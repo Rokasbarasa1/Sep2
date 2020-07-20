@@ -16,17 +16,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:marwan" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/HTTPHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/JavaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/JavaServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/network/DatabaseSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/network/DatabaseSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/shift/IShiftDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/shift/ShiftDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1d3SrOHEIjZZlmLCxxFo4YUt72a" />
   <component name="ProjectLevelVcsManager">
@@ -91,7 +93,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="marwan" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -99,9 +113,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="522" y="382" width="859" height="600" key="#Notifications" timestamp="1595240791853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="522" y="382" width="859" height="600" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1595240791853" />
     <state x="620" y="262" key="FileChooserDialogImpl" timestamp="1592246285231">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1592246285231" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595240645835">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595240645835" />
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595240611166">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595240611166" />
   </component>
 </project>

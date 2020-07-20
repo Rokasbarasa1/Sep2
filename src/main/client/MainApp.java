@@ -18,4 +18,6 @@ public class MainApp extends Application {
         ViewHandler viewHandler = new ViewHandler(stage, viewModelFactory);
         viewHandler.start();
     }
+
+    //this is a comment to check if the branch is working
 }
