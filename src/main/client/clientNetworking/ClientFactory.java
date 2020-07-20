@@ -2,10 +2,10 @@ package main.client.clientNetworking;
 
 
 public class ClientFactory {
-    private HTTPHandler httpHandler; // Replace
+    private ClientSocketHandler socketHandler; // Replace
 
-    public ClientFactory(HTTPHandler httpHandler){
-        this.httpHandler = httpHandler;
+    public ClientFactory(ClientSocketHandler socketHandler){
+        this.socketHandler = socketHandler;
     }
 
     public ILoginClient loginClient() {

@@ -1,7 +1,4 @@
 package main.client.clientNetworking;
 
-
-
-public class HTTPHandler {
-
+public class ClientSocketHandler {
 }

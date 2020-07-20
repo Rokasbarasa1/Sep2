@@ -22,8 +22,8 @@ public class JavaServer {
             while(true){
                 Socket connectionSocket = serverSocket.accept();
                 DatabaseSocketHandler c = new DatabaseSocketHandler(connectionSocket, DAOFactory);
-                new Thread(c, "Business Server " + i).start();
-                System.out.println("Connected to Business server " + i);
+                new Thread(c, "Client " + i).start();
+                System.out.println("Connected to client " + i);
                 i++;
             }
         }catch (IOException e) {

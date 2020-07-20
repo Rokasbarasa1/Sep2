@@ -19,16 +19,34 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="" />
+    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/HTTPHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/JavaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/JavaServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/network/DatabaseSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/network/DatabaseSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/shift/IShiftDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/shift/ShiftDAO.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1d3SrOHEIjZZlmLCxxFo4YUt72a" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -37,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sep3-Final/DataAccess" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -58,7 +76,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591652481609</updated>
-      <workItem from="1591652487619" duration="1841000" />
+      <workItem from="1591652487619" duration="1845000" />
+      <workItem from="1592246247682" duration="53000" />
+      <workItem from="1594645743027" duration="120000" />
+      <workItem from="1594716763143" duration="2231000" />
     </task>
     <servers />
   </component>
@@ -75,5 +96,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="620" y="262" key="FileChooserDialogImpl" timestamp="1592246285231">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1592246285231" />
   </component>
 </project>
