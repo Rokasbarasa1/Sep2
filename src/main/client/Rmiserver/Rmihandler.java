@@ -16,4 +16,9 @@ public class Rmihandler implements RemoteCommandList {
         System.out.println(loginCarrier.getPassword()+ " " + loginCarrier.getUsername());
         return "Login successful;21";
     }
+
+    @Override
+    public Receptionist getReceptionistById(int userId) throws RemoteException {
+        return null;
+    }
 }

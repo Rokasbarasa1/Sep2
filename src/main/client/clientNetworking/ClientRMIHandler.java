@@ -52,10 +52,18 @@ public class ClientRMIHandler implements RemoteSender {
 
         try {
             return rml.login(loginCarrier);
-            //return rml.;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return "false";
+    }
+
+    public Receptionist getReceptionistById(int userId) {
+        try {
+            return rml.getReceptionistById(userId);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

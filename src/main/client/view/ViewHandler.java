@@ -67,7 +67,7 @@ public class ViewHandler {
         FXMLLoader loader = new FXMLLoader();
         Parent root = getRootByPath("ReceptionistMenu/ReceptionistMenu.fxml", loader);
         ReceptionistMenuController controller = loader.getController();
-        controller.init(this);
+        controller.init(this, viewModelFactory.getReceptionistMenuViewModel());
         receptionistMenuScene = new Scene(root);
         mainStage.setTitle("Receptionist");
         mainStage.setScene(receptionistMenuScene);

@@ -21,12 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sep2-reexam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sep2-reexam.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/Rmiserver/Rmihandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Rmiserver/Rmihandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientSocketHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientRMIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientRMIHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/login/LoginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/login/LoginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/model/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/ModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/viewModel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/viewModel/ViewModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/server/JavaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/JavaServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/server/network/DatabaseSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/network/DatabaseSocketHandler.java" afterDir="false" />
@@ -41,6 +42,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/server/persistence/shift/ShiftDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/server/shared/Shift.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/server/shared/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/shared/RemoteCommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/RemoteCommandList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +53,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -78,11 +80,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.client.clientNetworking.receptionistMenu" />
+      <recent name="main.client.model.receptionistMenu" />
+      <recent name="main.client.viewModel" />
       <recent name="main.client.clientNetworking" />
       <recent name="main.shared" />
-      <recent name="main.client.clientNetworking.login" />
-      <recent name="main.client.model.login" />
-      <recent name="main.client.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\server" />
@@ -146,7 +148,7 @@
       <workItem from="1595238705246" duration="18628000" />
       <workItem from="1595278566313" duration="2044000" />
       <workItem from="1595313686274" duration="387000" />
-      <workItem from="1595314110052" duration="9581000" />
+      <workItem from="1595314110052" duration="14524000" />
     </task>
     <servers />
   </component>
@@ -166,40 +168,40 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="600" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1595324051518">
+    <state x="600" y="101" key="#com.intellij.ide.util.MemberChooser" timestamp="1595328250776">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="600" y="101" key="#com.intellij.ide.util.MemberChooser/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595324051518" />
+    <state x="600" y="101" key="#com.intellij.ide.util.MemberChooser/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595328250776" />
     <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1595257437833" />
-    <state x="709" y="217" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595253123127">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="872" y="301" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595326726634">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="872" y="301" key="#com.intellij.ide.util.PackageChooserDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595244538505" />
+    <state x="872" y="301" key="#com.intellij.ide.util.PackageChooserDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595326726634" />
     <state x="709" y="217" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1595253123127" />
     <state x="620" y="262" key="FileChooserDialogImpl" timestamp="1595278590090">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595278590090" />
     <state x="504" y="189" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595257010521" />
-    <state width="1637" height="261" key="GridCell.Tab.0.bottom" timestamp="1595324517436">
+    <state width="1637" height="261" key="GridCell.Tab.0.bottom" timestamp="1595329119221">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="261" key="GridCell.Tab.0.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595324517436" />
+    <state width="1637" height="261" key="GridCell.Tab.0.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595329119221" />
     <state width="1323" height="172" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595254958319" />
-    <state width="1637" height="261" key="GridCell.Tab.0.center" timestamp="1595324517436">
+    <state width="1637" height="261" key="GridCell.Tab.0.center" timestamp="1595329119221">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="261" key="GridCell.Tab.0.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595324517436" />
+    <state width="1637" height="261" key="GridCell.Tab.0.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595329119221" />
     <state width="1323" height="172" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595254958319" />
-    <state width="1637" height="261" key="GridCell.Tab.0.left" timestamp="1595324517436">
+    <state width="1637" height="261" key="GridCell.Tab.0.left" timestamp="1595329119221">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="261" key="GridCell.Tab.0.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595324517436" />
+    <state width="1637" height="261" key="GridCell.Tab.0.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595329119221" />
     <state width="1323" height="172" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595254958318" />
-    <state width="1637" height="261" key="GridCell.Tab.0.right" timestamp="1595324517436">
+    <state width="1637" height="261" key="GridCell.Tab.0.right" timestamp="1595329119221">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="261" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595324517436" />
+    <state width="1637" height="261" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595329119221" />
     <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595254958319" />
     <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1595321925320">
       <screen x="0" y="0" width="1680" height="1010" />
