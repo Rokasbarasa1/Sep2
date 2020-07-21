@@ -7,7 +7,6 @@ import main.shared.Receptionist;
 
 public class LoginClient implements ILoginClient {
     private ClientRMIHandler rmiHandler;
-    private ILoginModel model;
 
     public LoginClient(ClientRMIHandler rmiHandler) {
         this.rmiHandler = rmiHandler;
