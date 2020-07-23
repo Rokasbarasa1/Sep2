@@ -18,7 +18,7 @@ public class ClientRMIHandler implements RemoteSender {
         try{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
             UnicastRemoteObject.exportObject(this, 0);
-            rml = (RemoteCommandList)reg.lookup("msgList");
+            rml = (RemoteCommandList)reg.lookup("point of sales");
             connected = true;
         }catch (ConnectException e){
             connected = false;
@@ -34,7 +34,7 @@ public class ClientRMIHandler implements RemoteSender {
         try{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
             UnicastRemoteObject.exportObject(this, 0);
-            rml = (RemoteCommandList)reg.lookup("msgList");
+            rml = (RemoteCommandList)reg.lookup("point of sales");
             connected = true;
         }catch (RemoteException |NotBoundException e){
             connected = false;
@@ -43,9 +43,9 @@ public class ClientRMIHandler implements RemoteSender {
     }
 
     public String login(Receptionist loginCarrier) {
-        if(connected == false){
+        if(!connected){
             retryConnection();
-            if(connected == false){
+            if(!connected){
                 return "Failed to connect to server";
             }
         }

@@ -1,7 +1,7 @@
 package main.server.persistence.login;
 
-import shared.User;
+import main.shared.Receptionist;
 
 public interface ILoginDAO {
-    String validateLogin(User user) ;
+    String validateLogin(Receptionist receptionist) ;
 }

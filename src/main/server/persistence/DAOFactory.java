@@ -1,18 +1,17 @@
 package main.server.persistence;
 
-import persistence.employee.IUserDAO;
-import persistence.database.IDBConnection;
-import persistence.employee.UserDAO;
-import persistence.login.ILoginDAO;
-import persistence.login.LoginDAO;
-import persistence.shift.IShiftDAO;
-import persistence.shift.ShiftDAO;
+
+import main.server.persistence.database.IDBConnection;
+import main.server.persistence.login.ILoginDAO;
+import main.server.persistence.login.LoginDAO;
+import main.server.persistence.receptionist.IReceptionistDAO;
+import main.server.persistence.receptionist.ReceptionistDAO;
 
 public class DAOFactory {
     private IDBConnection connect;
     private ILoginDAO login;
-    private IShiftDAO shift;
-    private IUserDAO user;
+    private IReceptionistDAO receptionistDAO;
+
 
     public DAOFactory(IDBConnection connect) {
         this.connect = connect;
@@ -24,15 +23,9 @@ public class DAOFactory {
         return login;
     }
 
-    public IShiftDAO getShiftDAO() {
-        if(shift == null)
-            shift = new ShiftDAO(connect);
-        return shift;
-    }
-
-    public IUserDAO getUserDAO() {
-        if(user == null)
-            user = new UserDAO(connect);
-        return user;
+    public IReceptionistDAO getReceptionistDAO() {
+        if(receptionistDAO == null)
+            receptionistDAO = new ReceptionistDAO(connect);
+        return receptionistDAO;
     }
 }

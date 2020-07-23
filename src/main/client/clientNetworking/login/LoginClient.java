@@ -1,8 +1,5 @@
 package main.client.clientNetworking.login;
-
-import com.google.gson.Gson;
 import main.client.clientNetworking.ClientRMIHandler;
-import main.client.model.login.ILoginModel;
 import main.shared.Receptionist;
 
 public class LoginClient implements ILoginClient {
