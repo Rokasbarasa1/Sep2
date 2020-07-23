@@ -1,0 +1,236 @@
+Index: src/main/server/persistence/database/IDBConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main.server.persistence.database;\r\n\r\nimport exceptions.DataConnectionException;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.SQLException;\r\n\r\npublic interface IDBConnection {\r\n    Connection getConnection() throws DataConnectionException;\r\n\r\n    void closeConnection();\r\n\r\n    PreparedStatement executePreparedQuery(String preparedSql) throws DataConnectionException;\r\n\r\n    PreparedStatement createPreparedStatement(String preparedSql) throws DataConnectionException;\r\n\r\n    void executeUpdate(PreparedStatement preparedStatement) throws SQLException;\r\n\r\n    String getSchemaName();\r\n\r\n    String getUserTable();\r\n\r\n    String getShiftTable();\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/server/persistence/database/IDBConnection.java	(revision 18f3e91748e80481520252831f8ac934af1c2021)
++++ src/main/server/persistence/database/IDBConnection.java	(date 1595429191214)
+@@ -11,7 +11,7 @@
+ 
+     void closeConnection();
+ 
+-    PreparedStatement executePreparedQuery(String preparedSql) throws DataConnectionException;
++    PreparedStatement executePreparedQuery(String preparedSql) throws DataConnectionException, Exception;
+ 
+     PreparedStatement createPreparedStatement(String preparedSql) throws DataConnectionException;
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"BRANCH:marwan\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </select>\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"82a98f32-2d1e-4a4f-b793-6839b3d0437b\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/client/MainApp.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/client/MainApp.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1d3SrOHEIjZZlmLCxxFo4YUt72a\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../Sep3-Final/DataAccess\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Rokas\\Desktop\\Sep2-reexam\\src\\main\\server\" />\r\n      <recent name=\"C:\\Users\\Rokas\\Desktop\\Sep2-reexam\\src\\main\\client\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Rokas\\Desktop\\Sep2-reexam\\src\\main\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"82a98f32-2d1e-4a4f-b793-6839b3d0437b\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1591652481609</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1591652481609</updated>\r\n      <workItem from=\"1591652487619\" duration=\"1845000\" />\r\n      <workItem from=\"1592246247682\" duration=\"53000\" />\r\n      <workItem from=\"1594645743027\" duration=\"120000\" />\r\n      <workItem from=\"1594716763143\" duration=\"2231000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"marwan\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"522\" y=\"382\" width=\"859\" height=\"600\" key=\"#Notifications\" timestamp=\"1595240791853\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"522\" y=\"382\" width=\"859\" height=\"600\" key=\"#Notifications/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1595240791853\" />\r\n    <state x=\"620\" y=\"262\" key=\"FileChooserDialogImpl\" timestamp=\"1592246285231\">\r\n      <screen x=\"0\" y=\"0\" width=\"1680\" height=\"1010\" />\r\n    </state>\r\n    <state x=\"620\" y=\"262\" key=\"FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010\" timestamp=\"1592246285231\" />\r\n    <state x=\"552\" y=\"252\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1595240645835\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"552\" y=\"252\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1595240645835\" />\r\n    <state x=\"769\" y=\"433\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1595240611166\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"769\" y=\"433\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1595240611166\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 18f3e91748e80481520252831f8ac934af1c2021)
++++ .idea/workspace.xml	(date 1595429191256)
+@@ -25,14 +25,20 @@
+     </select>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="">
++    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="test">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Sep2-reexam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sep2-reexam.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/client/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/MainApp.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/database/DBConnection.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/database/IDBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/database/IDBConnection.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="CodeInsightWorkspaceSettings">
++    <option name="optimizeImportsOnTheFly" value="true" />
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+@@ -42,11 +48,18 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PUSH_TAGS">
++      <GitPushTagMode>
++        <option name="argument" value="--follow-tags" />
++        <option name="title" value="Current Branch" />
++      </GitPushTagMode>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+     <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="ProjectId" id="1d3SrOHEIjZZlmLCxxFo4YUt72a" />
+   <component name="ProjectLevelVcsManager">
++    <OptionsSetting value="false" id="Update" />
+     <ConfirmationsSetting value="1" id="Add" />
+   </component>
+   <component name="ProjectViewState">
+@@ -57,7 +70,16 @@
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sep3-Final/DataAccess" />
++    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49.jar!/" />
++    <property name="node.js.detected.package.eslint" value="true" />
++    <property name="node.js.detected.package.tslint" value="true" />
++    <property name="node.js.path.for.package.eslint" value="project" />
++    <property name="node.js.path.for.package.tslint" value="project" />
++    <property name="node.js.selected.package.eslint" value="(autodetect)" />
++    <property name="node.js.selected.package.tslint" value="(autodetect)" />
++    <property name="project.structure.last.edited" value="Libraries" />
++    <property name="project.structure.proportion" value="0.0" />
++    <property name="project.structure.side.proportion" value="0.2" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+@@ -82,7 +104,17 @@
+       <workItem from="1592246247682" duration="53000" />
+       <workItem from="1594645743027" duration="120000" />
+       <workItem from="1594716763143" duration="2231000" />
++      <workItem from="1595276712412" duration="1616000" />
++      <workItem from="1595317248408" duration="3217000" />
++    </task>
++    <task id="LOCAL-00001" summary="test">
++      <created>1595240864436</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1595240864436</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -112,22 +144,43 @@
+     </option>
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="test" />
++    <option name="LAST_COMMIT_MESSAGE" value="test" />
++  </component>
+   <component name="WindowStateProjectService">
++    <state x="586" y="198" key="#Inspections" timestamp="1595319453298">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1595319453298" />
+     <state x="522" y="382" width="859" height="600" key="#Notifications" timestamp="1595240791853">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="522" y="382" width="859" height="600" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1595240791853" />
+-    <state x="620" y="262" key="FileChooserDialogImpl" timestamp="1592246285231">
+-      <screen x="0" y="0" width="1680" height="1010" />
++    <state x="0" y="94" key="#Project_Structure" timestamp="1595318880830">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="0" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1595318880830" />
++    <state x="709" y="270" key="FileChooserDialogImpl" timestamp="1595318872913">
++      <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1592246285231" />
+-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595240645835">
++    <state x="709" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595318872913" />
++    <state x="302" y="225" key="RollbackChangesDialog" timestamp="1595277089293">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="302" y="225" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595277089293" />
++    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595240974175">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595240645835" />
+-    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595240611166">
++    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595240974175" />
++    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595325054821">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595240611166" />
++    <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595325054821" />
++    <state x="663" y="308" key="git4idea.merge.GitPullDialog" timestamp="1595325180368">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="663" y="308" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595325180368" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: Sep2-reexam.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Sep2-reexam.iml	(revision 18f3e91748e80481520252831f8ac934af1c2021)
++++ Sep2-reexam.iml	(date 1595318881352)
+@@ -7,5 +7,6 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="mysql-connector-java-5.1.49" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: src/main/server/persistence/database/DBConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main.server.persistence.database;\r\n\r\nimport exceptions.DataConnectionException;\r\n\r\nimport java.sql.*;\r\n\r\npublic class DBConnection implements IDBConnection {\r\n\r\n    private final String driver = \"com.mysql.cj.jdbc.Driver\";\r\n    private final String url = \"jdbc:mysql://localhost:3306/sep3?useTimezone=true&serverTimezone=GMT\";\r\n    private final String username = \"root\";\r\n    private final String password = \"9691cmsj\"; //change to your password\r\n\r\n\r\n    private final String schemaName;\r\n    private final String userTableName;\r\n    private final String shiftTableName;\r\n\r\n    private Connection connection;\r\n\r\n    public DBConnection() {\r\n        schemaName = \"sep3\";\r\n        userTableName = \"Users\";\r\n        shiftTableName = \"Shift\";\r\n    }\r\n\r\n    public Connection getConnection() {\r\n        try {\r\n            Class.forName(driver);\r\n        } catch (ClassNotFoundException e) {\r\n            e.printStackTrace();\r\n        }\r\n        try {\r\n            if (connection == null || connection.isClosed()) {\r\n                connection = DriverManager.getConnection(url, username, password);\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n        return connection;\r\n    }\r\n\r\n    @Override\r\n    public void closeConnection() {\r\n        try {\r\n            if (!connection.isClosed()) {\r\n                connection.close();\r\n            }\r\n        } catch (SQLException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public PreparedStatement executePreparedQuery(String preparedSql) throws DataConnectionException {\r\n        Connection connection = getConnection();\r\n        PreparedStatement preparedStatement;\r\n        try {\r\n            preparedStatement = connection.prepareStatement(preparedSql);\r\n        } catch (SQLException e) {\r\n            throw new DataConnectionException(\"Lost connection to data\");\r\n        }\r\n        assert preparedStatement != null;\r\n        return preparedStatement;\r\n\r\n    }\r\n\r\n    @Override\r\n    public PreparedStatement createPreparedStatement(String preparedSql) throws DataConnectionException {\r\n        Connection connection = getConnection();\r\n        PreparedStatement preparedStatement;\r\n        try {\r\n            preparedStatement = connection.prepareStatement(preparedSql);\r\n        } catch (SQLException e) {\r\n            throw new DataConnectionException(\"Lost connection to data\");\r\n        }\r\n        return preparedStatement;\r\n    }\r\n\r\n    @Override\r\n    public void executeUpdate(PreparedStatement preparedStatement) throws SQLException {\r\n        preparedStatement.executeUpdate();\r\n    }\r\n\r\n    @Override\r\n    public String getSchemaName() {\r\n        return schemaName;\r\n    }\r\n\r\n    @Override\r\n    public String getUserTable() {\r\n        return userTableName;\r\n    }\r\n\r\n    @Override\r\n    public String getShiftTable() {\r\n        return shiftTableName;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/server/persistence/database/DBConnection.java	(revision 18f3e91748e80481520252831f8ac934af1c2021)
++++ src/main/server/persistence/database/DBConnection.java	(date 1595429220691)
+@@ -1,15 +1,19 @@
+ package main.server.persistence.database;
+ 
+-import exceptions.DataConnectionException;
++
+ 
+-import java.sql.*;
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.PreparedStatement;
++import java.sql.SQLException;
++
+ 
+ public class DBConnection implements IDBConnection {
+ 
+     private final String driver = "com.mysql.cj.jdbc.Driver";
+     private final String url = "jdbc:mysql://localhost:3306/sep3?useTimezone=true&serverTimezone=GMT";
+     private final String username = "root";
+-    private final String password = "9691cmsj"; //change to your password
++    private final String password = "2401"; //change to your password
+ 
+ 
+     private final String schemaName;
+@@ -52,13 +56,13 @@
+     }
+ 
+     @Override
+-    public PreparedStatement executePreparedQuery(String preparedSql) throws DataConnectionException {
++    public PreparedStatement executePreparedQuery(String preparedSql) throws Exception {
+         Connection connection = getConnection();
+         PreparedStatement preparedStatement;
+         try {
+             preparedStatement = connection.prepareStatement(preparedSql);
+         } catch (SQLException e) {
+-            throw new DataConnectionException("Lost connection to data");
++            throw new Exception("Lost connection to data");
+         }
+         assert preparedStatement != null;
+         return preparedStatement;
+Index: src/main/client/MainApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main.client;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.stage.Stage;\r\nimport main.client.clientNetworking.ClientFactory;\r\nimport main.client.clientNetworking.HTTPHandler;\r\nimport main.client.model.ModelFactory;\r\nimport main.client.view.ViewHandler;\r\nimport main.client.viewModel.ViewModelFactory;\r\n\r\npublic class MainApp extends Application {\r\n    @Override\r\n    public void start(Stage stage) {\r\n        HTTPHandler httpHandler = new HTTPHandler();\r\n        ClientFactory clientFactory = new ClientFactory(httpHandler);\r\n        ModelFactory modelFactory = new ModelFactory(clientFactory);\r\n        ViewModelFactory viewModelFactory = new ViewModelFactory(modelFactory);\r\n        ViewHandler viewHandler = new ViewHandler(stage, viewModelFactory);\r\n        viewHandler.start();\r\n    }\r\n\r\n    //this is a comment to check if the branch is working\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/client/MainApp.java	(revision 18f3e91748e80481520252831f8ac934af1c2021)
++++ src/main/client/MainApp.java	(date 1595248484252)
+@@ -18,6 +18,4 @@
+         ViewHandler viewHandler = new ViewHandler(stage, viewModelFactory);
+         viewHandler.start();
+     }
+-
+-    //this is a comment to check if the branch is working
+ }
