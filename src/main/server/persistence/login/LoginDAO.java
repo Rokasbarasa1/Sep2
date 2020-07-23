@@ -1,8 +1,8 @@
 package main.server.persistence.login;
 
-import shared.User;
-import exceptions.DataConnectionException;
-import persistence.database.IDBConnection;
+import main.server.persistence.database.DataConnectionException;
+import main.server.persistence.database.IDBConnection;
+import main.shared.Receptionist;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,25 +17,21 @@ public class LoginDAO implements ILoginDAO {
     }
 
     @Override
-    public String validateLogin(User user) {
+    public String validateLogin(Receptionist receptionist) {
         PreparedStatement preparedStatement;
         ResultSet resultSet;
-        User resultUser;
-        String conclusion= "NOT";
+        String conclusion= "Database not responding";
         try {
-            String sql = "SELECT Users_ID, username, password FROM " + databaseConnection.getSchemaName() + "." + databaseConnection.getUserTable() +
-                    " WHERE username LIKE '" + user.getUsername() + "'  AND password LIKE '" + user.getPassword() + "'";
+            String sql = "SELECT receptionist_ID, userName, passWord FROM " + databaseConnection.getSchemaName() + "." + databaseConnection.getReceptionistTableName() +
+                    " WHERE username LIKE '" + receptionist.getUsername() + "'  AND password LIKE '" + receptionist.getPassword() + "'";
             preparedStatement = databaseConnection.createPreparedStatement(sql);
             resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                String userName = resultSet.getString("username");
-                String password = resultSet.getString("password");
+            if (resultSet.next()) {
                 int id = resultSet.getInt("Users_ID");
-
-                resultUser = new User(userName, password);
-                if (resultUser.getPassword().equals(user.getPassword()) && resultUser.getUsername().equals(user.getUsername())) {
-                    conclusion = "OK;" + id;
-                }
+                conclusion = "Login successful;"+id;
+            }
+            else{
+                conclusion = "Username or password is incorrect";
             }
         } catch (DataConnectionException | SQLException e) {
             e.printStackTrace();

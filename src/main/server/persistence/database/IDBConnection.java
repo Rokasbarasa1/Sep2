@@ -17,7 +17,5 @@ public interface IDBConnection {
 
     String getSchemaName();
 
-    String getUserTable();
-
-    String getShiftTable();
+    String getReceptionistTableName();
 }

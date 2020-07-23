@@ -1,4 +1,8 @@
 package main.server.persistence.database;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 
 import java.sql.*;
@@ -57,7 +61,7 @@ public class DBConnection implements IDBConnection {
         try {
             preparedStatement = connection.prepareStatement(preparedSql);
         } catch (SQLException e) {
-            throw new DataConnectionException("Lost connection to data");
+            throw new DataConnectionException("Lost connection to database");
         }
         assert preparedStatement != null;
         return preparedStatement;
@@ -71,7 +75,7 @@ public class DBConnection implements IDBConnection {
         try {
             preparedStatement = connection.prepareStatement(preparedSql);
         } catch (SQLException e) {
-            throw new DataConnectionException("Lost connection to data");
+            throw new DataConnectionException("Lost connection to database");
         }
         return preparedStatement;
     }
@@ -87,12 +91,8 @@ public class DBConnection implements IDBConnection {
     }
 
     @Override
-    public String getUserTable() {
+    public String getReceptionistTableName() {
         return receptionistTableName;
     }
 
-    @Override
-    public String getShiftTable() {
-        return orderTableName;
-    }
 }
