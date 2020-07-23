@@ -22,12 +22,12 @@ public class LoginDAO implements ILoginDAO {
         ResultSet resultSet;
         String conclusion= "Database not responding";
         try {
-            String sql = "SELECT receptionist_ID, userName, passWord FROM " + databaseConnection.getSchemaName() + "." + databaseConnection.getReceptionistTableName() +
+            String sql = "SELECT ID, userName, passWord FROM " + databaseConnection.getSchemaName() + "." + databaseConnection.getReceptionistTableName() +
                     " WHERE username LIKE '" + receptionist.getUsername() + "'  AND password LIKE '" + receptionist.getPassword() + "'";
             preparedStatement = databaseConnection.createPreparedStatement(sql);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                int id = resultSet.getInt("Users_ID");
+                int id = resultSet.getInt("ID");
                 conclusion = "Login successful;"+id;
             }
             else{

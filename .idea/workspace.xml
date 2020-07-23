@@ -25,7 +25,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working" />
+    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_49.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sep2-reexam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sep2-reexam.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/Rmiserver/RmiMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/Rmiserver/RmiMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/database/DBConnection.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/libraries/mysql-connector-java-5.1.49.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Libraries/mysql-connector-java-8.0.21.jar!/" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -66,9 +77,6 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="main.server.persistence.database" />
     </key>
@@ -77,8 +85,12 @@
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\server" />
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.MainApp">
+  <component name="RunManager" selected="Application.RmiMain (1)">
     <configuration name="JavaServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.server.JavaServer" />
       <module name="Sep2-reexam" />
@@ -105,6 +117,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RmiMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.client.Rmiserver.RmiMain" />
+      <module name="Sep2-reexam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.client.Rmiserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RmiMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.server.network.rmi.RmiMain" />
       <module name="Sep2-reexam" />
@@ -122,6 +147,7 @@
       <list>
         <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.JavaServer" />
+        <item itemvalue="Application.RmiMain (1)" />
         <item itemvalue="Application.RmiMain" />
       </list>
     </recent_temporary>
@@ -219,30 +245,55 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595521204857" />
-    <state x="709" y="270" key="FileChooserDialogImpl" timestamp="1595525213302">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="520" y="262" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1595527293758">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1592246285231" />
+    <state x="520" y="262" key="DUMP_DIALOG_DIMENSION_KEY/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527293757" />
+    <state x="620" y="262" key="FileChooserDialogImpl" timestamp="1595527684974">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527684974" />
     <state x="709" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595525213302" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1595526585278">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="261" key="GridCell.Tab.0.bottom" timestamp="1595529263708">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="261" key="GridCell.Tab.0.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595529263708" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585278" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1595526585277">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="261" key="GridCell.Tab.0.center" timestamp="1595529263708">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="261" key="GridCell.Tab.0.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595529263708" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585277" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1595526585277">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="261" key="GridCell.Tab.0.left" timestamp="1595529263708">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="261" key="GridCell.Tab.0.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595529263708" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585277" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1595526585278">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="261" key="GridCell.Tab.0.right" timestamp="1595529263708">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="261" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595529263708" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585278" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1595525313322">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1659" height="336" key="GridCell.Tab.1.bottom" timestamp="1595527987359">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527987359" />
+    <state width="1659" height="336" key="GridCell.Tab.1.center" timestamp="1595527987358">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527987358" />
+    <state width="1659" height="336" key="GridCell.Tab.1.left" timestamp="1595527987358">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527987358" />
+    <state width="1659" height="336" key="GridCell.Tab.1.right" timestamp="1595527987359">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="336" key="GridCell.Tab.1.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527987358" />
+    <state x="385" y="91" key="SettingsEditor" timestamp="1595527693324">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="385" y="91" key="SettingsEditor/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595527693324" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595525313322" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595526172978">
       <screen x="0" y="0" width="1920" height="1040" />

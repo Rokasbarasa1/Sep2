@@ -12,7 +12,7 @@ public class RmiMain {
         try {
             Registry registry = LocateRegistry.createRegistry(1099);
             RemoteCommandList server = new Rmihandler();
-            registry.bind("msgList", server);
+            registry.bind("point of sales", server);
             System.out.println("Server started...");
             System.out.println(registry.list().toString());
         } catch (RemoteException | AlreadyBoundException e){
