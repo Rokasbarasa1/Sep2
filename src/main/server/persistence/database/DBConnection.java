@@ -1,27 +1,26 @@
 package main.server.persistence.database;
 
-import exceptions.DataConnectionException;
 
 import java.sql.*;
 
 public class DBConnection implements IDBConnection {
 
     private final String driver = "com.mysql.cj.jdbc.Driver";
-    private final String url = "jdbc:mysql://localhost:3306/sep3?useTimezone=true&serverTimezone=GMT";
+    private final String url = "jdbc:mysql://localhost:3306/sep2?useTimezone=true&serverTimezone=GMT";
     private final String username = "root";
-    private final String password = "9691cmsj"; //change to your password
+    private final String password = "2401"; //change to your password
 
 
     private final String schemaName;
-    private final String userTableName;
-    private final String shiftTableName;
+    private final String receptionistTableName;
+    private final String orderTableName;
 
     private Connection connection;
 
     public DBConnection() {
-        schemaName = "sep3";
-        userTableName = "Users";
-        shiftTableName = "Shift";
+        schemaName = "sep2";
+        receptionistTableName = "Receptionist";
+        orderTableName = "order";
     }
 
     public Connection getConnection() {
@@ -89,11 +88,11 @@ public class DBConnection implements IDBConnection {
 
     @Override
     public String getUserTable() {
-        return userTableName;
+        return receptionistTableName;
     }
 
     @Override
     public String getShiftTable() {
-        return shiftTableName;
+        return orderTableName;
     }
 }
