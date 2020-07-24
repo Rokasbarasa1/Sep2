@@ -1,33 +1,25 @@
 package main.server;
 
-import main.server.network.DatabaseSocketHandler;
 import main.server.persistence.DAOFactory;
 import main.server.persistence.database.DBConnection;
 import main.server.persistence.database.IDBConnection;
-
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import main.shared.RemoteCommandList;
+import java.rmi.AlreadyBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 public class JavaServer {
 
     public static void main(String[] args){
         IDBConnection connect = new DBConnection();
         DAOFactory DAOFactory = new DAOFactory(connect);
-        System.out.println("Server started");
         try {
-            connect.getConnection();
-            ServerSocket serverSocket = new ServerSocket(4343, 10);
-            int i = 0;
-            while(true){
-                Socket connectionSocket = serverSocket.accept();
-                DatabaseSocketHandler c = new DatabaseSocketHandler(connectionSocket, DAOFactory);
-                new Thread(c, "Client " + i).start();
-                System.out.println("Connected to client " + i);
-                i++;
-            }
-        }catch (IOException e) {
-            System.out.println("Error occurred during connection to database");
+            Registry registry = LocateRegistry.createRegistry(1099);
+            RemoteCommandList server = new RmiHandler(DAOFactory);
+            registry.bind("point of sales", server);
+            System.out.println("Server Started...");
+        } catch (RemoteException | AlreadyBoundException e) {
             e.printStackTrace();
         }
     }

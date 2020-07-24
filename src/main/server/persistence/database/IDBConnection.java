@@ -1,7 +1,5 @@
 package main.server.persistence.database;
 
-import exceptions.DataConnectionException;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -19,7 +17,5 @@ public interface IDBConnection {
 
     String getSchemaName();
 
-    String getUserTable();
-
-    String getShiftTable();
+    String getReceptionistTableName();
 }
