@@ -4,19 +4,25 @@ import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
 import main.client.model.login.ILoginModel;
 import main.shared.Ingredient;
 import main.shared.Item;
+import main.shared.Order;
 import main.shared.Receptionist;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 
 public class ReceptionistMenuModel implements IReceptionistMenuModel{
     private Receptionist currentUser;
     private IReceptionistMenuClient client;
     private ILoginModel loginModel;
+    private PropertyChangeSupport newOrderSupport = new PropertyChangeSupport(this);
     private ArrayList<Item> menu;
+    private ArrayList<Order> orders;
 
     public ReceptionistMenuModel(IReceptionistMenuClient receptionistMenuClient, ILoginModel login) {
         client = receptionistMenuClient;
         loginModel = login;
+        client.addPropertyChangeListener(evt -> newOrder());
     }
 
     @Override
@@ -65,5 +71,20 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
     public ArrayList<Item> getMenu() {
         //menu = client.getMenu();
         return getMenuTemp();
+    }
+
+    @Override
+    public ArrayList<Order> getOrders() {
+        orders = client.getOrders();
+        return orders;
+    }
+
+    public void newOrder(){
+        newOrderSupport.firePropertyChange("New Order", null, null);
+    }
+
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        newOrderSupport.addPropertyChangeListener(listener);
     }
 }
