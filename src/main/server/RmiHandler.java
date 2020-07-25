@@ -2,6 +2,7 @@ package main.server;
 
 import main.server.persistence.DAOFactory;
 import main.shared.Item;
+import main.shared.Order;
 import main.shared.Receptionist;
 import main.shared.RemoteCommandList;
 
@@ -29,6 +30,11 @@ public class RmiHandler implements RemoteCommandList {
 
     @Override
     public ArrayList<Item> getMenu() throws RemoteException{
+        return null;
+    }
+
+    @Override
+    public ArrayList<Order> getOrders() throws RemoteException {
         return null;
     }
 }

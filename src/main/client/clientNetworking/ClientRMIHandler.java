@@ -1,10 +1,9 @@
 package main.client.clientNetworking;
 
-import main.shared.Item;
-import main.shared.Receptionist;
-import main.shared.RemoteCommandList;
-import main.shared.RemoteSender;
+import main.shared.*;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.rmi.ConnectException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -13,9 +12,11 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-public class ClientRMIHandler implements RemoteSender {
+public class ClientRMIHandler implements RemoteSender, PropertyChangeSubject {
     private RemoteCommandList rml;
     private boolean connected;
+    private PropertyChangeSupport newOrderSupport = new PropertyChangeSupport(this);
+
     public ClientRMIHandler() throws RemoteException, NotBoundException {
         try{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
@@ -27,9 +28,10 @@ public class ClientRMIHandler implements RemoteSender {
             e.printStackTrace();
         }
     }
-    @Override
-    public void replyMessage(String message) throws RemoteException {
 
+    @Override
+    public void newOrder() throws RemoteException {
+        newOrderSupport.firePropertyChange("New Order", null, null);
     }
 
     public void retryConnection(){
@@ -82,5 +84,19 @@ public class ClientRMIHandler implements RemoteSender {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<Order> getOrders() {
+        try {
+            return rml.getOrders();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        newOrderSupport.addPropertyChangeListener(listener);
     }
 }
