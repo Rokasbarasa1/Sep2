@@ -4,30 +4,36 @@ import main.client.model.ModelFactory;
 
 public class ViewModelFactory {
     private ModelFactory modelFactory;
-    private LoginViewModel loginViewModel;
-    private ReceptionistMenuViewModel receptionistMenuViewModel;
+    private LoginViewModel login;
+    private ReceptionistMenuViewModel receptionist;
+    private CustomerMenuViewModel customerMenu;
+    private CartViewModel cart;
 
     public ViewModelFactory(ModelFactory modelFactory) {
         this.modelFactory = modelFactory;
     }
 
     public LoginViewModel getLoginViewModel() {
-        if(loginViewModel == null)
-            loginViewModel = new LoginViewModel(modelFactory.loginModel());
-        return loginViewModel;
+        if(login == null)
+            login = new LoginViewModel(modelFactory.loginModel());
+        return login;
     }
 
     public ReceptionistMenuViewModel getReceptionistMenuViewModel() {
-        if(receptionistMenuViewModel == null)
-            receptionistMenuViewModel = new ReceptionistMenuViewModel(modelFactory.receptionistMenuModel());
-        return receptionistMenuViewModel;
-    }
-    /*
-    public LoginViewModel getLoginViewModel() {
-        if(loginViewModel == null)
-            loginViewModel = new LoginViewModel(modelFactory.loginModel());
-        return loginViewModel;
+        if (receptionist == null)
+            receptionist = new ReceptionistMenuViewModel(modelFactory.receptionistMenuModel());
+        return receptionist;
     }
 
-     */
+    public CustomerMenuViewModel getCustomerMenuViewModel() {
+        if(customerMenu == null)
+            customerMenu = new CustomerMenuViewModel(modelFactory.customerMenuModel());
+        return customerMenu;
+    }
+
+    public CartViewModel getCartViewModel() {
+        if(cart == null)
+            cart = new CartViewModel(modelFactory.cartModel());
+        return cart;
+    }
 }

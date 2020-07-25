@@ -1,5 +1,6 @@
 package main.client.clientNetworking;
 
+import main.shared.Item;
 import main.shared.Receptionist;
 import main.shared.RemoteCommandList;
 import main.shared.RemoteSender;
@@ -10,6 +11,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 public class ClientRMIHandler implements RemoteSender {
     private RemoteCommandList rml;
@@ -65,5 +67,9 @@ public class ClientRMIHandler implements RemoteSender {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<Item> getMenu() {
+        return rml.getMenu();
     }
 }
