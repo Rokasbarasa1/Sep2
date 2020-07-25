@@ -4,14 +4,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.client.view.cart.CartController;
 import main.client.view.customerMenu.CustomerMenuController;
 import main.client.view.login.LoginController;
 import main.client.view.orderScreen.OrderScreenController;
 import main.client.view.receptionistMenu.ReceptionistMenuController;
 import main.client.view.userSelect.UserSelectController;
 import main.client.viewModel.ViewModelFactory;
-
 import java.io.IOException;
+
 
 public class ViewHandler {
     private ViewModelFactory viewModelFactory;
@@ -21,6 +22,7 @@ public class ViewHandler {
     private Scene customerMenuScene;
     private Scene orderScreenScene;
     private Scene receptionistMenuScene;
+    private Scene cart;
 
 
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
@@ -47,9 +49,9 @@ public class ViewHandler {
         FXMLLoader loader = new FXMLLoader();
         Parent root = getRootByPath("CustomerMenu/CustomerMenu.fxml", loader);
         CustomerMenuController controller = loader.getController();
-        controller.init(this);
+        controller.init(this, viewModelFactory.getCustomerMenuViewModel());
         customerMenuScene = new Scene(root);
-        mainStage.setTitle("Customer");
+        mainStage.setTitle("Menu");
         mainStage.setScene(customerMenuScene);
     }
 
@@ -81,6 +83,16 @@ public class ViewHandler {
         loginScene = new Scene(root);
         mainStage.setTitle("Login");
         mainStage.setScene(loginScene);
+    }
+
+    public void openCart() {
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = getRootByPath("Cart/Cart.fxml", loader);
+        CartController controller = loader.getController();
+        controller.init(viewModelFactory.getCartViewModel(), this);
+        cart = new Scene(root);
+        mainStage.setTitle("Cart");
+        mainStage.setScene(cart);
     }
 
     private Parent getRootByPath(String path, FXMLLoader loader) {
