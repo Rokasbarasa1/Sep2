@@ -25,7 +25,8 @@ public class Item {
         return customizable;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
+    public ArrayList<Ingredient> getIngredientsList() {
+
         return ingredients;
     }
 
@@ -37,16 +38,16 @@ public class Item {
         return groupName;
     }
 
-    public String getIngredientsString(){
+    public String getIngredients(){
         String ingredientString = "";
         for (int i = 0; i < ingredients.size(); i++) {
-            ingredientString += " " + ingredients.get(i).getName();
+            ingredientString += ingredients.get(i).getName() + ", ";
         }
         return ingredientString;
     }
 
     @Override
     public String toString(){
-        return name + ": " + getIngredientsString();
+        return name + ": " + getIngredients();
     }
 }
