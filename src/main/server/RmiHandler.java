@@ -28,7 +28,7 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     @Override
-    public ArrayList<Item> getMenu() {
+    public ArrayList<Item> getMenu() throws RemoteException{
         return null;
     }
 }

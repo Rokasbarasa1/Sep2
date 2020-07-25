@@ -70,6 +70,17 @@ public class ClientRMIHandler implements RemoteSender {
     }
 
     public ArrayList<Item> getMenu() {
-        return rml.getMenu();
+        if(!connected){
+            retryConnection();
+            if(!connected){
+                //return "Failed to connect to server";
+            }
+        }
+        try {
+            return rml.getMenu();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
