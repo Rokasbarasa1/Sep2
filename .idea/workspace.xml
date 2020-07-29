@@ -25,19 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientRMIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/rmi/ClientRMIHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/cart/CartClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/cart/CartClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/customerMenu/CustomerMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/customerMenu/CustomerMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/login/LoginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/login/LoginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/ReceptionistMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/ReceptionistMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/customerMenu/CustomerMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/customerMenu/CustomerMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/shared/RemoteSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/rmi/RemoteSender.java" afterDir="false" />
-    </list>
+    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,9 +69,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.server.model" />
+      <recent name="main.server.persistence.ingredient" />
+      <recent name="main.server.persistence.item" />
+      <recent name="main.shared" />
+      <recent name="main.client.model.cart" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\view\cart" />
@@ -92,12 +83,9 @@
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\viewModel" />
       <recent name="D:\Sep2-reexam\src\libraries" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.server.model" />
-      <recent name="main.server.persistence.ingredient" />
-      <recent name="main.server.persistence.item" />
-      <recent name="main.shared" />
-      <recent name="main.client.model.cart" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainApp">

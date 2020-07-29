@@ -18,6 +18,14 @@ public class Item {
         this.groupName = groupName;
     }
 
+    public Item(String name, boolean customizable, ArrayList<Ingredient> ingredients, double price, String groupName) {
+        this.name = name;
+        this.customizable = customizable;
+        this.ingredients = ingredients;
+        this.price = price;
+        this.groupName = groupName;
+    }
+
     public int getID() {
         return ID;
     }

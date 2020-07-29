@@ -21,7 +21,7 @@ public class ModelFactory {
 
     public ILoginModel getLoginModel() {
         if(login == null)
-            login = new LoginModel(daoFactory.getItemDAO(), daoFactory.getIngredientDAO());
+            login = new LoginModel(daoFactory.getLoginDAO(), daoFactory.getReceptionistDAO());
         return login;
     }
 }
