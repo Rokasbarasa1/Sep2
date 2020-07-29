@@ -1,4 +1,4 @@
-package main.client.clientNetworking;
+package main.client.clientNetworking.rmi;
 
 import main.shared.*;
 
