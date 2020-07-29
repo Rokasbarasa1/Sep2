@@ -1,5 +1,5 @@
 package main.client.clientNetworking.login;
-import main.client.clientNetworking.ClientRMIHandler;
+import main.client.clientNetworking.rmi.ClientRMIHandler;
 import main.shared.Receptionist;
 
 public class LoginClient implements ILoginClient {

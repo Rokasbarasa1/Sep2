@@ -8,6 +8,8 @@ import main.client.clientNetworking.login.ILoginClient;
 import main.client.clientNetworking.login.LoginClient;
 import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
 import main.client.clientNetworking.receptionistMenu.ReceptionistMenuClient;
+import main.client.clientNetworking.rmi.ClientRMIHandler;
+
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 

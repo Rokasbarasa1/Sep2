@@ -1,11 +1,10 @@
 package main.client.clientNetworking.receptionistMenu;
 
-import main.client.clientNetworking.ClientRMIHandler;
+import main.client.clientNetworking.rmi.ClientRMIHandler;
 import main.shared.Item;
 import main.shared.Order;
 import main.shared.Receptionist;
 
-import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;

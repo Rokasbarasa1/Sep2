@@ -60,9 +60,9 @@ public class CustomerMenuModel implements ICustomerMenuModel{
 
     @Override
     public ArrayList<Item> getMenu() {
-        menu = client.getMenu();
-        return menu;
-        //return getMenuTemp();
+        //menu = client.getMenu();
+        //return menu;
+        return getMenuTemp();
     }
 
     @Override

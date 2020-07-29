@@ -1,6 +1,6 @@
 package main.client.clientNetworking.customerMenu;
 
-import main.client.clientNetworking.ClientRMIHandler;
+import main.client.clientNetworking.rmi.ClientRMIHandler;
 import main.shared.Item;
 
 import java.util.ArrayList;
