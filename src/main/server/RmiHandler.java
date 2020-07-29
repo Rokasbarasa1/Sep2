@@ -1,5 +1,6 @@
 package main.server;
 
+import main.server.model.ModelFactory;
 import main.server.persistence.DAOFactory;
 import main.shared.Item;
 import main.shared.Order;
@@ -11,30 +12,30 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 public class RmiHandler implements RemoteCommandList {
-    private DAOFactory daoFactory;
+    private ModelFactory modelFactory;
 
-    public RmiHandler(DAOFactory DAOFactory) throws RemoteException{
+    public RmiHandler(ModelFactory modelFactory) throws RemoteException{
         UnicastRemoteObject.exportObject(this, 0);
-        daoFactory = DAOFactory;
+        this.modelFactory = modelFactory;
     }
 
     public String login(Receptionist loginCarrier) throws RemoteException {
-        System.out.println(loginCarrier.getPassword()+""+loginCarrier.getUsername());
-        return daoFactory.getLoginDAO().validateLogin(loginCarrier);
+        System.out.println(loginCarrier.getPassword()+" "+loginCarrier.getUsername());
+        return modelFactory.getLoginModel().validateLogin(loginCarrier);
     }
 
     @Override
     public Receptionist getReceptionistById(int userId) throws RemoteException {
-        return null;
+        return modelFactory.getLoginModel().getReceptionistById(userId);
     }
 
     @Override
     public ArrayList<Item> getMenu() throws RemoteException{
-        return null;
+        return modelFactory.getMenuModel().getMenu();
     }
 
     @Override
     public ArrayList<Order> getOrders() throws RemoteException {
-        return null;
+        return null; //modelFactory.getOrderModel().getOrders();
     }
 }

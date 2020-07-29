@@ -81,12 +81,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.shared" />
-      <recent name="main.client.model.cart" />
-      <recent name="main.client.clientNetworking.cart" />
-      <recent name="main.client.viewModel" />
-      <recent name="main.server.persistence.database" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\view\cart" />
@@ -95,9 +92,12 @@
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\viewModel" />
       <recent name="D:\Sep2-reexam\src\libraries" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.server.model" />
+      <recent name="main.server.persistence.ingredient" />
+      <recent name="main.server.persistence.item" />
+      <recent name="main.shared" />
+      <recent name="main.client.model.cart" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainApp">
@@ -247,15 +247,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595523470770" />
-    <state x="669" y="219" key="#com.intellij.ide.util.MemberChooser" timestamp="1595715698325">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="544" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1596054234463">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="669" y="219" key="#com.intellij.ide.util.MemberChooser/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595715698325" />
+    <state x="669" y="219" key="#com.intellij.ide.util.MemberChooser/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595714722421" />
+    <state x="544" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596054234463" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595522952363" />
-    <state x="570" y="285" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595712768232">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="629" y="204" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1596052660284">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="570" y="285" key="#com.intellij.ide.util.PackageChooserDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595712768232" />
+    <state x="629" y="204" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596052660284" />
+    <state x="477" y="266" width="411" height="199" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596050020202">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="477" y="266" width="411" height="199" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1596050020202" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595505646607">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

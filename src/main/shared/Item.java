@@ -3,18 +3,23 @@ package main.shared;
 import java.util.ArrayList;
 
 public class Item {
+    private int ID;
     private String name;
     private boolean customizable;
     private ArrayList<Ingredient> ingredients;
     private double price;
     private String groupName;
 
-    public Item(String name, boolean customizable, ArrayList<Ingredient> ingredients, double price, String groupName) {
+    public Item(int id, String name, boolean customizable, double price, String groupName) {
+        this.ID = id;
         this.name = name;
         this.customizable = customizable;
-        this.ingredients = ingredients;
         this.price = price;
         this.groupName = groupName;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public String getName() {
@@ -44,6 +49,10 @@ public class Item {
             ingredientString += ingredients.get(i).getName() + ", ";
         }
         return ingredientString;
+    }
+
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
     @Override
