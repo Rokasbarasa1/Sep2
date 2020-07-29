@@ -1,5 +1,6 @@
 package main.server;
 
+import main.server.model.ModelFactory;
 import main.server.persistence.DAOFactory;
 import main.server.persistence.database.DBConnection;
 import main.server.persistence.database.IDBConnection;
@@ -14,9 +15,10 @@ public class JavaServer {
     public static void main(String[] args){
         IDBConnection connect = new DBConnection();
         DAOFactory DAOFactory = new DAOFactory(connect);
+        ModelFactory modelFactory = new ModelFactory(DAOFactory);
         try {
             Registry registry = LocateRegistry.createRegistry(1099);
-            RemoteCommandList server = new RmiHandler(DAOFactory);
+            RemoteCommandList server = new RmiHandler(modelFactory);
             registry.bind("point of sales", server);
             System.out.println("Server Started...");
         } catch (RemoteException | AlreadyBoundException e) {

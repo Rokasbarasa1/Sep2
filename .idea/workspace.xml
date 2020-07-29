@@ -26,17 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientRMIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientRMIHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/IReceptionistMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/IReceptionistMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/ReceptionistMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/ReceptionistMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/IReceptionistMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/IReceptionistMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/viewModel/ReceptionistMenuViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/viewModel/ReceptionistMenuViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/shared/RemoteCommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/RemoteCommandList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/shared/RemoteSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/RemoteSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/JavaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/JavaServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/RmiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/RmiHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/receptionist/IReceptionistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/receptionist/IReceptionistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/receptionist/ReceptionistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/receptionist/ReceptionistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/shared/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,12 +78,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.shared" />
-      <recent name="main.client.model.cart" />
-      <recent name="main.client.clientNetworking.cart" />
-      <recent name="main.client.viewModel" />
-      <recent name="main.server.persistence.database" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\view\cart" />
@@ -94,9 +89,12 @@
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\viewModel" />
       <recent name="D:\Sep2-reexam\src\libraries" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.server.model" />
+      <recent name="main.server.persistence.ingredient" />
+      <recent name="main.server.persistence.item" />
+      <recent name="main.shared" />
+      <recent name="main.client.model.cart" />
     </key>
   </component>
   <component name="RunManager" selected="Application.JavaServer">
@@ -244,15 +242,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595523470770" />
-    <state x="669" y="219" key="#com.intellij.ide.util.MemberChooser" timestamp="1595714722421">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="544" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1596054234463">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="669" y="219" key="#com.intellij.ide.util.MemberChooser/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595714722421" />
+    <state x="544" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596054234463" />
     <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595522952363" />
-    <state x="570" y="285" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1595712768232">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="629" y="204" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1596052660284">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="570" y="285" key="#com.intellij.ide.util.PackageChooserDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595712768232" />
+    <state x="629" y="204" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596052660284" />
+    <state x="477" y="266" width="411" height="199" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596050020202">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="477" y="266" width="411" height="199" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1596050020202" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595505646607">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

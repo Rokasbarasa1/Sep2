@@ -16,10 +16,10 @@ public class ReceptionistDAO implements IReceptionistDAO {
     }
 
     @Override
-    public Receptionist getReceptionist(String Id) {
+    public Receptionist getReceptionist(int Id) {
         Receptionist receptionist = null;
         try{
-            String sql = "SELECT * FROM " + databaseConnection.getReceptionistTableName()+ " WHERE ID = " + Integer.parseInt(Id) + ";";
+            String sql = "SELECT * FROM " + databaseConnection.getReceptionistTableName()+ " WHERE ID = " + Id + ";";
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while ( resultSet.next()) {
