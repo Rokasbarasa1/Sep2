@@ -59,7 +59,7 @@ public class ViewHandler {
         FXMLLoader loader = new FXMLLoader();
         Parent root = getRootByPath("OrderScreen/OrderScreen.fxml", loader);
         OrderScreenController controller = loader.getController();
-        controller.init(this);
+        controller.init(this, viewModelFactory.getorderScreenViewModel());
         orderScreenScene = new Scene(root);
         mainStage.setTitle("Order screen");
         mainStage.setScene(orderScreenScene);

@@ -15,7 +15,7 @@ public class ReceptionistMenuClient implements IReceptionistMenuClient {
 
     public ReceptionistMenuClient(ClientRMIHandler rmiHandler) {
         this.rmiHandler = rmiHandler;
-        rmiHandler.addPropertyChangeListener(evt -> newOrder());
+        rmiHandler.addPropertyChangeListenerNewOrder(evt -> newOrder());
     }
 
     private void newOrder() {
@@ -33,8 +33,8 @@ public class ReceptionistMenuClient implements IReceptionistMenuClient {
     }
 
     @Override
-    public ArrayList<Order> getOrders() {
-        return rmiHandler.getOrders();
+    public ArrayList<Order> getIncompleteOrders() {
+        return rmiHandler.getIncompleteOrders();
     }
 
     @Override

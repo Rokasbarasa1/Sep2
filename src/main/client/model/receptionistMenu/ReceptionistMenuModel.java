@@ -67,6 +67,47 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
         return list;
     }
 
+    public ArrayList<Order> getOrdersTemp(){
+        ArrayList<Order> orders = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<Item>();
+        Ingredient tomato = new Ingredient("tomato");
+        Ingredient cheese = new Ingredient("cheese");
+        Ingredient lettuce = new Ingredient("lettuce");
+        Ingredient potato = new Ingredient("potato");
+        Ingredient almond = new Ingredient("almond");
+        Ingredient mayo = new Ingredient("mayo");
+        Ingredient basil = new Ingredient("basil");
+        ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+        ingredients.add(tomato);
+        ingredients.add(cheese);
+        ingredients.add(lettuce);
+        ingredients.add(potato);
+        ingredients.add(almond);
+        ingredients.add(mayo);
+        ingredients.add(basil);
+        Item item1 = new Item("Potato salad", true,ingredients,29.99,"Kaka");
+        Item item2 = new Item("Pork salad", true,ingredients,44.99,"Kaka");
+        Item item3 = new Item("Cessars salad", true,ingredients,10.99,"Kaka");
+        Item item4 = new Item("Esternato salad", true,ingredients,9.99,"Kaka");
+        Item item5 = new Item("Mushroom salad", true,ingredients,19.99,"Kaka");
+        Item item6 = new Item("Beet salad", true,ingredients,0.99,"Kaka");
+        Item item7 = new Item("Chicken salad", true,ingredients,99.99,"Kaka");
+        Item item8 = new Item("Fish salad", true,ingredients,49.99,"Kaka");
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
+        items.add(item4);
+        items.add(item5);
+        items.add(item6);
+        items.add(item7);
+        items.add(item8);
+        for (int i = 0; i < 6; i++) {
+            Order order = new Order(i, items);
+            orders.add(order);
+        }
+        return orders;
+    }
+
     @Override
     public ArrayList<Item> getMenu() {
         //menu = client.getMenu();
@@ -74,9 +115,12 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
     }
 
     @Override
-    public ArrayList<Order> getOrders() {
+    public ArrayList<Order> getIncompleteOrders() {
+        /*
         orders = client.getOrders();
         return orders;
+         */
+        return getOrdersTemp();
     }
 
     @Override

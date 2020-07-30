@@ -13,10 +13,11 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-public class ClientRMIHandler implements RemoteSender, PropertyChangeSubject {
+public class ClientRMIHandler implements RemoteSender{
     private RemoteCommandList rml;
     private boolean connected;
     private PropertyChangeSupport newOrderSupport = new PropertyChangeSupport(this);
+    private PropertyChangeSupport orderUpdateSupport = new PropertyChangeSupport(this);
 
     public ClientRMIHandler() throws RemoteException, NotBoundException {
         try{
@@ -33,6 +34,11 @@ public class ClientRMIHandler implements RemoteSender, PropertyChangeSubject {
     @Override
     public void newOrder() throws RemoteException {
         newOrderSupport.firePropertyChange("New Order", null, null);
+    }
+
+    @Override
+    public void newOrderOrStatusUpdate() throws RemoteException {
+        orderUpdateSupport.firePropertyChange("Updated order list", null, null);
     }
 
     public void retryConnection(){
@@ -115,8 +121,12 @@ public class ClientRMIHandler implements RemoteSender, PropertyChangeSubject {
         return 20;
     }
 
-    @Override
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
+
+    public void addPropertyChangeListenerNewOrder(PropertyChangeListener listener) {
+        newOrderSupport.addPropertyChangeListener(listener);
+    }
+
+    public void addPropertyChangeListenerOrderListUpdate(PropertyChangeListener listener) {
         newOrderSupport.addPropertyChangeListener(listener);
     }
 
@@ -128,5 +138,14 @@ public class ClientRMIHandler implements RemoteSender, PropertyChangeSubject {
             e.printStackTrace();
         }
          */
+    }
+
+    public ArrayList<Order> getIncompleteOrders() {
+        try {
+            return rml.getIncompleteOrders();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+         return null;
     }
 }
