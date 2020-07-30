@@ -2,16 +2,17 @@ package main.client.view.cart;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import main.client.view.ViewHandler;
 import main.client.viewModel.CartViewModel;
 import main.client.viewModel.CustomerMenuViewModel;
 import main.shared.Item;
+import main.shared.Order;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class CartController {
     @FXML
@@ -80,7 +81,9 @@ public class CartController {
         total.setText(total.getText() + String.format("%.2f", totalPrice));
     }
 
-    private void removeItem(int parseInt) {
+    private void removeItem(int id) {
+        vm.removeItemFromCart(id);
+        viewHandler.openCart();
     }
 
     @FXML
@@ -90,6 +93,22 @@ public class CartController {
 
     @FXML
     void OnMakeOrder(ActionEvent event) {
+        if(vm.getCart().size() == 0){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Alert");
+            alert.setHeaderText("Your cart is empty!");
+            alert.showAndWait();
+        }else {
+            int id = vm.getIdForOrder();
+            vm.makeOrder(id);
 
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ID");
+            alert.setHeaderText("Your order id is: " + id);
+            alert.showAndWait();
+
+            vm.clearCart();
+            viewHandler.openCustomerMenu();
+        }
     }
 }

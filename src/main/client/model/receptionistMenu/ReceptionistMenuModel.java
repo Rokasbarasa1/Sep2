@@ -79,6 +79,11 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
         return orders;
     }
 
+    @Override
+    public void completeOrder(int id) {
+        client.completeOrder(id);
+    }
+
     public void newOrder(){
         newOrderSupport.firePropertyChange("New Order", null, null);
     }

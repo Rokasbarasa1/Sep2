@@ -69,4 +69,14 @@ public class CustomerMenuModel implements ICustomerMenuModel{
     public ArrayList<Item> getCart() {
         return cart;
     }
+
+    @Override
+    public void clear() {
+        cart.clear();
+    }
+
+    @Override
+    public void removeItemFromCart(int id) {
+        cart.remove(id);
+    }
 }

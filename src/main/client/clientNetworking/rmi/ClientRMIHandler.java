@@ -1,5 +1,6 @@
 package main.client.clientNetworking.rmi;
 
+import main.server.rmi.RemoteCommandList;
 import main.shared.*;
 
 import java.beans.PropertyChangeListener;
@@ -95,8 +96,37 @@ public class ClientRMIHandler implements RemoteSender, PropertyChangeSubject {
         return null;
     }
 
+    public void completeOrder(int id) {
+        try {
+            rml.completeOrder(id);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public int getIdForOrder() {
+        /*try {
+            return rml.getIdForOrder();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+         */
+        return 20;
+    }
+
     @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         newOrderSupport.addPropertyChangeListener(listener);
+    }
+
+    public void makeOrder(Order order) {
+        /*
+        try {
+            rml.makeOrder(order);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+         */
     }
 }

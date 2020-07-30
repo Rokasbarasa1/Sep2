@@ -1,11 +1,9 @@
-package main.server;
+package main.server.rmi;
 
 import main.server.model.ModelFactory;
-import main.server.persistence.DAOFactory;
 import main.shared.Item;
 import main.shared.Order;
 import main.shared.Receptionist;
-import main.shared.RemoteCommandList;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -37,5 +35,20 @@ public class RmiHandler implements RemoteCommandList {
     @Override
     public ArrayList<Order> getOrders() throws RemoteException {
         return null; //modelFactory.getOrderModel().getOrders();
+    }
+
+    @Override
+    public void completeOrder(int id) throws RemoteException {
+
+    }
+
+    @Override
+    public int getIdForOrder() throws RemoteException {
+        return -1;
+    }
+
+    @Override
+    public void makeOrder(Order order) throws RemoteException {
+
     }
 }

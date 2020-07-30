@@ -3,6 +3,7 @@ package main.client.model.cart;
 import main.client.clientNetworking.cart.ICartClient;
 import main.client.model.customerMenu.ICustomerMenuModel;
 import main.shared.Item;
+import main.shared.Order;
 
 import java.util.ArrayList;
 
@@ -18,5 +19,26 @@ public class CartModel implements ICartModel {
     @Override
     public ArrayList<Item> getCart() {
         return customerMenuModel.getCart();
+    }
+
+    @Override
+    public int getIdForOrder() {
+        return client.getIdForOrder();
+    }
+
+    @Override
+    public void makeOrder(int id) {
+        Order order = new Order(id, customerMenuModel.getCart());
+        client.makeOrder(order);
+    }
+
+    @Override
+    public void clearCart() {
+        customerMenuModel.clear();
+    }
+
+    @Override
+    public void removeItemFromCart(int id) {
+        customerMenuModel.removeItemFromCart(id);
     }
 }
