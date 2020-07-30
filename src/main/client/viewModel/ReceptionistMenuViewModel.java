@@ -36,4 +36,8 @@ public class ReceptionistMenuViewModel implements PropertyChangeSubject {
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         newOrderSupport.addPropertyChangeListener(listener);
     }
+
+    public void completeOrder(int id) {
+        model.completeOrder(id);
+    }
 }

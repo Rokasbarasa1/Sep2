@@ -38,6 +38,11 @@ public class ReceptionistMenuClient implements IReceptionistMenuClient {
     }
 
     @Override
+    public void completeOrder(int id) {
+        rmiHandler.completeOrder(id);
+    }
+
+    @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         newOrderSupport.addPropertyChangeListener(listener);
     }

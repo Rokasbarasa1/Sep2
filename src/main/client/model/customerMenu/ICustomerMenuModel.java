@@ -8,4 +8,6 @@ public interface ICustomerMenuModel {
     void addToCart(int id);
     ArrayList<Item> getMenu();
     ArrayList<Item> getCart();
+    void clear();
+    void removeItemFromCart(int id);
 }

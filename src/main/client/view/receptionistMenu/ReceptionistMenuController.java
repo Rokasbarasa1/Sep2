@@ -2,6 +2,7 @@ package main.client.view.receptionistMenu;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -53,12 +54,19 @@ public class ReceptionistMenuController {
 
         tableIdOrder.setCellValueFactory(new PropertyValueFactory<Order, String>("ID"));
         tableItemsOrder.setCellValueFactory(new PropertyValueFactory<Order, String>("items"));
-        orderItems.addAll(vm.getOrders());
-        incompleteOrderTable.setItems(orderItems);
+        //orderItems.addAll(vm.getOrders());
+        //incompleteOrderTable.setItems(orderItems);
     }
 
     public void updateTable(){
         orderItems.addAll(vm.getOrders());
         incompleteOrderTable.setItems(orderItems);
+    }
+
+    @FXML
+    void OnCompleteOrder(ActionEvent event) {
+        Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
+        vm.completeOrder(selectedOrder.getID());
+        updateTable();
     }
 }

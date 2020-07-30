@@ -6,4 +6,8 @@ import java.util.ArrayList;
 
 public interface ICartModel {
     ArrayList<Item> getCart();
+    int getIdForOrder();
+    void makeOrder(int id);
+    void clearCart();
+    void removeItemFromCart(int id);
 }
