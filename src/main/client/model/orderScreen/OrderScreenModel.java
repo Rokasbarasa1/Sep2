@@ -48,7 +48,7 @@ public class OrderScreenModel implements IOrderScreenModel{
         items.add(item6);
         items.add(item7);
         items.add(item8);
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 20; i++) {
             Order order = new Order(i, items);
             orders.add(order);
         }

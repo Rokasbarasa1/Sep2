@@ -27,15 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/ModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/model/orderScreen/OrderScreenModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/orderScreen/OrderScreenModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/viewModel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/viewModel/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/shared/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +177,7 @@
       <workItem from="1595675841015" duration="22045000" />
       <workItem from="1595840789173" duration="1209000" />
       <workItem from="1595846565740" duration="629000" />
-      <workItem from="1596110267249" duration="9504000" />
+      <workItem from="1596110267249" duration="10501000" />
     </task>
     <task id="LOCAL-00001" summary="works but connection to db is not working">
       <created>1595526166295</created>
@@ -283,32 +277,32 @@
     </state>
     <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595710908924" />
     <state x="709" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595525213302" />
-    <state width="1899" height="227" key="GridCell.Tab.0.bottom" timestamp="1596119948085">
+    <state width="1899" height="227" key="GridCell.Tab.0.bottom" timestamp="1596120979792">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144097" />
-    <state width="1899" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
+    <state width="1899" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596120979792" />
     <state width="1345" height="170" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595682129734" />
     <state width="936" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969858" />
-    <state width="1899" height="227" key="GridCell.Tab.0.center" timestamp="1596119948085">
+    <state width="1899" height="227" key="GridCell.Tab.0.center" timestamp="1596120979791">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144097" />
-    <state width="1899" height="227" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
+    <state width="1899" height="227" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596120979791" />
     <state width="1345" height="170" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595682129733" />
     <state width="936" height="227" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969854" />
-    <state width="1899" height="227" key="GridCell.Tab.0.left" timestamp="1596119948085">
+    <state width="1899" height="227" key="GridCell.Tab.0.left" timestamp="1596120979791">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144096" />
-    <state width="1899" height="227" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
+    <state width="1899" height="227" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596120979791" />
     <state width="1345" height="170" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595682129733" />
     <state width="936" height="227" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969854" />
-    <state width="1899" height="227" key="GridCell.Tab.0.right" timestamp="1596119948085">
+    <state width="1899" height="227" key="GridCell.Tab.0.right" timestamp="1596120979792">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144097" />
-    <state width="1899" height="227" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
+    <state width="1899" height="227" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596120979792" />
     <state width="1345" height="170" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595682129734" />
     <state width="936" height="227" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969854" />
     <state width="1659" height="336" key="GridCell.Tab.1.bottom" timestamp="1595527987359">
@@ -350,9 +344,10 @@
     </state>
     <state x="703" y="269" key="refactoring.ChangeSignatureDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595628108921" />
     <state x="803" y="277" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595523573318" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1596118073342">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1982" y="240" key="run.anything.popup" timestamp="1596120501869">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
+    <state x="1982" y="240" key="run.anything.popup/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596120501869" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596118073342" />
   </component>
 </project>
