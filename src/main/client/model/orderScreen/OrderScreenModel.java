@@ -5,13 +5,17 @@ import main.shared.Ingredient;
 import main.shared.Item;
 import main.shared.Order;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 
 public class OrderScreenModel implements IOrderScreenModel{
     private IOrderScreenClient client;
+    private PropertyChangeSupport orderUpdateSupport = new PropertyChangeSupport(this);
 
     public OrderScreenModel(IOrderScreenClient client) {
         this.client = client;
+        client.addPropertyChangeListener(evt -> newOrderOrStatusUpdate());
     }
 
     public ArrayList<Order> getOrdersTemp(){
@@ -48,7 +52,7 @@ public class OrderScreenModel implements IOrderScreenModel{
         items.add(item6);
         items.add(item7);
         items.add(item8);
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 35; i++) {
             Order order = new Order(i, items);
             orders.add(order);
         }
@@ -61,5 +65,14 @@ public class OrderScreenModel implements IOrderScreenModel{
     public ArrayList<Order> getOrders() {
         //return client.getOrders();
         return getOrdersTemp();
+    }
+
+    public void newOrderOrStatusUpdate(){
+        orderUpdateSupport.firePropertyChange("Updated order list", null, null);
+    }
+
+    @Override
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        orderUpdateSupport.addPropertyChangeListener(listener);
     }
 }

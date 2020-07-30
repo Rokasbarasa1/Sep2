@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public interface IReceptionistMenuModel extends PropertyChangeSubject {
     void loadReceptionist();
     ArrayList<Item> getMenu();
-    ArrayList<Order> getOrders();
-
+    ArrayList<Order> getIncompleteOrders();
     void completeOrder(int id);
 }

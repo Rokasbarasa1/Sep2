@@ -23,37 +23,42 @@ public class OrderScreenController {
     public void init(ViewHandler viewHandler, OrderScreenViewModel orderScreenViewModel) {
         this.viewHandler = viewHandler;
         vm = orderScreenViewModel;
+        vm.addPropertyChangeListener(evt -> updateTable());
         populateLists(vm.getOrders());
     }
 
+    private void updateTable() {
+        viewHandler.openOrderScreen();
+    }
+
     private void populateLists(ArrayList<Order> orders) {
-        int rowOfFinishedCollumn0 = 0;
-        int rowOfFinishedCollumn1 = 0;
-        int rowOfUnfinishedCollumn0 = 0;
-        int rowOfUnfinishedCollumn1 = 0;
+        int rowOfFinished= 0;
+        int collumnOfFinished = 0;
+        int rowOfUnfinished = 0;
+        int collumnOfUnfinished = 0;
         for (int i = 0; i < orders.size(); i++) {
             if(orders.get(i).isFinished() == true){
                 Label orderId = new Label(orders.get(i).getID()+ "");
                 orderId.setFont(new Font("Arial", 30));
                 orderId.setTextFill(Color.web("#008000", 0.8));
-                if(rowOfFinishedCollumn0 > 12){
-                    FinishedGrid.add(orderId, 1, rowOfFinishedCollumn1);
-                    rowOfFinishedCollumn1++;
-                }else {
-                    FinishedGrid.add(orderId, 0, rowOfFinishedCollumn0);
-                    rowOfFinishedCollumn0++;
+                if(rowOfFinished > 12){
+                    collumnOfFinished++;
+                    rowOfFinished = 0;
                 }
+                FinishedGrid.add(orderId, collumnOfFinished, rowOfFinished);
+                rowOfFinished++;
+
+
             }else {
                 Label orderId = new Label(orders.get(i).getID()+ "");
                 orderId.setFont(new Font("Arial", 30));
                 orderId.setTextFill(Color.web("#808080", 0.8));
-                if(rowOfUnfinishedCollumn0 > 12){
-                    UnfinishedGrid.add(orderId, 1, rowOfUnfinishedCollumn1);
-                    rowOfUnfinishedCollumn1++;
-                }else {
-                    UnfinishedGrid.add(orderId, 0, rowOfUnfinishedCollumn0);
-                    rowOfUnfinishedCollumn0++;
+                if(rowOfUnfinished > 12){
+                    collumnOfUnfinished++;
+                    rowOfUnfinished = 0;
                 }
+                UnfinishedGrid.add(orderId, collumnOfUnfinished, rowOfUnfinished);
+                rowOfUnfinished++;
             }
         }
     }

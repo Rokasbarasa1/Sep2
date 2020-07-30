@@ -33,6 +33,11 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     @Override
+    public ArrayList<Order> getIncompleteOrders() throws RemoteException {
+        return null;
+    }
+
+    @Override
     public ArrayList<Order> getOrders() throws RemoteException {
         return null; //modelFactory.getOrderModel().getOrders();
     }

@@ -115,7 +115,7 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
     }
 
     @Override
-    public ArrayList<Order> getOrders() {
+    public ArrayList<Order> getIncompleteOrders() {
         /*
         orders = client.getOrders();
         return orders;

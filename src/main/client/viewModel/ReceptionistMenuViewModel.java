@@ -28,8 +28,8 @@ public class ReceptionistMenuViewModel implements PropertyChangeSubject {
         return model.getMenu();
     }
 
-    public ArrayList<Order> getOrders() {
-        return model.getOrders();
+    public ArrayList<Order> getIncompleteOrders() {
+        return model.getIncompleteOrders();
     }
 
     @Override
