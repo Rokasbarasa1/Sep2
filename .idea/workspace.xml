@@ -27,25 +27,15 @@
   <component name="ChangeListManager">
     <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/cart/CartClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/cart/CartClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/cart/ICartClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/cart/ICartClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/IReceptionistMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/IReceptionistMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/ReceptionistMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/receptionistMenu/ReceptionistMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/rmi/ClientRMIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/rmi/ClientRMIHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/cart/CartModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/cart/CartModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/cart/ICartModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/cart/ICartModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/customerMenu/CustomerMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/customerMenu/CustomerMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/customerMenu/ICustomerMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/customerMenu/ICustomerMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/IReceptionistMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/IReceptionistMenuModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/clientNetworking/ClientFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/model/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/ModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/view/cart/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/cart/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/orderScreen/OrderScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/viewModel/CartViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/viewModel/CartViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/client/viewModel/ReceptionistMenuViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/viewModel/ReceptionistMenuViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/JavaServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/JavaServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server/RmiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/rmi/RmiHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/shared/RemoteCommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/rmi/RemoteCommandList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/viewModel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/viewModel/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/shared/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +46,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,17 +75,16 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.server.model" />
-      <recent name="main.server.persistence.ingredient" />
-      <recent name="main.server.persistence.item" />
-      <recent name="main.shared" />
-      <recent name="main.client.model.cart" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
+      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\view\cart" />
@@ -104,9 +93,12 @@
       <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main\client\viewModel" />
       <recent name="D:\Sep2-reexam\src\libraries" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\Libraries" />
-      <recent name="C:\Users\Rokas\Desktop\Sep2-reexam\src\main" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.client.viewModel" />
+      <recent name="main.server.model" />
+      <recent name="main.server.persistence.ingredient" />
+      <recent name="main.server.persistence.item" />
+      <recent name="main.shared" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainApp">
@@ -191,7 +183,7 @@
       <workItem from="1595675841015" duration="22045000" />
       <workItem from="1595840789173" duration="1209000" />
       <workItem from="1595846565740" duration="629000" />
-      <workItem from="1596110267249" duration="4792000" />
+      <workItem from="1596110267249" duration="9504000" />
     </task>
     <task id="LOCAL-00001" summary="works but connection to db is not working">
       <created>1595526166295</created>
@@ -257,17 +249,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595523470770" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1596114451151">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2138" y="222" key="#com.intellij.ide.util.MemberChooser" timestamp="1596119863646">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="669" y="219" key="#com.intellij.ide.util.MemberChooser/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596057654307" />
+    <state x="2138" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119863646" />
     <state x="544" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1596054234463" />
-    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596114451151" />
-    <state x="629" y="204" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1596052660284">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="772" y="222" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1596118635227" />
+    <state x="884" y="291" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1596116913805">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="570" y="285" key="#com.intellij.ide.util.PackageChooserDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595712768232" />
     <state x="629" y="204" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1596052660284" />
+    <state x="884" y="291" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1596116913805" />
     <state x="477" y="266" width="411" height="199" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596050020202">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -289,30 +283,34 @@
     </state>
     <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595710908924" />
     <state x="709" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595525213302" />
-    <state width="1899" height="227" key="GridCell.Tab.0.bottom" timestamp="1596114785377">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1899" height="227" key="GridCell.Tab.0.bottom" timestamp="1596119948085">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144097" />
+    <state width="1899" height="227" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
     <state width="1345" height="170" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595682129734" />
-    <state width="1899" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596114785377" />
-    <state width="1899" height="227" key="GridCell.Tab.0.center" timestamp="1596114785377">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="936" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969858" />
+    <state width="1899" height="227" key="GridCell.Tab.0.center" timestamp="1596119948085">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144097" />
+    <state width="1899" height="227" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
     <state width="1345" height="170" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595682129733" />
-    <state width="1899" height="227" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596114785377" />
-    <state width="1899" height="227" key="GridCell.Tab.0.left" timestamp="1596114785377">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="936" height="227" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969854" />
+    <state width="1899" height="227" key="GridCell.Tab.0.left" timestamp="1596119948085">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144096" />
+    <state width="1899" height="227" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
     <state width="1345" height="170" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595682129733" />
-    <state width="1899" height="227" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596114785377" />
-    <state width="1899" height="227" key="GridCell.Tab.0.right" timestamp="1596114785377">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="936" height="227" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969854" />
+    <state width="1899" height="227" key="GridCell.Tab.0.right" timestamp="1596119948085">
+      <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1596059144097" />
+    <state width="1899" height="227" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1596119948085" />
     <state width="1345" height="170" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595682129734" />
-    <state width="1899" height="227" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596114785377" />
+    <state width="936" height="227" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596116969854" />
     <state width="1659" height="336" key="GridCell.Tab.1.bottom" timestamp="1595527987359">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -342,14 +340,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595240611166" />
-    <state x="833" y="0" width="854" height="1017" key="dock-window-1" timestamp="1595688061373">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1596117309602">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="833" y="0" width="854" height="1017" key="dock-window-1/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595688061373" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1596117309602" />
     <state x="703" y="269" key="refactoring.ChangeSignatureDialog" timestamp="1595628108921">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="703" y="269" key="refactoring.ChangeSignatureDialog/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595628108921" />
     <state x="803" y="277" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595523573318" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1596118073342">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1596118073342" />
   </component>
 </project>

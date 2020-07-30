@@ -54,8 +54,8 @@ public class ReceptionistMenuController {
 
         tableIdOrder.setCellValueFactory(new PropertyValueFactory<Order, String>("ID"));
         tableItemsOrder.setCellValueFactory(new PropertyValueFactory<Order, String>("items"));
-        //orderItems.addAll(vm.getOrders());
-        //incompleteOrderTable.setItems(orderItems);
+        orderItems.addAll(vm.getOrders());
+        incompleteOrderTable.setItems(orderItems);
     }
 
     public void updateTable(){

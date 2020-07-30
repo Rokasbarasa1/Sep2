@@ -9,6 +9,8 @@ import main.client.model.customerMenu.CustomerMenuModel;
 import main.client.model.customerMenu.ICustomerMenuModel;
 import main.client.model.login.ILoginModel;
 import main.client.model.login.LoginModel;
+import main.client.model.orderScreen.IOrderScreenModel;
+import main.client.model.orderScreen.OrderScreenModel;
 import main.client.model.receptionistMenu.IReceptionistMenuModel;
 import main.client.model.receptionistMenu.ReceptionistMenuModel;
 
@@ -18,6 +20,7 @@ public class ModelFactory {
     private IReceptionistMenuModel receptionistMenu;
     private ICustomerMenuModel customerMenu;
     private ICartModel cart;
+    private IOrderScreenModel orderScreen;
 
     public ModelFactory(ClientFactory clientFactory) {
         this.clientFactory = clientFactory;
@@ -45,5 +48,11 @@ public class ModelFactory {
         if(cart == null)
             cart = new CartModel(customerMenuModel(), clientFactory.cartClient());
         return cart;
+    }
+
+    public IOrderScreenModel orderScreenModel() {
+        if(orderScreen == null)
+            orderScreen = new OrderScreenModel(clientFactory.orderScreenClient());
+        return orderScreen;
     }
 }

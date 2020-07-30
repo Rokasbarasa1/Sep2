@@ -6,6 +6,8 @@ import main.client.clientNetworking.customerMenu.CustomerMenuClient;
 import main.client.clientNetworking.customerMenu.ICustomerMenuClient;
 import main.client.clientNetworking.login.ILoginClient;
 import main.client.clientNetworking.login.LoginClient;
+import main.client.clientNetworking.orderScreen.IOrderScreenClient;
+import main.client.clientNetworking.orderScreen.OrderScreenClient;
 import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
 import main.client.clientNetworking.receptionistMenu.ReceptionistMenuClient;
 import main.client.clientNetworking.rmi.ClientRMIHandler;
@@ -19,6 +21,7 @@ public class ClientFactory {
     private IReceptionistMenuClient receptionistMenu;
     private ICustomerMenuClient customerMenu;
     private ICartClient cart;
+    private IOrderScreenClient orderScreen;
 
     public ClientFactory(){
         try {
@@ -50,6 +53,12 @@ public class ClientFactory {
         if(cart == null)
             cart = new CartClient(rmiHandler);
         return cart;
+    }
+
+    public IOrderScreenClient orderScreenClient() {
+        if(orderScreen == null)
+            orderScreen = new OrderScreenClient(rmiHandler);
+        return orderScreen;
     }
 
     public void closeConnection() {
