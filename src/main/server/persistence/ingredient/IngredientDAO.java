@@ -22,13 +22,14 @@ public class IngredientDAO implements IIngredientDAO{
     public ArrayList<Ingredient> getIngredientsByItemId(int id) {
         ArrayList<Ingredient> ingredients =  new ArrayList<>();
         try{
-            String sql =    "SELECT i.name" +
-                            "FROM Ingredient i, ItemIngredient ie" +
-                            "WHERE ie.itemID = " + id + " AND i.ID = ie.ingredientID;";
+            String sql =    //"use sep2; " +
+                            "SELECT i.ingredientName " +
+                            "FROM Ingredient i, ItemIngredient ie " +
+                            "WHERE ie.item_ID = "+ id +" AND ie.ingredient_ID = i.ingredient_ID;";
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while ( resultSet.next()) {
-                String name = resultSet.getString("name");
+                String name = resultSet.getString("ingredientName");
                 Ingredient ingredient = new Ingredient(name);
                 ingredients.add(ingredient);
             }

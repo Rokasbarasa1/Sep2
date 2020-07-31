@@ -1,12 +1,13 @@
-package main.server.model;
+package main.server.model.menu;
 
+import main.server.model.menu.IMenuModel;
 import main.server.persistence.ingredient.IIngredientDAO;
 import main.server.persistence.item.IItemDAO;
 import main.shared.Item;
 
 import java.util.ArrayList;
 
-public class MenuModel implements IMenuModel{
+public class MenuModel implements IMenuModel {
     private IItemDAO itemDAO;
     private IIngredientDAO ingredientDAO;
 

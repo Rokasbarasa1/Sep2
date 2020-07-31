@@ -1,4 +1,4 @@
-package main.server.model;
+package main.server.model.login;
 
 import main.shared.Receptionist;
 

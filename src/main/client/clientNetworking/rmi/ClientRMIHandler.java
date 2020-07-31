@@ -86,7 +86,9 @@ public class ClientRMIHandler implements RemoteSender{
             }
         }
         try {
-            return rml.getMenu();
+            ArrayList<Item> menu = rml.getMenu();
+            System.out.println(menu.get(0).toString());
+            return menu;
         } catch (RemoteException e) {
             e.printStackTrace();
         }

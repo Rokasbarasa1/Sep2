@@ -1,7 +1,6 @@
-package main.server.model;
+package main.server.model.login;
 
-import main.server.persistence.ingredient.IIngredientDAO;
-import main.server.persistence.item.IItemDAO;
+import main.server.model.login.ILoginModel;
 import main.server.persistence.login.ILoginDAO;
 import main.server.persistence.receptionist.IReceptionistDAO;
 import main.shared.Receptionist;

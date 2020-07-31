@@ -110,8 +110,8 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
 
     @Override
     public ArrayList<Item> getMenu() {
-        //menu = client.getMenu();
-        return getMenuTemp();
+        menu = client.getMenu();
+        return menu;
     }
 
     @Override
