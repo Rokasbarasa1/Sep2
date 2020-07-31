@@ -1,8 +1,10 @@
 package main.server.model;
 
+import main.server.model.login.ILoginModel;
+import main.server.model.login.LoginModel;
+import main.server.model.menu.IMenuModel;
+import main.server.model.menu.MenuModel;
 import main.server.persistence.DAOFactory;
-import main.server.persistence.login.ILoginDAO;
-import main.server.persistence.login.LoginDAO;
 
 public class ModelFactory {
     private DAOFactory daoFactory;

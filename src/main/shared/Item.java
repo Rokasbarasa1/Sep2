@@ -1,8 +1,9 @@
 package main.shared;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Item {
+public class Item implements Serializable {
     private int ID;
     private String name;
     private boolean customizable;

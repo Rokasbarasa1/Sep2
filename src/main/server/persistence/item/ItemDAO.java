@@ -26,8 +26,8 @@ public class ItemDAO implements IItemDAO{
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while ( resultSet.next()) {
-                int id = resultSet.getInt("ID");
-                String name = resultSet.getString("name");
+                int id = resultSet.getInt("item_ID");
+                String name = resultSet.getString("itemName");
                 boolean customizable = resultSet.getBoolean("customizable");
                 double price = resultSet.getDouble("price");
                 String groupName = resultSet.getString("groupName");

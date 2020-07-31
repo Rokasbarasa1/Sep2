@@ -1,3 +1,4 @@
+DROP SCHEMA IF EXISTS sep2;
 create schema sep2;
 
 use sep2;
@@ -17,19 +18,10 @@ CREATE TABLE Receptionist(
 INSERT INTO Receptionist (userName, passWord, firstName, lastName, email, phoneNumber,workRole) VALUE('marwan1',1234, 'marwan', 'summakieh','maksfdiahdfa','546565465','RECEPTIONIST');
 INSERT INTO Receptionist (userName, passWord, firstName, lastName, email, phoneNumber,workRole) VALUE('marwan2',1234, 'marwan', 'summakieh','maksfdiahdfa','546565465','RECEPTIONIST');
 INSERT INTO Receptionist (userName, passWord, firstName, lastName, email, phoneNumber,workRole) VALUE('marwan3',1234, 'marwan', 'summakieh','maksfdiahdfa','546565465','RECEPTIONIST');
-INSERT INTO Receptionist (userName, passWord, firstName, lastName, email, phoneNumber,workRole) VALUE('Rokas','dmin', 'Rokas', 'Barasa','maksfdiahdfa','546565465','RECEPTIONIST');
+INSERT INTO Receptionist (userName, passWord, firstName, lastName, email, phoneNumber,workRole) VALUE('Rokas','admin', 'Rokas', 'Barasa','maksfdiahdfa','546565465','RECEPTIONIST');
  SELECT* from Receptionist;
 
-Insert into Item(itemName) value ('tomatos');
-Insert into Item(itemName) value ('cucumber');
-Insert into Item(itemName) value ('potatos');
-Insert into Item(itemName) value ('latice');
-Insert into Item(itemName) value ('beef');
-
-select*from Item;
 DROP TABLE IF EXISTS Item cascade;
-
-DROP TABLE IF EXISTS Ingredient cascade;
 CREATE TABLE Item(
 		item_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		itemName VARCHAR(255) NOT NULL UNIQUE,
@@ -39,7 +31,9 @@ CREATE TABLE Item(
 );
 
 insert into Item(itemName, customizable, price , groupName) values ('Chease Burger', true, 10.00, 'sandwiches');
+select*from Item;
 
+DROP TABLE IF EXISTS Ingredient cascade;
 CREATE TABLE Ingredient(
 		ingredient_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		ingredientName VARCHAR(255) NOT NULL UNIQUE

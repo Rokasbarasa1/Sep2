@@ -24,31 +24,37 @@ public class RmiHandler implements RemoteCommandList {
 
     @Override
     public Receptionist getReceptionistById(int userId) throws RemoteException {
+        System.out.println("Getting receptionist");
         return modelFactory.getLoginModel().getReceptionistById(userId);
     }
 
     @Override
     public ArrayList<Item> getMenu() throws RemoteException{
+        System.out.println("Geting the menu");
         return modelFactory.getMenuModel().getMenu();
     }
 
     @Override
     public ArrayList<Order> getIncompleteOrders() throws RemoteException {
+        System.out.println("Getting incomplete orders");
         return null;
     }
 
     @Override
     public ArrayList<Order> getOrders() throws RemoteException {
+        System.out.println("Getting orders");
         return null; //modelFactory.getOrderModel().getOrders();
     }
 
     @Override
     public void completeOrder(int id) throws RemoteException {
+        System.out.println("Setting order status to complete");
 
     }
 
     @Override
     public int getIdForOrder() throws RemoteException {
+        System.out.println("Getting an id for order");
         return -1;
     }
 

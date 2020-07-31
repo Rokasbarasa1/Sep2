@@ -59,6 +59,7 @@ public class ReceptionistMenuController {
     }
 
     public void updateTable(){
+        incompleteOrderTable.getItems().clear();
         orderItems.addAll(vm.getIncompleteOrders());
         incompleteOrderTable.setItems(orderItems);
     }
