@@ -16,15 +16,12 @@ public class DBConnection implements IDBConnection {
 
 
     private final String schemaName;
-    private final String receptionistTableName;
-    private final String orderTableName;
+
 
     private Connection connection;
 
     public DBConnection() {
         schemaName = "sep2";
-        receptionistTableName = "Receptionist";
-        orderTableName = "order";
     }
 
     public Connection getConnection() {
@@ -89,10 +86,4 @@ public class DBConnection implements IDBConnection {
     public String getSchemaName() {
         return schemaName;
     }
-
-    @Override
-    public String getReceptionistTableName() {
-        return receptionistTableName;
-    }
-
 }

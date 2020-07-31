@@ -19,7 +19,8 @@ public class ReceptionistDAO implements IReceptionistDAO {
     public Receptionist getReceptionist(int Id) {
         Receptionist receptionist = null;
         try{
-            String sql = "SELECT * FROM " + databaseConnection.getReceptionistTableName()+ " WHERE ID = " + Id + ";";
+            String sql = "SELECT * FROM Receptionist" +
+                    " WHERE ID = " + Id + ";";
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while ( resultSet.next()) {
