@@ -20,11 +20,12 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:marwan" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not working">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_07_2020_12_11__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
@@ -35,6 +36,13 @@
       <change beforePath="$PROJECT_DIR$/src/main/server/persistence/receptionist/IReceptionistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/receptionist/IReceptionistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/server/persistence/receptionist/ReceptionistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/receptionist/ReceptionistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/shared/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/shared/Item.java" afterDir="false" />
+=======
+    <list default="true" id="82a98f32-2d1e-4a4f-b793-6839b3d0437b" name="Default Changelist" comment="works but connection to db is not wo&#10;rking">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/model/receptionistMenu/ReceptionistMenuModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/client/view/receptionistMenu/ReceptionistMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/server/persistence/database/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server/persistence/database/DBConnection.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +184,13 @@
       <workItem from="1595429675126" duration="725000" />
       <workItem from="1595432444792" duration="14518000" />
       <workItem from="1595611795582" duration="15607000" />
+<<<<<<< Updated upstream
       <workItem from="1595675841015" duration="21302000" />
+=======
+      <workItem from="1595675841015" duration="22045000" />
+      <workItem from="1595840789173" duration="1209000" />
+      <workItem from="1595846565740" duration="629000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="works but connection to db is not working">
       <created>1595526166295</created>
@@ -274,6 +288,7 @@
     </state>
     <state x="620" y="262" key="FileChooserDialogImpl/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595710908924" />
     <state x="709" y="270" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595525213302" />
+<<<<<<< Updated upstream
     <state width="1659" height="130" key="GridCell.Tab.0.bottom" timestamp="1595708691103">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -296,6 +311,30 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1659" height="130" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595708691103" />
+=======
+    <state width="1659" height="130" key="GridCell.Tab.0.bottom" timestamp="1595847196176">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="130" key="GridCell.Tab.0.bottom/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595847196176" />
+    <state width="1345" height="170" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1595682129734" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585278" />
+    <state width="1659" height="130" key="GridCell.Tab.0.center" timestamp="1595847196176">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="130" key="GridCell.Tab.0.center/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595847196176" />
+    <state width="1345" height="170" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1595682129733" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585277" />
+    <state width="1659" height="130" key="GridCell.Tab.0.left" timestamp="1595847196175">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="130" key="GridCell.Tab.0.left/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595847196175" />
+    <state width="1345" height="170" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1595682129733" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585277" />
+    <state width="1659" height="130" key="GridCell.Tab.0.right" timestamp="1595847196176">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1659" height="130" key="GridCell.Tab.0.right/-1366.142.1366.728/0.0.1680.1010@0.0.1680.1010" timestamp="1595847196176" />
+>>>>>>> Stashed changes
     <state width="1345" height="170" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1595682129734" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595526585278" />
     <state width="1659" height="336" key="GridCell.Tab.1.bottom" timestamp="1595527987359">
