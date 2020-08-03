@@ -24,5 +24,4 @@ public class MainApp extends Application {
         super.stop();
         clientFactory.closeConnection();
     }
-    //this is a comment
 }

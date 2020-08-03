@@ -113,14 +113,12 @@ public class ClientRMIHandler implements RemoteSender{
     }
 
     public int getIdForOrder() {
-        /*try {
+        try {
             return rml.getIdForOrder();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-
-         */
-        return 20;
+        return -1;
     }
 
 
@@ -133,13 +131,11 @@ public class ClientRMIHandler implements RemoteSender{
     }
 
     public void makeOrder(Order order) {
-        /*
         try {
             rml.makeOrder(order);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-         */
     }
 
     public ArrayList<Order> getIncompleteOrders() {
@@ -148,6 +144,6 @@ public class ClientRMIHandler implements RemoteSender{
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-         return null;
+        return null;
     }
 }
