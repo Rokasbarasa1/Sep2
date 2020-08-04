@@ -103,7 +103,7 @@ public class CartController {
             vm.makeOrder(id);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("ID");
+            alert.setTitle("Make order");
             alert.setHeaderText("Your order id is: " + id);
             alert.showAndWait();
 
