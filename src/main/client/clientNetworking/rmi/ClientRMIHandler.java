@@ -62,7 +62,7 @@ public class ClientRMIHandler implements RemoteSender{
         }
 
         try {
-            return rml.login(loginCarrier);
+            return rml.login(loginCarrier, this);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -97,7 +97,7 @@ public class ClientRMIHandler implements RemoteSender{
 
     public ArrayList<Order> getOrders() {
         try {
-            return rml.getOrders();
+            return rml.getOrders(this);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -127,7 +127,7 @@ public class ClientRMIHandler implements RemoteSender{
     }
 
     public void addPropertyChangeListenerOrderListUpdate(PropertyChangeListener listener) {
-        newOrderSupport.addPropertyChangeListener(listener);
+        orderUpdateSupport.addPropertyChangeListener(listener);
     }
 
     public void makeOrder(Order order) {
@@ -145,5 +145,13 @@ public class ClientRMIHandler implements RemoteSender{
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void closeConnection() {
+        try {
+            rml.closeConnection(this);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }

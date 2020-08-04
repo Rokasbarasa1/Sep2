@@ -62,6 +62,6 @@ public class ClientFactory {
     }
 
     public void closeConnection() {
-        //socketHandler.closeConnection();
+        rmiHandler.closeConnection();
     }
 }
