@@ -75,6 +75,17 @@ public class RmiHandler implements RemoteCommandList {
         modelFactory.getOrderModel().makeOrder(order);
     }
 
+    @Override
+    public void closeConnection(RemoteSender clientRMIHandler) throws RemoteException {
+        System.out.println("Removing user form update list");
+        if(receptionists.contains(clientRMIHandler)){
+            receptionists.remove(clientRMIHandler);
+        }
+        else if(orderScreens.contains(clientRMIHandler)){
+            orderScreens.remove(clientRMIHandler);
+        }
+    }
+
     public void sendUpdateToReceptionists(){
         for (int i = 0; i < receptionists.size(); i++) {
             try {
@@ -86,10 +97,9 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     public void sendUpdateToOrderScreens(){
-
-        for (int i = 0; i < receptionists.size(); i++) {
+        for (int i = 0; i < orderScreens.size(); i++) {
             try {
-                receptionists.get(i).newOrderOrStatusUpdate();
+                orderScreens.get(i).newOrderOrStatusUpdate();
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

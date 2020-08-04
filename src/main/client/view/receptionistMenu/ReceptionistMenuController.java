@@ -59,6 +59,7 @@ public class ReceptionistMenuController {
     }
 
     public void updateTable(){
+        System.out.println("Scream if you got this from observer pattern");
         incompleteOrderTable.getItems().clear();
         orderItems.addAll(vm.getIncompleteOrders());
         incompleteOrderTable.setItems(orderItems);
@@ -68,6 +69,5 @@ public class ReceptionistMenuController {
     void OnCompleteOrder(ActionEvent event) {
         Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
         vm.completeOrder(selectedOrder.getID());
-        updateTable();
     }
 }

@@ -1,5 +1,6 @@
 package main.server.rmi;
 
+import main.client.clientNetworking.rmi.ClientRMIHandler;
 import main.client.clientNetworking.rmi.RemoteSender;
 import main.shared.Item;
 import main.shared.Order;
@@ -18,4 +19,5 @@ public interface RemoteCommandList extends Remote {
     void completeOrder(int id) throws RemoteException; // Set the complete status of this order to true
     int getIdForOrder() throws RemoteException; // I dont know which id is taken or not. I need you to give my order an id.
     void makeOrder(Order order) throws RemoteException; // Put the order into the orderModel order list. Basicaly new order
+    void closeConnection(RemoteSender clientRMIHandler) throws RemoteException; // Removes Remote senders from list
 }

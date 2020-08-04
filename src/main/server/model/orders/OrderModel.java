@@ -11,7 +11,7 @@ public class OrderModel implements IOrderModel {
     private int count;
 
     public OrderModel() {
-        count = 1;
+        count = 0;
         this.orders = new ArrayList<>();
     }
 
@@ -40,6 +40,7 @@ public class OrderModel implements IOrderModel {
 
     @Override
     public int getIdForOrder() {
+        count++;
         if(count < 100) {
             return count;
         } else {
