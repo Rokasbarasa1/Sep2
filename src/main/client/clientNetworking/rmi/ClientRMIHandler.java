@@ -62,7 +62,7 @@ public class ClientRMIHandler implements RemoteSender{
         }
 
         try {
-            return rml.login(loginCarrier);
+            return rml.login(loginCarrier, this);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -97,7 +97,7 @@ public class ClientRMIHandler implements RemoteSender{
 
     public ArrayList<Order> getOrders() {
         try {
-            return rml.getOrders();
+            return rml.getOrders(this);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
