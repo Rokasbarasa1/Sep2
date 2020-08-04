@@ -11,7 +11,7 @@ public class OrderModel implements IOrderModel {
     private int count;
 
     public OrderModel() {
-        count = 0;
+        count = 1;
         this.orders = new ArrayList<>();
     }
 
@@ -27,7 +27,10 @@ public class OrderModel implements IOrderModel {
     @Override
     public ArrayList<Order> getUnfinishedOrders() {
         ArrayList<Order> unFinishedOrders = new ArrayList<>();
-        for (int i = 0; i == orders.size(); i ++){
+        for (int i = 0; i < orders.size() ; i++) {
+
+        }
+        for (int i = 0; i < orders.size() ; i++){
             if(orders.get(i).isFinished() == false){
                 unFinishedOrders.add(orders.get(i));
             }
