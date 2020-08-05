@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.client.view.card.CardController;
 import main.client.view.cart.CartController;
 import main.client.view.customerMenu.CustomerMenuController;
 import main.client.view.login.LoginController;
@@ -23,6 +24,7 @@ public class ViewHandler {
     private Scene orderScreenScene;
     private Scene receptionistMenuScene;
     private Scene cart;
+    private Scene card;
 
 
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
@@ -93,6 +95,16 @@ public class ViewHandler {
         cart = new Scene(root);
         mainStage.setTitle("Cart");
         mainStage.setScene(cart);
+    }
+
+    public void openCard() {
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = getRootByPath("Card/Card.fxml", loader);
+        CardController controller = loader.getController();
+        controller.init(viewModelFactory.getCardViewModel(), this);
+        card = new Scene(root);
+        mainStage.setTitle("Cart");
+        mainStage.setScene(card);
     }
 
     private Parent getRootByPath(String path, FXMLLoader loader) {

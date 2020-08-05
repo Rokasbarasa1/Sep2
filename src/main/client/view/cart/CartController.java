@@ -99,16 +99,7 @@ public class CartController {
             alert.setHeaderText("Your cart is empty!");
             alert.showAndWait();
         }else {
-            int id = vm.getIdForOrder();
-            vm.makeOrder(id);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Make order");
-            alert.setHeaderText("Your order id is: " + id);
-            alert.showAndWait();
-
-            vm.clearCart();
-            viewHandler.openCustomerMenu();
+            viewHandler.openCard();
         }
     }
 }

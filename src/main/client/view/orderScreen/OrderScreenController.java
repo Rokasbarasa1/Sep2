@@ -36,7 +36,6 @@ public class OrderScreenController {
                 UnfinishedGrid.getChildren().clear();
                 populateLists(vm.getOrders());
             }
-
         });
     }
 

@@ -9,6 +9,7 @@ public class ViewModelFactory {
     private CustomerMenuViewModel customerMenu;
     private CartViewModel cart;
     private OrderScreenViewModel orderScreen;
+    private CardViewModel card;
 
     public ViewModelFactory(ModelFactory modelFactory) {
         this.modelFactory = modelFactory;
@@ -42,6 +43,12 @@ public class ViewModelFactory {
         if(orderScreen == null)
             orderScreen = new OrderScreenViewModel(modelFactory.orderScreenModel());
         return orderScreen;
+    }
+
+    public CardViewModel getCardViewModel() {
+        if(card == null)
+            card = new CardViewModel(modelFactory.cardModel());
+        return card;
     }
 
 }
