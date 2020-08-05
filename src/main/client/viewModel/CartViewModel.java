@@ -16,6 +16,7 @@ public class CartViewModel {
     }
 
     public void setCustomizeItem(int id) {
+        model.setCustomizeItem(id);
     }
 
     public int getIdForOrder() {

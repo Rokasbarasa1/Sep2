@@ -88,7 +88,14 @@ public class RmiHandler implements RemoteCommandList {
 
     @Override
     public String createItem(Item createdItem) throws RemoteException {
+        System.out.println("Creating item");
         return null;
+    }
+
+    @Override
+    public void deleteItem(int id) throws RemoteException {
+        System.out.println("Deleting item " + id);
+
     }
 
     public void sendUpdateToReceptionists(){

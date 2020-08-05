@@ -21,4 +21,5 @@ public interface RemoteCommandList extends Remote {
     void makeOrder(Order order) throws RemoteException; // Put the order into the orderModel order list. Basicaly new order
     void closeConnection(RemoteSender clientRMIHandler) throws RemoteException; // Removes Remote senders from list
     String createItem(Item createdItem) throws RemoteException; // Create the item,  and if it was created give me "OK" as string back
+    void deleteItem(int id) throws RemoteException; // Delete the item by specified id and the delete the ItemIngredient things for it.
 }

@@ -11,4 +11,7 @@ public interface ICartModel {
     void clearCart();
     void removeItemFromCart(int id);
     int getIdSaved();
+    void setCustomizeItem(int id);
+
+    Item getCustomizeItem();
 }

@@ -27,6 +27,15 @@ public class Item implements Serializable {
         this.groupName = groupName;
     }
 
+    public Item(Item item) {
+        this.ID = item.getID();
+        this.name = item.getName();
+        this.customizable = item.isCustomizable();
+        this.ingredients = item.getIngredientsList();
+        this.price = item.getPrice();
+        this.groupName = item.getGroupName();
+    }
+
     public int getID() {
         return ID;
     }
@@ -55,7 +64,7 @@ public class Item implements Serializable {
     public String getIngredients(){
         String ingredientString = "";
         for (int i = 0; i < ingredients.size(); i++) {
-            ingredientString += ingredients.get(i).getName() + ", ";
+            ingredientString += ingredients.get(i).toString();
         }
         return ingredientString;
     }

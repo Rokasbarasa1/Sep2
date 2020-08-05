@@ -162,4 +162,12 @@ public class ClientRMIHandler implements RemoteSender{
         }
         return "Failed to connect";
     }
+
+    public void deleteItem(int id) {
+        try {
+            rml.deleteItem(id);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 }

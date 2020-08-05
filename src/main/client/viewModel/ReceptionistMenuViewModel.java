@@ -40,4 +40,8 @@ public class ReceptionistMenuViewModel implements PropertyChangeSubject {
     public void completeOrder(int id) {
         model.completeOrder(id);
     }
+
+    public void deleteItem(int id) {
+        model.deleteItem(id);
+    }
 }

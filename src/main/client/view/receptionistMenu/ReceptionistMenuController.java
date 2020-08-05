@@ -82,20 +82,33 @@ public class ReceptionistMenuController {
     @FXML
     void OnPrintOrder(ActionEvent event) {
         Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
-        PrinterJob job = PrinterJob.getPrinterJob();
-        job.setPrintable(selectedOrder);
-        boolean doPrint = job.printDialog();
-        if (doPrint)
-        {
-            try
+        if(selectedOrder != null){
+            PrinterJob job = PrinterJob.getPrinterJob();
+            job.setPrintable(selectedOrder);
+            boolean doPrint = job.printDialog();
+            if (doPrint)
             {
-                job.print();
+                try
+                {
+                    job.print();
+                }
+                catch (PrinterException e)
+                {
+                    System.out.println("Something went wrong while printing");
+                    e.printStackTrace();
+                }
             }
-            catch (PrinterException e)
-            {
-                System.out.println("Something went wrong while printing");
-                e.printStackTrace();
-            }
+        }
+    }
+
+    @FXML
+    void OnDeleteItem(ActionEvent event) {
+        Item selectedItem = menuTable.getSelectionModel().getSelectedItem();
+        if(selectedItem != null){
+            vm.deleteItem(selectedItem.getID());
+            menuTable.getItems().clear();
+            menuItems.addAll(vm.getMenu());
+            menuTable.setItems(menuItems);
         }
     }
 }

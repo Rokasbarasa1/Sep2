@@ -70,7 +70,7 @@ public class CartController {
 
     public void editItem(int id){
         vm.setCustomizeItem(id);
-        //viewHandler.openCustomizeItem();
+        viewHandler.openCustomize();
     }
 
     public void setTotal(ArrayList<Item> cart){

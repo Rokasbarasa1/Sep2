@@ -40,6 +40,7 @@
                           </columns>
                         </TableView>
                         <Button layoutX="14.0" layoutY="324.0" mnemonicParsing="false" onAction="#OnCreateNewItem" text="Create new menu item" />
+                        <Button layoutX="164.0" layoutY="324.0" mnemonicParsing="false" onAction="#OnDeleteItem" text="Delete Item" />
                      </children>
                   </AnchorPane>
             </content>
