@@ -1,5 +1,7 @@
 package main.client.clientNetworking;
 
+import main.client.clientNetworking.card.CardClient;
+import main.client.clientNetworking.card.ICardClient;
 import main.client.clientNetworking.cart.CartClient;
 import main.client.clientNetworking.cart.ICartClient;
 import main.client.clientNetworking.customerMenu.CustomerMenuClient;
@@ -22,6 +24,7 @@ public class ClientFactory {
     private ICustomerMenuClient customerMenu;
     private ICartClient cart;
     private IOrderScreenClient orderScreen;
+    private ICardClient card;
 
     public ClientFactory(){
         try {
@@ -59,6 +62,12 @@ public class ClientFactory {
         if(orderScreen == null)
             orderScreen = new OrderScreenClient(rmiHandler);
         return orderScreen;
+    }
+
+    public ICardClient cardClient() {
+        if(card == null)
+            card = new CardClient(rmiHandler);
+        return card;
     }
 
     public void closeConnection() {

@@ -2,7 +2,10 @@ package main.client.model;
 
 import com.sun.security.ntlm.Client;
 import main.client.clientNetworking.ClientFactory;
+import main.client.clientNetworking.card.ICardClient;
 import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
+import main.client.model.card.CardModel;
+import main.client.model.card.ICardModel;
 import main.client.model.cart.CartModel;
 import main.client.model.cart.ICartModel;
 import main.client.model.customerMenu.CustomerMenuModel;
@@ -21,6 +24,7 @@ public class ModelFactory {
     private ICustomerMenuModel customerMenu;
     private ICartModel cart;
     private IOrderScreenModel orderScreen;
+    private ICardModel card;
 
     public ModelFactory(ClientFactory clientFactory) {
         this.clientFactory = clientFactory;
@@ -54,5 +58,11 @@ public class ModelFactory {
         if(orderScreen == null)
             orderScreen = new OrderScreenModel(clientFactory.orderScreenClient());
         return orderScreen;
+    }
+
+    public ICardModel cardModel() {
+        if(card == null)
+            card = new CardModel(clientFactory.cardClient(), customerMenuModel(), cartModel());
+        return card;
     }
 }
