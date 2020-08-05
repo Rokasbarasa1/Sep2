@@ -154,4 +154,13 @@ public class ClientRMIHandler implements RemoteSender{
             e.printStackTrace();
         }
     }
+
+    public String createItem(Item createdItem) {
+        try {
+            return rml.createItem(createdItem);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return "Failed to connect";
+    }
 }

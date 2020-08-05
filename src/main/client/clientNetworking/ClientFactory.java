@@ -4,6 +4,8 @@ import main.client.clientNetworking.card.CardClient;
 import main.client.clientNetworking.card.ICardClient;
 import main.client.clientNetworking.cart.CartClient;
 import main.client.clientNetworking.cart.ICartClient;
+import main.client.clientNetworking.createItem.CreateItemClient;
+import main.client.clientNetworking.createItem.ICreateItemClient;
 import main.client.clientNetworking.customerMenu.CustomerMenuClient;
 import main.client.clientNetworking.customerMenu.ICustomerMenuClient;
 import main.client.clientNetworking.login.ILoginClient;
@@ -25,6 +27,7 @@ public class ClientFactory {
     private ICartClient cart;
     private IOrderScreenClient orderScreen;
     private ICardClient card;
+    private ICreateItemClient createItem;
 
     public ClientFactory(){
         try {
@@ -68,6 +71,12 @@ public class ClientFactory {
         if(card == null)
             card = new CardClient(rmiHandler);
         return card;
+    }
+
+    public ICreateItemClient createItemClient() {
+        if(createItem == null)
+            createItem = new CreateItemClient(rmiHandler);
+        return createItem;
     }
 
     public void closeConnection() {

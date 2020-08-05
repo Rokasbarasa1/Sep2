@@ -28,6 +28,20 @@ public class CustomerMenuController {
     }
 
     public void populateMenu(ArrayList<Item> list) {
+        ArrayList<String> groupNames = new ArrayList<>();
+        ArrayList<Item> listSortedByGroupName = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if(!groupNames.contains(list.get(i).getGroupName()))
+                groupNames.add(list.get(i).getGroupName());
+        }
+
+        for (int i = 0; i < groupNames.size(); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if(groupNames.get(i).equals(list.get(j).getGroupName()))
+                    listSortedByGroupName.add(list.get(j));
+            }
+        }
+
         menuGrid.getColumnConstraints().get(0).setPrefWidth(430);
         menuGrid.getColumnConstraints().get(0).setMaxWidth(430);
 
@@ -36,22 +50,27 @@ public class CustomerMenuController {
 
         menuGrid.getColumnConstraints().get(2).setPrefWidth(85);
         menuGrid.getColumnConstraints().get(2).setMaxWidth(85);
+        String lastGroupName = "";
+        int listCounter = 0;
+        for (int i = 0; i < listSortedByGroupName.size() + groupNames.size(); i++) {
+            if(lastGroupName != listSortedByGroupName.get(listCounter).getGroupName()){
+                lastGroupName = listSortedByGroupName.get(listCounter).getGroupName();
+                Label group = new Label(lastGroupName);
+                menuGrid.add(group, 0, i);
+            } else {
+                Label label = new Label(listSortedByGroupName.get(listCounter).toString());
+                menuGrid.add(label, 0, i);
 
-        for (int i = 0; i < list.size(); i++) {
-            Label label = new Label();
-            label.setText(list.get(i).toString());
-            menuGrid.add(label, 0, i);
+                Label price = new Label("" + listSortedByGroupName.get(listCounter).getPrice());
+                menuGrid.add(price, 1, i);
 
-            Label price = new Label();
-            price.setText("" + list.get(i).getPrice());
-            menuGrid.add(price, 1, i);
-
-            Button button = new Button("Add to cart");
-            button.setId(i + "");
-            button.setOnAction(actionEvent -> {
-                addToCart(button.getId());
-            });
-            menuGrid.add(button, 2, i);
+                Button button = new Button("Add to cart");
+                button.setId(i + "");
+                button.setOnAction(actionEvent -> {
+                    addToCart(button.getId());
+                });
+                menuGrid.add(button, 2, i);
+            }
         }
     }
 

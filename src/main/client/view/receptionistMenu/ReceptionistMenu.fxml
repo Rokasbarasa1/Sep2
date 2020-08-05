@@ -38,6 +38,7 @@
                               <TableColumn fx:id="menuGroupName" editable="false" text="Group name" />
                           </columns>
                         </TableView>
+                        <Button layoutX="14.0" layoutY="324.0" mnemonicParsing="false" onAction="#OnCreateNewItem" text="Create new menu item" />
                      </children>
                   </AnchorPane>
             </content>

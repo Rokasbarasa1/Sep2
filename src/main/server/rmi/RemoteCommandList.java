@@ -20,4 +20,5 @@ public interface RemoteCommandList extends Remote {
     int getIdForOrder() throws RemoteException; // I dont know which id is taken or not. I need you to give my order an id.
     void makeOrder(Order order) throws RemoteException; // Put the order into the orderModel order list. Basicaly new order
     void closeConnection(RemoteSender clientRMIHandler) throws RemoteException; // Removes Remote senders from list
+    String createItem(Item createdItem) throws RemoteException; // Create the item,  and if it was created give me "OK" as string back
 }

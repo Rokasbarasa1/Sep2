@@ -70,4 +70,9 @@ public class ReceptionistMenuController {
         Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
         vm.completeOrder(selectedOrder.getID());
     }
+
+    @FXML
+    void OnCreateNewItem(ActionEvent event) {
+        viewHandler.openCreateItem();
+    }
 }

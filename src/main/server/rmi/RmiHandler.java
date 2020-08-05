@@ -86,6 +86,11 @@ public class RmiHandler implements RemoteCommandList {
         }
     }
 
+    @Override
+    public String createItem(Item createdItem) throws RemoteException {
+        return null;
+    }
+
     public void sendUpdateToReceptionists(){
         for (int i = 0; i < receptionists.size(); i++) {
             try {

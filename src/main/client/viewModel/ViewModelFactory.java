@@ -10,6 +10,7 @@ public class ViewModelFactory {
     private CartViewModel cart;
     private OrderScreenViewModel orderScreen;
     private CardViewModel card;
+    private CreateItemViewModel createItem;
 
     public ViewModelFactory(ModelFactory modelFactory) {
         this.modelFactory = modelFactory;
@@ -51,4 +52,9 @@ public class ViewModelFactory {
         return card;
     }
 
+    public CreateItemViewModel getCreateItemViewModel() {
+        if(createItem == null)
+            createItem = new CreateItemViewModel(modelFactory.createItemModel());
+        return createItem;
+    }
 }

@@ -8,6 +8,8 @@ import main.client.model.card.CardModel;
 import main.client.model.card.ICardModel;
 import main.client.model.cart.CartModel;
 import main.client.model.cart.ICartModel;
+import main.client.model.createItem.CreateItemModel;
+import main.client.model.createItem.ICreateItemModel;
 import main.client.model.customerMenu.CustomerMenuModel;
 import main.client.model.customerMenu.ICustomerMenuModel;
 import main.client.model.login.ILoginModel;
@@ -25,6 +27,7 @@ public class ModelFactory {
     private ICartModel cart;
     private IOrderScreenModel orderScreen;
     private ICardModel card;
+    private ICreateItemModel createItem;
 
     public ModelFactory(ClientFactory clientFactory) {
         this.clientFactory = clientFactory;
@@ -64,5 +67,11 @@ public class ModelFactory {
         if(card == null)
             card = new CardModel(clientFactory.cardClient(), customerMenuModel(), cartModel());
         return card;
+    }
+
+    public ICreateItemModel createItemModel() {
+        if(createItem == null)
+            createItem = new CreateItemModel(clientFactory.createItemClient());
+        return createItem;
     }
 }

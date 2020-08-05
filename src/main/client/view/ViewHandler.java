@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.client.view.card.CardController;
 import main.client.view.cart.CartController;
+import main.client.view.createItem.CreateItemController;
 import main.client.view.customerMenu.CustomerMenuController;
 import main.client.view.login.LoginController;
 import main.client.view.orderScreen.OrderScreenController;
@@ -25,6 +26,7 @@ public class ViewHandler {
     private Scene receptionistMenuScene;
     private Scene cart;
     private Scene card;
+    private Scene createItem;
 
 
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
@@ -103,8 +105,18 @@ public class ViewHandler {
         CardController controller = loader.getController();
         controller.init(viewModelFactory.getCardViewModel(), this);
         card = new Scene(root);
-        mainStage.setTitle("Cart");
+        mainStage.setTitle("Card");
         mainStage.setScene(card);
+    }
+
+    public void openCreateItem() {
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = getRootByPath("CreateItem/CreateItem.fxml", loader);
+        CreateItemController controller = loader.getController();
+        controller.init(viewModelFactory.getCreateItemViewModel(), this);
+        createItem = new Scene(root);
+        mainStage.setTitle("Create Item");
+        mainStage.setScene(createItem);
     }
 
     private Parent getRootByPath(String path, FXMLLoader loader) {
