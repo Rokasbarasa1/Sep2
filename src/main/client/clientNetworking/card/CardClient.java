@@ -12,6 +12,7 @@ public class CardClient implements ICardClient {
 
     @Override
     public String makeOrder(String cardNumber, String expiration, String securityNumber, Order order) {
+        System.out.println(order.getItemsForPrinting());
         if(makePayment(cardNumber, expiration, securityNumber)){
             rmiHandler.makeOrder(order);
             return "OK";

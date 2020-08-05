@@ -32,9 +32,10 @@ CREATE TABLE Item(
 
 insert into Item(itemName, customizable, price , groupName) values ('Chease Burger', true, 10.00, 'sandwiches');
 insert into Item(itemName, customizable, price , groupName) values ('Bbq', true, 10.00, 'steak');
+insert into Item(itemName, customizable, price , groupName) values ('BBQ2', false, 10.00, 'steak');
 insert into Item(itemName, customizable, price , groupName) values ('Cola', true, 10.00, 'drinks');
 insert into Item(itemName, customizable, price , groupName) values ('Chicken Burger', true, 10.00, 'sandwiches');
-insert into Item(itemName, customizable, price , groupName) values ('Foxi', true, 10.00, 'drinks');S
+insert into Item(itemName, customizable, price , groupName) values ('Foxi', true, 10.00, 'drinks');
 select*from Item;
 
 DROP TABLE IF EXISTS Ingredient cascade;

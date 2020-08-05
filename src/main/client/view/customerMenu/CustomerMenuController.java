@@ -3,6 +3,7 @@ package main.client.view.customerMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import main.client.view.ViewHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
@@ -29,17 +30,9 @@ public class CustomerMenuController {
 
     public void populateMenu(ArrayList<Item> list) {
         ArrayList<String> groupNames = new ArrayList<>();
-        ArrayList<Item> listSortedByGroupName = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if(!groupNames.contains(list.get(i).getGroupName()))
                 groupNames.add(list.get(i).getGroupName());
-        }
-
-        for (int i = 0; i < groupNames.size(); i++) {
-            for (int j = 0; j < list.size(); j++) {
-                if(groupNames.get(i).equals(list.get(j).getGroupName()))
-                    listSortedByGroupName.add(list.get(j));
-            }
         }
 
         menuGrid.getColumnConstraints().get(0).setPrefWidth(430);
@@ -52,24 +45,26 @@ public class CustomerMenuController {
         menuGrid.getColumnConstraints().get(2).setMaxWidth(85);
         String lastGroupName = "";
         int listCounter = 0;
-        for (int i = 0; i < listSortedByGroupName.size() + groupNames.size(); i++) {
-            if(lastGroupName != listSortedByGroupName.get(listCounter).getGroupName()){
-                lastGroupName = listSortedByGroupName.get(listCounter).getGroupName();
+        for (int i = 0; i < list.size() + groupNames.size(); i++) {
+            if(!lastGroupName.equals(list.get(listCounter).getGroupName())){
+                lastGroupName = list.get(listCounter).getGroupName();
                 Label group = new Label(lastGroupName);
+                group.setStyle("-fx-font-weight: bold;-fx-text-fill:#000000;-fx-font-family:\"Arial\";-fx-font-size:30px;");
                 menuGrid.add(group, 0, i);
             } else {
-                Label label = new Label(listSortedByGroupName.get(listCounter).toString());
+                Label label = new Label(list.get(listCounter).toString());
                 menuGrid.add(label, 0, i);
 
-                Label price = new Label("" + listSortedByGroupName.get(listCounter).getPrice());
+                Label price = new Label("" + list.get(listCounter).getPrice());
                 menuGrid.add(price, 1, i);
 
                 Button button = new Button("Add to cart");
-                button.setId(i + "");
+                button.setId(listCounter + "");
                 button.setOnAction(actionEvent -> {
                     addToCart(button.getId());
                 });
                 menuGrid.add(button, 2, i);
+                listCounter++;
             }
         }
     }
