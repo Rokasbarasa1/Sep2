@@ -19,4 +19,8 @@ public class CustomerMenuViewModel {
     public ArrayList<Item> getMenu() {
         return model.getMenu();
     }
+
+    public void clear() {
+        model.clear();
+    }
 }

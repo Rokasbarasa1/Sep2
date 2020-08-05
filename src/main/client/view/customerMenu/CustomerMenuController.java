@@ -71,7 +71,7 @@ public class CustomerMenuController {
 
     @FXML
     void OnCancelOrder(ActionEvent event) {
-
+        vm.clear();
     }
 
     @FXML
