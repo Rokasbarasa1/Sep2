@@ -42,4 +42,40 @@ public class ItemDAO implements IItemDAO{
         }
         return items;
     }
+
+    @Override
+    public boolean addItem(Item item) {
+        try{
+            String sql = "INSERT INTO Item VALUES(?,?,?,?)";
+            PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
+            preparedStatement.setString(1, item.getName());
+            preparedStatement.setBoolean(2, item.isCustomizable());
+            preparedStatement.setDouble(3, item.getPrice());
+            preparedStatement.setString(4, item.getGroupName());
+
+            int i = preparedStatement.executeUpdate();
+
+            if (i == 1){
+                return true;
+            }
+        } catch (DataConnectionException | SQLException e) {
+        e.printStackTrace();
+        } finally {
+        databaseConnection.closeConnection();
+        }
+        return false;
+    }
 }
+/*
+ PreparedStatement ps = connection.prepareStatement("INSERT INTO user VALUES (NULL, ?, ?, ?)");
+        ps.setString(1, user.getName());
+        ps.setString(2, user.getPass());
+        ps.setInt(3, user.getAge());
+        int i = ps.executeUpdate();
+      if(i == 1) {
+        return true;
+      }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+ */
