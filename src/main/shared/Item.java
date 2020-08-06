@@ -2,8 +2,9 @@ package main.shared;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Item implements Serializable {
+public class Item implements Serializable, Cloneable {
     private int ID;
     private String name;
     private boolean customizable;
@@ -31,7 +32,7 @@ public class Item implements Serializable {
         this.ID = item.getID();
         this.name = item.getName();
         this.customizable = item.isCustomizable();
-        this.ingredients = item.getIngredientsList();
+        this.ingredients = cloneList(item.getIngredientsList());
         this.price = item.getPrice();
         this.groupName = item.getGroupName();
     }
@@ -76,5 +77,13 @@ public class Item implements Serializable {
     @Override
     public String toString(){
         return name + ": " + getIngredients();
+    }
+
+    public static ArrayList<Ingredient> cloneList(ArrayList<Ingredient> ingredientList) {
+        ArrayList<Ingredient> clonedList = new ArrayList<Ingredient>(ingredientList.size());
+        for (Ingredient ing : ingredientList) {
+            clonedList.add(new Ingredient(ing.getName()));
+        }
+        return clonedList;
     }
 }

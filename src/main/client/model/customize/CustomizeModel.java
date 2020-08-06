@@ -15,4 +15,9 @@ public class CustomizeModel implements ICustomizeModel{
     public ArrayList<Ingredient> getIngredients() {
         return cartModel.getCustomizeItem().getIngredientsList();
     }
+
+    @Override
+    public String getItemName() {
+        return cartModel.getCustomizeItem().getName();
+    }
 }

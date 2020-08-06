@@ -46,6 +46,7 @@ public class CardController {
 
     @FXML
     void OnBack(ActionEvent event) {
+        clearCardDetails();
         viewHandler.openCart();
     }
 
@@ -59,7 +60,15 @@ public class CardController {
             alert.showAndWait();
 
             vm.clearCart();
+            clearCardDetails();
             viewHandler.openCustomerMenu();
         }
+    }
+
+    private void clearCardDetails() {
+        cardNumber.clear();
+        expiration.clear();
+        securityNumber.clear();
+        response.setText("");
     }
 }

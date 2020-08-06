@@ -18,8 +18,8 @@ public class CustomerMenuModel implements ICustomerMenuModel{
 
     @Override
     public void addToCart(int id) {
-        cart.add(new Item(menu.get(id)));
-        System.out.println(menu.get(id).toString());
+        Item cloned = new Item(menu.get(id));
+        cart.add(cloned);
     }
 
     @Override

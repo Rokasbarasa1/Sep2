@@ -23,6 +23,7 @@ public class CustomizeController {
         vm = customizeViewModel;
         this.viewHandler = viewHandler;
         populateGrid(vm.getIngredients());
+        itemName.setText(itemName.getText() + " " + vm.getItemName());
     }
 
     private void populateGrid(ArrayList<Ingredient> ingredients) {

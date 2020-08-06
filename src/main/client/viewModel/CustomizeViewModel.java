@@ -14,4 +14,8 @@ public class CustomizeViewModel {
     public ArrayList<Ingredient> getIngredients() {
         return model.getIngredients();
     }
+
+    public String getItemName() {
+        return model.getItemName();
+    }
 }
