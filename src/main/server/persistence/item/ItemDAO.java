@@ -2,9 +2,8 @@ package main.server.persistence.item;
 
 import main.server.persistence.database.DataConnectionException;
 import main.server.persistence.database.IDBConnection;
-import main.shared.Ingredient;
 import main.shared.Item;
-import main.shared.Receptionist;
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,16 +65,3 @@ public class ItemDAO implements IItemDAO{
         return false;
     }
 }
-/*
- PreparedStatement ps = connection.prepareStatement("INSERT INTO user VALUES (NULL, ?, ?, ?)");
-        ps.setString(1, user.getName());
-        ps.setString(2, user.getPass());
-        ps.setInt(3, user.getAge());
-        int i = ps.executeUpdate();
-      if(i == 1) {
-        return true;
-      }
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-    }
- */
