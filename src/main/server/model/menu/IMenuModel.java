@@ -6,4 +6,6 @@ import java.util.ArrayList;
 
 public interface IMenuModel {
     ArrayList<Item> getMenu();
+    void addItemToMenu(Item item);
+    void deleteItemFromMenu(Item item);
 }

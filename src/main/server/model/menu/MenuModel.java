@@ -23,4 +23,16 @@ public class MenuModel implements IMenuModel {
         }
         return items;
     }
+
+    @Override
+    public void addItemToMenu(Item item) {
+        ArrayList<Item> items = itemDAO.getMenuItems();
+        items.add(item);
+    }
+
+    @Override
+    public void deleteItemFromMenu(Item item) {
+        ArrayList<Item> items = itemDAO.getMenuItems();
+        items.remove(item);
+    }
 }
