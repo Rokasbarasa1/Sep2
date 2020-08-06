@@ -55,7 +55,7 @@ public class Item implements Serializable, Cloneable {
     }
 
     public double getPrice() {
-        return price;
+        return price + getIngredientTotalPrice();
     }
 
     public String getGroupName() {
@@ -82,8 +82,18 @@ public class Item implements Serializable, Cloneable {
     public static ArrayList<Ingredient> cloneList(ArrayList<Ingredient> ingredientList) {
         ArrayList<Ingredient> clonedList = new ArrayList<Ingredient>(ingredientList.size());
         for (Ingredient ing : ingredientList) {
-            clonedList.add(new Ingredient(ing.getName()));
+            clonedList.add(new Ingredient(ing.getName(), ing.getPrice()));
         }
         return clonedList;
+    }
+
+    public double getIngredientTotalPrice() {
+        double price = 0;
+        for (int i = 0; i < ingredients.size(); i++) {
+            if(ingredients.get(i).getCounter() > 1){
+                price += ingredients.get(i).getPrice() * ingredients.get(i).getCounter();
+            }
+        }
+        return price;
     }
 }
