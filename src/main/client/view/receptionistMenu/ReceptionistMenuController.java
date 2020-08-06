@@ -12,6 +12,9 @@ import main.client.viewModel.ReceptionistMenuViewModel;
 import main.shared.Item;
 import main.shared.Order;
 
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+
 public class ReceptionistMenuController {
     @FXML
     private TableView<Item> menuTable;
@@ -69,5 +72,43 @@ public class ReceptionistMenuController {
     void OnCompleteOrder(ActionEvent event) {
         Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
         vm.completeOrder(selectedOrder.getID());
+    }
+
+    @FXML
+    void OnCreateNewItem(ActionEvent event) {
+        viewHandler.openCreateItem();
+    }
+
+    @FXML
+    void OnPrintOrder(ActionEvent event) {
+        Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
+        if(selectedOrder != null){
+            PrinterJob job = PrinterJob.getPrinterJob();
+            job.setPrintable(selectedOrder);
+            boolean doPrint = job.printDialog();
+            if (doPrint)
+            {
+                try
+                {
+                    job.print();
+                }
+                catch (PrinterException e)
+                {
+                    System.out.println("Something went wrong while printing");
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    @FXML
+    void OnDeleteItem(ActionEvent event) {
+        Item selectedItem = menuTable.getSelectionModel().getSelectedItem();
+        if(selectedItem != null){
+            vm.deleteItem(selectedItem.getID());
+            menuTable.getItems().clear();
+            menuItems.addAll(vm.getMenu());
+            menuTable.setItems(menuItems);
+        }
     }
 }

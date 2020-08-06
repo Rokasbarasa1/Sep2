@@ -87,7 +87,6 @@ public class ClientRMIHandler implements RemoteSender{
         }
         try {
             ArrayList<Item> menu = rml.getMenu();
-            System.out.println(menu.get(0).toString());
             return menu;
         } catch (RemoteException e) {
             e.printStackTrace();
@@ -150,6 +149,23 @@ public class ClientRMIHandler implements RemoteSender{
     public void closeConnection() {
         try {
             rml.closeConnection(this);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String createItem(Item createdItem) {
+        try {
+            return rml.createItem(createdItem);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return "Failed to connect";
+    }
+
+    public void deleteItem(int id) {
+        try {
+            rml.deleteItem(id);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

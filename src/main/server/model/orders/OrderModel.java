@@ -61,6 +61,19 @@ public class OrderModel implements IOrderModel {
         for (int i = 0; i < orders.size(); i++){
             if (orders.get(i).getID() == ID){
                 orders.get(i).setFinished(true);
+                int numberOfCompleted = 0;
+                for (int j = 0; j < orders.size(); j++) {
+                    if(orders.get(j).isFinished())
+                        numberOfCompleted++;
+                }
+                if(numberOfCompleted == 20){
+                    for (int j = 0; j < orders.size(); j++) {
+                        if(orders.get(j).isFinished()){
+                            orders.remove(j);
+                            break;
+                        }
+                    }
+                }
                 rmiHandler.sendUpdateToOrderScreens();
                 rmiHandler.sendUpdateToReceptionists();
                 break;

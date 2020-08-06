@@ -31,6 +31,6 @@
       <ComboBox fx:id="payementMethod" layoutX="59.0" layoutY="67.0" prefWidth="150.0" />
       <Button layoutX="59.0" layoutY="317.0" mnemonicParsing="false" onAction="#OnBack" text="Back" />
       <Button layoutX="254.0" layoutY="317.0" mnemonicParsing="false" onAction="#OnMakeOrder" text="Make order" />
-      <Label fx:id="response" alignment="CENTER" contentDisplay="CENTER" layoutX="177.0" layoutY="14.0" textFill="RED" />
+      <Label fx:id="response" alignment="CENTER" contentDisplay="CENTER" layoutX="177.0" layoutY="14.0" textAlignment="CENTER" textFill="RED" />
    </children>
 </AnchorPane>

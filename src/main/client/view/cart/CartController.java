@@ -70,13 +70,13 @@ public class CartController {
 
     public void editItem(int id){
         vm.setCustomizeItem(id);
-        //viewHandler.openCustomizeItem();
+        viewHandler.openCustomize();
     }
 
     public void setTotal(ArrayList<Item> cart){
         double totalPrice = 0;
         for (int i = 0; i < cart.size(); i++) {
-            totalPrice += cart.get(i).getPrice();
+            totalPrice += cart.get(i).getPrice() + cart.get(i).getIngredientTotalPrice();
         }
         total.setText(total.getText() + String.format("%.2f", totalPrice));
     }
