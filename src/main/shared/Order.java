@@ -35,7 +35,7 @@ public class Order implements Serializable, Printable {
     }
 
     public String getItemsForPrinting() {
-        String itemsString = "Id of order: " + ID;
+        String itemsString = "Id of order: " + ID + "\n";
         for (int i = 0; i < items.size(); i++) {
             itemsString += items.get(i).toString() + "\n";
         }

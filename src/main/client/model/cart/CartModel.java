@@ -26,7 +26,7 @@ public class CartModel implements ICartModel {
     @Override
     public int getIdForOrder() {
         orderId = client.getIdForOrder();
-        return client.getIdForOrder();
+        return orderId;
     }
 
     @Override
