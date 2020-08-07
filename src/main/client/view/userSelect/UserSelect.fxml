@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.userSelect.UserSelectController">
+<AnchorPane prefHeight="331.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="main.client.view.userSelect.UserSelectController">
    <children>
       <Button layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#OnWorker" prefHeight="135.0" prefWidth="166.0" text="Receptionist">
          <font>

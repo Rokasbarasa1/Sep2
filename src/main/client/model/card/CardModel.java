@@ -1,33 +1,32 @@
 package main.client.model.card;
 
 import main.client.clientNetworking.card.ICardClient;
-import main.client.model.cart.ICartModel;
 import main.client.model.customerMenu.ICustomerMenuModel;
 import main.shared.Order;
 
 public class CardModel implements ICardModel{
     private ICardClient client;
     private ICustomerMenuModel menuModel;
-    private ICartModel cartModel;
-    public CardModel(ICardClient cardClient, ICustomerMenuModel menuModel, ICartModel cartModel) {
+    private int id;
+    public CardModel(ICardClient cardClient, ICustomerMenuModel menuModel) {
         client = cardClient;
         this.menuModel = menuModel;
-        this.cartModel = cartModel;
-    }
-
-    @Override
-    public String makeOrder(String cardNumber, String expiration, String securityNumber) {
-        Order order = new Order(cartModel.getIdForOrder(), menuModel.getCart());
-        return client.makeOrder(cardNumber, expiration, securityNumber, order);
     }
 
     @Override
     public int getId() {
-        return cartModel.getIdSaved();
+        return id;
     }
 
     @Override
     public void clearCart() {
         menuModel.clear();
+    }
+
+    @Override
+    public String makeOrder(String cardNumber, String expiration, String securityNumber, String method) {
+        id = client.getIdForOrder();
+        Order order = new Order(id, menuModel.getCart());
+        return client.makeOrder(cardNumber, expiration, securityNumber, method, order);
     }
 }
