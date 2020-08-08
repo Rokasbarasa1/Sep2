@@ -4,8 +4,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.client.view.card.CardController;
 import main.client.view.cart.CartController;
+import main.client.view.createItem.CreateItemController;
 import main.client.view.customerMenu.CustomerMenuController;
+import main.client.view.customize.CustomizeController;
 import main.client.view.login.LoginController;
 import main.client.view.orderScreen.OrderScreenController;
 import main.client.view.receptionistMenu.ReceptionistMenuController;
@@ -23,6 +26,8 @@ public class ViewHandler {
     private Scene orderScreenScene;
     private Scene receptionistMenuScene;
     private Scene cart;
+    private Scene card;
+    private Scene createItem;
 
 
     public ViewHandler(Stage stage, ViewModelFactory vmf) {
@@ -93,6 +98,36 @@ public class ViewHandler {
         cart = new Scene(root);
         mainStage.setTitle("Cart");
         mainStage.setScene(cart);
+    }
+
+    public void openCard() {
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = getRootByPath("Card/Card.fxml", loader);
+        CardController controller = loader.getController();
+        controller.init(viewModelFactory.getCardViewModel(), this);
+        card = new Scene(root);
+        mainStage.setTitle("Card");
+        mainStage.setScene(card);
+    }
+
+    public void openCreateItem() {
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = getRootByPath("CreateItem/CreateItem.fxml", loader);
+        CreateItemController controller = loader.getController();
+        controller.init(viewModelFactory.getCreateItemViewModel(), this);
+        createItem = new Scene(root);
+        mainStage.setTitle("Create Item");
+        mainStage.setScene(createItem);
+    }
+
+    public void openCustomize() {
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = getRootByPath("Customize/Customize.fxml", loader);
+        CustomizeController controller = loader.getController();
+        controller.init(viewModelFactory.getCustomizeViewModel(), this);
+        createItem = new Scene(root);
+        mainStage.setTitle("Create Item");
+        mainStage.setScene(createItem);
     }
 
     private Parent getRootByPath(String path, FXMLLoader loader) {

@@ -19,15 +19,15 @@ public class IngredientDAO implements IIngredientDAO{
     public ArrayList<Ingredient> getIngredientsByItemId(int id) {
         ArrayList<Ingredient> ingredients =  new ArrayList<>();
         try{
-            String sql =    //"use sep2; " +
-                            "SELECT i.ingredientName " +
+            String sql =    "SELECT i.ingredientName, i.price " +
                             "FROM Ingredient i, ItemIngredient ie " +
                             "WHERE ie.item_ID = "+ id +" AND ie.ingredient_ID = i.ingredient_ID;";
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while ( resultSet.next()) {
                 String name = resultSet.getString("ingredientName");
-                Ingredient ingredient = new Ingredient(name);
+                double price = resultSet.getDouble("price");
+                Ingredient ingredient = new Ingredient(name, price);
                 ingredients.add(ingredient);
             }
         } catch (DataConnectionException | SQLException e) {

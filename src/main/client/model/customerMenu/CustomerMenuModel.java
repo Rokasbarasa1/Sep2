@@ -16,53 +16,30 @@ public class CustomerMenuModel implements ICustomerMenuModel{
         cart = new ArrayList<Item>();
     }
 
-    public ArrayList<Item> getMenuTemp(){
-        ArrayList<Item> list = new ArrayList<Item>();
-        Ingredient tomato = new Ingredient("tomato");
-        Ingredient cheese = new Ingredient("cheese");
-        Ingredient lettuce = new Ingredient("lettuce");
-        Ingredient potato = new Ingredient("potato");
-        Ingredient almond = new Ingredient("almond");
-        Ingredient mayo = new Ingredient("mayo");
-        Ingredient basil = new Ingredient("basil");
-        ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
-        ingredients.add(tomato);
-        ingredients.add(cheese);
-        ingredients.add(lettuce);
-        ingredients.add(potato);
-        ingredients.add(almond);
-        ingredients.add(mayo);
-        ingredients.add(basil);
-        Item item1 = new Item("Potato salad", true,ingredients,29.99,"Kaka");
-        Item item2 = new Item("Pork salad", true,ingredients,44.99,"Kaka");
-        Item item3 = new Item("Cessars salad", true,ingredients,10.99,"Kaka");
-        Item item4 = new Item("Esternato salad", true,ingredients,9.99,"Kaka");
-        Item item5 = new Item("Mushroom salad", true,ingredients,19.99,"Kaka");
-        Item item6 = new Item("Beet salad", true,ingredients,0.99,"Kaka");
-        Item item7 = new Item("Chicken salad", true,ingredients,99.99,"Kaka");
-        Item item8 = new Item("Fish salad", true,ingredients,49.99,"Kaka");
-        list.add(item1);
-        list.add(item2);
-        list.add(item3);
-        list.add(item4);
-        list.add(item5);
-        list.add(item6);
-        list.add(item7);
-        list.add(item8);
-        menu = list;
-        return list;
-    }
-
     @Override
     public void addToCart(int id) {
-        cart.add(menu.get(id));
+        Item cloned = new Item(menu.get(id));
+        cart.add(cloned);
     }
 
     @Override
     public ArrayList<Item> getMenu() {
-        menu = client.getMenu();
+        ArrayList<Item> list = client.getMenu();
+        ArrayList<String> groupNames = new ArrayList<>();
+        ArrayList<Item> listSortedByGroupName = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if(!groupNames.contains(list.get(i).getGroupName()))
+                groupNames.add(list.get(i).getGroupName());
+        }
+
+        for (int i = 0; i < groupNames.size(); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if(groupNames.get(i).equals(list.get(j).getGroupName()))
+                    listSortedByGroupName.add(list.get(j));
+            }
+        }
+        menu = listSortedByGroupName;
         return menu;
-        //return getMenuTemp();
     }
 
     @Override

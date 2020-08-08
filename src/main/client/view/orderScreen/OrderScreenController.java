@@ -1,5 +1,6 @@
 package main.client.view.orderScreen;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -28,7 +29,14 @@ public class OrderScreenController {
     }
 
     private void updateTable() {
-        viewHandler.openOrderScreen();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                FinishedGrid.getChildren().clear();
+                UnfinishedGrid.getChildren().clear();
+                populateLists(vm.getOrders());
+            }
+        });
     }
 
     private void populateLists(ArrayList<Order> orders) {

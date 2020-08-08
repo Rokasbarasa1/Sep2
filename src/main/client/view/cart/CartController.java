@@ -70,13 +70,13 @@ public class CartController {
 
     public void editItem(int id){
         vm.setCustomizeItem(id);
-        //viewHandler.openCustomizeItem();
+        viewHandler.openCustomize();
     }
 
     public void setTotal(ArrayList<Item> cart){
         double totalPrice = 0;
         for (int i = 0; i < cart.size(); i++) {
-            totalPrice += cart.get(i).getPrice();
+            totalPrice += cart.get(i).getPrice() + cart.get(i).getIngredientTotalPrice();
         }
         total.setText(total.getText() + String.format("%.2f", totalPrice));
     }
@@ -99,16 +99,7 @@ public class CartController {
             alert.setHeaderText("Your cart is empty!");
             alert.showAndWait();
         }else {
-            int id = vm.getIdForOrder();
-            vm.makeOrder(id);
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("ID");
-            alert.setHeaderText("Your order id is: " + id);
-            alert.showAndWait();
-
-            vm.clearCart();
-            viewHandler.openCustomerMenu();
+            viewHandler.openCard();
         }
     }
 }

@@ -43,6 +43,11 @@ public class ReceptionistMenuClient implements IReceptionistMenuClient {
     }
 
     @Override
+    public void deleteItem(int id) {
+        rmiHandler.deleteItem(id);
+    }
+
+    @Override
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         newOrderSupport.addPropertyChangeListener(listener);
     }

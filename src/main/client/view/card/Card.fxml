@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="390.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.card.CardController">
+   <children>
+      <TextField fx:id="cardNumber" layoutX="59.0" layoutY="142.0" promptText="xxxx xxxx xxxx xxxxx">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="expiration" layoutX="59.0" layoutY="227.0" prefHeight="48.0" prefWidth="104.0" promptText="mm-yy">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="securityNumber" layoutX="196.0" layoutY="227.0" prefHeight="48.0" prefWidth="65.0" promptText="xxx">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <Label layoutX="59.0" layoutY="116.0" text="Card number" />
+      <Label layoutX="196.0" layoutY="204.0" text="Security number" />
+      <Label layoutX="59.0" layoutY="204.0" text="Exipation date" />
+      <Label layoutX="59.0" layoutY="41.0" text="Please select a payement method " />
+      <ComboBox fx:id="payementMethod" layoutX="59.0" layoutY="67.0" prefWidth="150.0" />
+      <Button layoutX="59.0" layoutY="317.0" mnemonicParsing="false" onAction="#OnBack" text="Back" />
+      <Button layoutX="254.0" layoutY="317.0" mnemonicParsing="false" onAction="#OnMakeOrder" text="Make order" />
+      <Label fx:id="response" alignment="CENTER" contentDisplay="CENTER" layoutX="177.0" layoutY="14.0" textAlignment="CENTER" textFill="RED" />
+   </children>
+</AnchorPane>

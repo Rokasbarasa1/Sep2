@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class CartModel implements ICartModel {
     private ICustomerMenuModel customerMenuModel;
     private ICartClient client;
+    private int orderId;
+    private Item custimize;
 
     public CartModel(ICustomerMenuModel customerMenuModel, ICartClient cartClient) {
         this.customerMenuModel = customerMenuModel;
@@ -23,7 +25,8 @@ public class CartModel implements ICartModel {
 
     @Override
     public int getIdForOrder() {
-        return client.getIdForOrder();
+        orderId = client.getIdForOrder();
+        return orderId;
     }
 
     @Override
@@ -40,5 +43,20 @@ public class CartModel implements ICartModel {
     @Override
     public void removeItemFromCart(int id) {
         customerMenuModel.removeItemFromCart(id);
+    }
+
+    @Override
+    public int getIdSaved() {
+        return  orderId;
+    }
+
+    @Override
+    public void setCustomizeItem(int id) {
+        custimize = getCart().get(id);
+    }
+
+    @Override
+    public Item getCustomizeItem() {
+        return custimize;
     }
 }
