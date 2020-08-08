@@ -2,6 +2,7 @@ package main.client.model.receptionistMenu;
 
 import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
 import main.client.model.login.ILoginModel;
+import main.shared.Ingredient;
 import main.shared.Item;
 import main.shared.Order;
 import main.shared.Receptionist;
