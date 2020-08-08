@@ -13,7 +13,7 @@ public class Ingredient implements Serializable {
     public String getName() {
         return name;
     }
-   
+    public double getPrice(){return price; }
 
     @Override
     public String toString(){
