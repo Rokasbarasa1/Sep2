@@ -3,6 +3,8 @@ package main.server.persistence.ingredient;
 import main.server.persistence.database.DataConnectionException;
 import main.server.persistence.database.IDBConnection;
 import main.shared.Ingredient;
+import main.shared.Item;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -74,5 +76,16 @@ public class IngredientDAO implements IIngredientDAO{
             databaseConnection.closeConnection();
         }
         return false;
+    }
+    public int getIngredientID(Ingredient ingredient) {
+        try {
+            PreparedStatement getID = databaseConnection.createPreparedStatement("SELECT OBJECT_ID('" + ingredient.getName() + "')");
+            ResultSet resultSet = getID.executeQuery();
+            int id = resultSet.getInt("ingredient_ID");
+
+        } catch (DataConnectionException | SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
     }
 }

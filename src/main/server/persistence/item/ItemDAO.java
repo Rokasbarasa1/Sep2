@@ -51,8 +51,8 @@ public class ItemDAO implements IItemDAO{
             preparedStatement.setBoolean(2, item.isCustomizable());
             preparedStatement.setDouble(3, item.getPrice());
             preparedStatement.setString(4, item.getGroupName());
-
             int i = preparedStatement.executeUpdate();
+
 
             if (i == 1){
                 return true;
@@ -65,4 +65,16 @@ public class ItemDAO implements IItemDAO{
         return false;
     }
 
+    public int getItemID(Item item) {
+        try {
+            PreparedStatement getID = databaseConnection.createPreparedStatement("SELECT OBJECT_ID('" + item.getName() + "')");
+            ResultSet resultSet = getID.executeQuery();
+            int id = resultSet.getInt("item_ID");
+
+        } catch (DataConnectionException | SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
 }
+
