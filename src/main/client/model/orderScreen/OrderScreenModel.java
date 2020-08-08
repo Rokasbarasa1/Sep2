@@ -1,7 +1,6 @@
 package main.client.model.orderScreen;
 
 import main.client.clientNetworking.orderScreen.IOrderScreenClient;
-import main.shared.Ingredient;
 import main.shared.Item;
 import main.shared.Order;
 

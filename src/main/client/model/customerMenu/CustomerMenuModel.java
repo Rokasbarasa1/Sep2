@@ -1,7 +1,6 @@
 package main.client.model.customerMenu;
 
 import main.client.clientNetworking.customerMenu.ICustomerMenuClient;
-import main.shared.Ingredient;
 import main.shared.Item;
 
 import java.util.ArrayList;
