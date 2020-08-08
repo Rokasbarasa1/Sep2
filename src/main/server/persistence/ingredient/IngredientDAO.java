@@ -78,10 +78,11 @@ public class IngredientDAO implements IIngredientDAO{
         return false;
     }
     public int getIngredientID(Ingredient ingredient) {
+        int id = 0;
         try {
             PreparedStatement getID = databaseConnection.createPreparedStatement("SELECT OBJECT_ID('" + ingredient.getName() + "')");
             ResultSet resultSet = getID.executeQuery();
-            int id = resultSet.getInt("ingredient_ID");
+            id = resultSet.getInt("ingredient_ID");
 
         } catch (DataConnectionException | SQLException e) {
             e.printStackTrace();

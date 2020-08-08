@@ -66,10 +66,11 @@ public class ItemDAO implements IItemDAO{
     }
 
     public int getItemID(Item item) {
+        int id = 0;
         try {
             PreparedStatement getID = databaseConnection.createPreparedStatement("SELECT OBJECT_ID('" + item.getName() + "')");
             ResultSet resultSet = getID.executeQuery();
-            int id = resultSet.getInt("item_ID");
+            id = resultSet.getInt("item_ID");
 
         } catch (DataConnectionException | SQLException e) {
             e.printStackTrace();
