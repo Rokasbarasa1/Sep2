@@ -37,4 +37,42 @@ public class IngredientDAO implements IIngredientDAO{
         }
         return ingredients;
     }
+
+    @Override
+    public boolean createIngredient(Ingredient ingredient) {
+        try{
+            String sql = "INSERT INTO Ingredient VALUES(?,?)";
+            PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
+            preparedStatement.setString(1, ingredient.getName());
+            preparedStatement.setDouble(2, ingredient.getPrice());
+
+            int i = preparedStatement.executeUpdate();
+
+            if (i == 1){
+                return true;
+            }
+        } catch (DataConnectionException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            databaseConnection.closeConnection();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean checkIfIngredientExists(Ingredient ingredient) {
+        try{
+            String sql = "Select * FROM Ingredient where name ="+ingredient.getName();
+            PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
+            int i = preparedStatement.executeUpdate();
+            if (i == 1){
+                return true;
+            }
+        } catch (DataConnectionException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            databaseConnection.closeConnection();
+        }
+        return false;
+    }
 }
