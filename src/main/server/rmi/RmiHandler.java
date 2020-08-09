@@ -89,13 +89,13 @@ public class RmiHandler implements RemoteCommandList {
     @Override
     public String createItem(Item createdItem) throws RemoteException {
         System.out.println("Creating item");
-        return null;
+        return modelFactory.getMenuModel().addItemToMenu(createdItem);
     }
 
     @Override
     public void deleteItem(int id) throws RemoteException {
         System.out.println("Deleting item " + id);
-
+        modelFactory.getMenuModel().deleteItemFromMenu(id);
     }
 
     public void sendUpdateToReceptionists(){

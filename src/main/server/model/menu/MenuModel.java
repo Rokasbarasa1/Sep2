@@ -1,6 +1,5 @@
 package main.server.model.menu;
 
-import main.server.model.menu.IMenuModel;
 import main.server.persistence.ingredient.IIngredientDAO;
 import main.server.persistence.item.IItemDAO;
 import main.shared.Item;
@@ -25,14 +24,14 @@ public class MenuModel implements IMenuModel {
     }
 
     @Override
-    public void addItemToMenu(Item item) {
+    public String addItemToMenu(Item item) {
         ArrayList<Item> items = itemDAO.getMenuItems();
         items.add(item);
+        return null;
     }
 
     @Override
-    public void deleteItemFromMenu(Item item) {
-        ArrayList<Item> items = itemDAO.getMenuItems();
-        items.remove(item);
+    public void deleteItemFromMenu(int id) {
+
     }
 }
