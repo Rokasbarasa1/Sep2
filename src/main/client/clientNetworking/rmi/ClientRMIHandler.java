@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class ClientRMIHandler implements RemoteSender{
     private RemoteCommandList rml;
-    private boolean connected;
     private PropertyChangeSupport newOrderSupport = new PropertyChangeSupport(this);
     private PropertyChangeSupport orderUpdateSupport = new PropertyChangeSupport(this);
 
@@ -24,90 +23,100 @@ public class ClientRMIHandler implements RemoteSender{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
             UnicastRemoteObject.exportObject(this, 0);
             rml = (RemoteCommandList)reg.lookup("point of sales");
-            connected = true;
         }catch (ConnectException e){
-            connected = false;
             e.printStackTrace();
+            System.out.println("Connection stopped");
         }
     }
 
     @Override
-    public void newOrder() throws RemoteException {
+    public void newOrder(){
         newOrderSupport.firePropertyChange("New Order", null, null);
     }
 
     @Override
-    public void newOrderOrStatusUpdate() throws RemoteException {
+    public void newOrderOrStatusUpdate(){
         orderUpdateSupport.firePropertyChange("Updated order list", null, null);
     }
 
-    public void retryConnection(){
-        try{
+    public void retryConnection() throws RemoteException, NotBoundException {
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
             UnicastRemoteObject.exportObject(this, 0);
             rml = (RemoteCommandList)reg.lookup("point of sales");
-            connected = true;
-        }catch (RemoteException |NotBoundException e){
-            connected = false;
-            e.printStackTrace();
-        }
     }
 
     public String login(Receptionist loginCarrier) {
-        if(!connected){
-            retryConnection();
-            if(!connected){
+        try {
+            return rml.login(loginCarrier, this);
+        } catch (RemoteException e) {
+            System.out.println("Retry connection");
+
+            try {
+                retryConnection();
+                return rml.login(loginCarrier, this);
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
                 return "Failed to connect to server";
             }
         }
-
-        try {
-            return rml.login(loginCarrier, this);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "false";
     }
 
     public Receptionist getReceptionistById(int userId) {
         try {
             return rml.getReceptionistById(userId);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                return rml.getReceptionistById(userId);
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return null;
+            }
         }
-        return null;
     }
 
     public ArrayList<Item> getMenu() {
-        if(!connected){
-            retryConnection();
-            if(!connected){
-                //return "Failed to connect to server";
+        try {
+            return rml.getMenu();
+        } catch (RemoteException | NullPointerException e) {
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                return rml.getMenu();
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return null;
             }
         }
-        try {
-            ArrayList<Item> menu = rml.getMenu();
-            return menu;
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     public ArrayList<Order> getOrders() {
         try {
             return rml.getOrders(this);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                return rml.getOrders(this);
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return null;
+            }
         }
-        return null;
     }
 
     public void completeOrder(int id) {
         try {
             rml.completeOrder(id);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                rml.completeOrder(id);
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+            }
         }
     }
 
@@ -115,25 +124,31 @@ public class ClientRMIHandler implements RemoteSender{
         try {
             return rml.getIdForOrder();
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                return rml.getIdForOrder();
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return -1;
+            }
         }
-        return -1;
     }
 
-
-    public void addPropertyChangeListenerNewOrder(PropertyChangeListener listener) {
-        newOrderSupport.addPropertyChangeListener(listener);
-    }
-
-    public void addPropertyChangeListenerOrderListUpdate(PropertyChangeListener listener) {
-        orderUpdateSupport.addPropertyChangeListener(listener);
-    }
-
-    public void makeOrder(Order order) {
+    public String makeOrder(Order order) {
         try {
             rml.makeOrder(order);
+            return "OK";
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                rml.makeOrder(order);
+                return "OK";
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return "No connection to server";
+            }
         }
     }
 
@@ -141,9 +156,44 @@ public class ClientRMIHandler implements RemoteSender{
         try {
             return rml.getIncompleteOrders();
         } catch (RemoteException e) {
-            e.printStackTrace();
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                return rml.getIncompleteOrders();
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return null;
+            }
         }
-        return null;
+    }
+
+    public String createItem(Item createdItem) {
+        try {
+            return rml.createItem(createdItem);
+        } catch (RemoteException e) {
+            try {
+                retryConnection();
+                return rml.createItem(createdItem);
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+                return "Failed to connect";
+            }
+        }
+
+    }
+
+    public void deleteItem(int id) {
+        try {
+            rml.deleteItem(id);
+        } catch (RemoteException e) {
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                rml.deleteItem(id);
+            }catch (RemoteException | NotBoundException i){
+                i.printStackTrace();
+            }
+        }
     }
 
     public void closeConnection() {
@@ -154,20 +204,11 @@ public class ClientRMIHandler implements RemoteSender{
         }
     }
 
-    public String createItem(Item createdItem) {
-        try {
-            return rml.createItem(createdItem);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-        return "Failed to connect";
+    public void addPropertyChangeListenerNewOrder(PropertyChangeListener listener) {
+        newOrderSupport.addPropertyChangeListener(listener);
     }
 
-    public void deleteItem(int id) {
-        try {
-            rml.deleteItem(id);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+    public void addPropertyChangeListenerOrderListUpdate(PropertyChangeListener listener) {
+        orderUpdateSupport.addPropertyChangeListener(listener);
     }
 }

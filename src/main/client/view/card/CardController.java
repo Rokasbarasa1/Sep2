@@ -8,9 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.client.view.ViewHandler;
 import main.client.viewModel.CardViewModel;
-import main.client.viewModel.CartViewModel;
-
-import javax.swing.text.View;
 
 public class CardController {
     @FXML
@@ -53,7 +50,9 @@ public class CardController {
     @FXML
     void OnMakeOrder(ActionEvent event) {
         vm.makeOrder(payementMethod.getValue());
-        if(response.getText().equals("OK")){
+        if (vm.getId() == -1) {
+            response.setText("Problem getting id for order");
+        } else if(response.getText().equals("OK")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Make order");
             alert.setHeaderText("Your order id is: " + vm.getId());

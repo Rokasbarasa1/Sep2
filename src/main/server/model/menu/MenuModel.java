@@ -1,6 +1,5 @@
 package main.server.model.menu;
 
-import main.server.model.menu.IMenuModel;
 import main.server.persistence.ingredient.IIngredientDAO;
 import main.server.persistence.item.IItemDAO;
 import main.shared.Item;
@@ -16,6 +15,7 @@ public class MenuModel implements IMenuModel {
         this.ingredientDAO = ingredientDAO;
     }
 
+    @Override
     public ArrayList<Item> getMenu(){
         ArrayList<Item> items = itemDAO.getMenuItems();
         for (int i = 0; i < items.size(); i++) {

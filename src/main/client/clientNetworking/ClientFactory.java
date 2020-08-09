@@ -2,8 +2,6 @@ package main.client.clientNetworking;
 
 import main.client.clientNetworking.card.CardClient;
 import main.client.clientNetworking.card.ICardClient;
-import main.client.clientNetworking.cart.CartClient;
-import main.client.clientNetworking.cart.ICartClient;
 import main.client.clientNetworking.createItem.CreateItemClient;
 import main.client.clientNetworking.createItem.ICreateItemClient;
 import main.client.clientNetworking.customerMenu.CustomerMenuClient;
@@ -24,7 +22,6 @@ public class ClientFactory {
     private ILoginClient login;
     private IReceptionistMenuClient receptionistMenu;
     private ICustomerMenuClient customerMenu;
-    private ICartClient cart;
     private IOrderScreenClient orderScreen;
     private ICardClient card;
     private ICreateItemClient createItem;
@@ -53,12 +50,6 @@ public class ClientFactory {
         if(customerMenu == null)
             customerMenu = new CustomerMenuClient(rmiHandler);
         return customerMenu;
-    }
-
-    public ICartClient cartClient() {
-        if(cart == null)
-            cart = new CartClient(rmiHandler);
-        return cart;
     }
 
     public IOrderScreenClient orderScreenClient() {
