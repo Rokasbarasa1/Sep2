@@ -56,6 +56,17 @@ public class CreateItemController {
     void OnCreateItem(ActionEvent event) {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
-        vm.createItem(Boolean.getBoolean(toogleGroupValue));
+        System.out.println(Boolean.parseBoolean(toogleGroupValue));
+        vm.createItem(Boolean.parseBoolean(toogleGroupValue));
+        clear();
+        viewHandler.openReceptionistMenu();
+    }
+
+    private void clear() {
+        name.clear();
+        groupName.clear();
+        price.clear();
+        ingredients.clear();
+        response.setText("");
     }
 }

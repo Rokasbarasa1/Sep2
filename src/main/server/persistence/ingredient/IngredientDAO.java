@@ -43,14 +43,12 @@ public class IngredientDAO implements IIngredientDAO{
     @Override
     public boolean createIngredient(Ingredient ingredient) {
         try{
-            String sql = "INSERT INTO Ingredient VALUES(?,?)";
+            String sql =    "insert into Ingredient(ingredientName, price) values (?,?);";
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
             preparedStatement.setString(1, ingredient.getName());
             preparedStatement.setDouble(2, ingredient.getPrice());
-
-            int i = preparedStatement.executeUpdate();
-
-            if (i == 1){
+            int affectedRows = preparedStatement.executeUpdate();
+            if (affectedRows == 0){
                 return true;
             }
         } catch (DataConnectionException | SQLException e) {
@@ -64,29 +62,52 @@ public class IngredientDAO implements IIngredientDAO{
     @Override
     public boolean checkIfIngredientExists(Ingredient ingredient) {
         try{
-            String sql = "Select * FROM Ingredient where name ="+ingredient.getName();
+            String sql = "Select * FROM Ingredient WHERE ingredientName = '"+ingredient.getName() + "';";
             PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
-            int i = preparedStatement.executeUpdate();
-            if (i == 1){
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
                 return true;
+            }else {
+                return false;
+            }
+        } catch (DataConnectionException | SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            databaseConnection.closeConnection();
+        }
+    }
+    public int getIngredientID(Ingredient ingredient) {
+        int id = 0;
+        try {
+            String sql =    "SELECT ingredient_ID FROM Ingredient " +
+                            "WHERE ingredientName = '" + ingredient.getName() +"';";
+            PreparedStatement getID = databaseConnection.createPreparedStatement(sql);
+            ResultSet resultSet = getID.executeQuery();
+            if(resultSet.next()){
+                id = resultSet.getInt("ingredient_ID");
             }
         } catch (DataConnectionException | SQLException e) {
             e.printStackTrace();
         } finally {
             databaseConnection.closeConnection();
         }
-        return false;
+        return id;
     }
-    public int getIngredientID(Ingredient ingredient) {
-        int id = 0;
-        try {
-            PreparedStatement getID = databaseConnection.createPreparedStatement("SELECT OBJECT_ID('" + ingredient.getName() + "')");
-            ResultSet resultSet = getID.executeQuery();
-            id = resultSet.getInt("ingredient_ID");
 
+    @Override
+    public void deleteIngredientsWithoutPairs() {
+        try{
+            String sql = "DELETE FROM Ingredient WHERE ingredient_ID NOT IN (SELECT ingredient_ID FROM ItemIngredient);";
+            PreparedStatement preparedStatement = databaseConnection.createPreparedStatement(sql);
+            int i = preparedStatement.executeUpdate();
+            if(i >0){
+                System.out.println("Ingredients deleted");
+            }
         } catch (DataConnectionException | SQLException e) {
             e.printStackTrace();
+        } finally {
+            databaseConnection.closeConnection();
         }
-        return id;
     }
 }

@@ -1,6 +1,8 @@
 package main.server.persistence;
 
 
+import main.server.persistence.ItemIngredient.IItemIngredientDAO;
+import main.server.persistence.ItemIngredient.ItemIngredientDAO;
 import main.server.persistence.database.IDBConnection;
 import main.server.persistence.ingredient.IIngredientDAO;
 import main.server.persistence.ingredient.IngredientDAO;
@@ -17,6 +19,7 @@ public class DAOFactory {
     private IReceptionistDAO receptionist;
     private IItemDAO item;
     private IIngredientDAO ingredient;
+    private IItemIngredientDAO itemIngredient;
 
 
     public DAOFactory(IDBConnection connect) {
@@ -45,5 +48,11 @@ public class DAOFactory {
         if(ingredient == null)
             ingredient = new IngredientDAO(connect);
         return ingredient;
+    }
+
+    public IItemIngredientDAO getItemIngredientDAO() {
+        if(itemIngredient == null)
+            itemIngredient = new ItemIngredientDAO(connect);
+        return itemIngredient;
     }
 }

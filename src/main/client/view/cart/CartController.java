@@ -31,11 +31,11 @@ public class CartController {
     }
 
     public void populateCart(ArrayList<Item> list) {
-        cartGrid.getColumnConstraints().get(0).setPrefWidth(430);
-        cartGrid.getColumnConstraints().get(0).setMaxWidth(430);
+        cartGrid.getColumnConstraints().get(0).setPrefWidth(420);
+        cartGrid.getColumnConstraints().get(0).setMaxWidth(420);
 
-        cartGrid.getColumnConstraints().get(1).setPrefWidth(30);
-        cartGrid.getColumnConstraints().get(1).setMaxWidth(30);
+        cartGrid.getColumnConstraints().get(1).setPrefWidth(40);
+        cartGrid.getColumnConstraints().get(1).setMaxWidth(40);
 
         cartGrid.getColumnConstraints().get(2).setPrefWidth(85);
         cartGrid.getColumnConstraints().get(2).setMaxWidth(85);

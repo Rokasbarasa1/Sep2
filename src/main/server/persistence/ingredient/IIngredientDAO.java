@@ -8,4 +8,5 @@ public interface IIngredientDAO {
     boolean createIngredient(Ingredient ingredient);
     boolean checkIfIngredientExists(Ingredient ingredient);
     int getIngredientID(Ingredient ingredient);
+    void deleteIngredientsWithoutPairs();
 }

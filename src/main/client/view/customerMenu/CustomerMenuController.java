@@ -38,8 +38,8 @@ public class CustomerMenuController {
         menuGrid.getColumnConstraints().get(0).setPrefWidth(430);
         menuGrid.getColumnConstraints().get(0).setMaxWidth(430);
 
-        menuGrid.getColumnConstraints().get(1).setPrefWidth(30);
-        menuGrid.getColumnConstraints().get(1).setMaxWidth(30);
+        menuGrid.getColumnConstraints().get(1).setPrefWidth(40);
+        menuGrid.getColumnConstraints().get(1).setMaxWidth(40);
 
         menuGrid.getColumnConstraints().get(2).setPrefWidth(85);
         menuGrid.getColumnConstraints().get(2).setMaxWidth(85);
