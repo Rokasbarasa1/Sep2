@@ -7,14 +7,12 @@ import main.shared.Item;
 import java.util.ArrayList;
 
 public class AddItem implements IAddItem {
-    public void addItemWithIngredients(Item item, ArrayList<Ingredient> ingredients){
-
+    public void addItemWithIngredients(Item item){
+        
     }
 
     @Override
     public void setRmiHandler(RmiHandler rmiHandler) {
 
     }
-
-    ;
 }
