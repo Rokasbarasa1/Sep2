@@ -1,6 +1,6 @@
 package main.client;
 
-import com.sun.security.ntlm.Client;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import main.client.clientNetworking.ClientFactory;

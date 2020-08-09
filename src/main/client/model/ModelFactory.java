@@ -56,7 +56,7 @@ public class ModelFactory {
 
     public ICartModel cartModel() {
         if(cart == null)
-            cart = new CartModel(customerMenuModel(), clientFactory.cartClient());
+            cart = new CartModel(customerMenuModel());
         return cart;
     }
 
@@ -68,7 +68,7 @@ public class ModelFactory {
 
     public ICardModel cardModel() {
         if(card == null)
-            card = new CardModel(clientFactory.cardClient(), customerMenuModel(), cartModel());
+            card = new CardModel(clientFactory.cardClient(), customerMenuModel());
         return card;
     }
 

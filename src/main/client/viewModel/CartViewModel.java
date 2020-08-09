@@ -19,18 +19,6 @@ public class CartViewModel {
         model.setCustomizeItem(id);
     }
 
-    public int getIdForOrder() {
-        return model.getIdForOrder();
-    }
-
-    public void makeOrder(int id) {
-        model.makeOrder(id);
-    }
-
-    public void clearCart() {
-        model.clearCart();
-    }
-
     public void removeItemFromCart(int id) {
         model.removeItemFromCart(id);
     }

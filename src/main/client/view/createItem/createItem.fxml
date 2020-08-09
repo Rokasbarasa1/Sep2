@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="403.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.createItem.CreateItemController">
+<AnchorPane prefHeight="403.0" prefWidth="399.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="main.client.view.createItem.CreateItemController">
    <children>
       <Label layoutX="14.0" layoutY="18.0" text="Name of Item" />
       <Label layoutX="15.0" layoutY="43.0" text="Customizable" />

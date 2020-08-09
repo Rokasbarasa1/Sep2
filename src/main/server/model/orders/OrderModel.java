@@ -15,6 +15,24 @@ public class OrderModel implements IOrderModel {
         this.orders = new ArrayList<>();
     }
 
+    @Override
+    public int getIdForOrder() {
+        count++;
+        if(count < 100) {
+            return count;
+        } else {
+            count = 1;
+            return count;
+        }
+    }
+
+    @Override
+    public void makeOrder(Order order) {
+        orders.add(order);
+        rmiHandler.sendUpdateToOrderScreens();
+        rmiHandler.sendUpdateToReceptionists();
+    }
+
     public void setRmiHandler(RmiHandler rmiHandler) {
         this.rmiHandler = rmiHandler;
     }
@@ -36,24 +54,6 @@ public class OrderModel implements IOrderModel {
             }
         }
         return unFinishedOrders;
-    }
-
-    @Override
-    public int getIdForOrder() {
-        count++;
-        if(count < 100) {
-            return count;
-        } else {
-            count = 1;
-            return count;
-        }
-    }
-
-    @Override
-    public void makeOrder(Order order) {
-        orders.add(order);
-        rmiHandler.sendUpdateToOrderScreens();
-        rmiHandler.sendUpdateToReceptionists();
     }
 
     @Override

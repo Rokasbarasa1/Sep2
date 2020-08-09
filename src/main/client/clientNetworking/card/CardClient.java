@@ -10,18 +10,22 @@ public class CardClient implements ICardClient {
         this.rmiHandler = rmiHandler;
     }
 
+    private boolean makePayment(String cardNumber, String expiration, String securityNumber, String method) {
+        return true;
+    }
+
     @Override
-    public String makeOrder(String cardNumber, String expiration, String securityNumber, Order order) {
+    public String makeOrder(String cardNumber, String expiration, String securityNumber, String method, Order order) {
         System.out.println(order.getItemsForPrinting());
-        if(makePayment(cardNumber, expiration, securityNumber)){
-            rmiHandler.makeOrder(order);
-            return "OK";
+        if(makePayment(cardNumber, expiration, securityNumber, method)){
+            return rmiHandler.makeOrder(order);
         }else {
             return "Bad card";
         }
     }
 
-    private boolean makePayment(String cardNumber, String expiration, String securityNumber) {
-        return true;
+    @Override
+    public int getIdForOrder() {
+        return rmiHandler.getIdForOrder();
     }
 }

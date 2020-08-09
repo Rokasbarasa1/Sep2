@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="390.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.card.CardController">
+<AnchorPane prefHeight="390.0" prefWidth="381.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="main.client.view.card.CardController">
    <children>
       <TextField fx:id="cardNumber" layoutX="59.0" layoutY="142.0" promptText="xxxx xxxx xxxx xxxxx">
          <font>
