@@ -69,6 +69,9 @@ public class Item implements Serializable, Cloneable {
         }
         return ingredientString;
     }
+    public ArrayList<Ingredient> getIngredientList(){
+        return ingredients;
+    }
 
     public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;

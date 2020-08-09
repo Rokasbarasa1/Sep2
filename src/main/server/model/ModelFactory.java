@@ -20,7 +20,7 @@ public class ModelFactory {
 
     public IMenuModel getMenuModel() {
         if(menu == null)
-            menu = new MenuModel(daoFactory.getItemDAO(), daoFactory.getIngredientDAO());
+            menu = new MenuModel(daoFactory.getItemDAO(), daoFactory.getIngredientDAO(),daoFactory.getItemIngredientDAO());
         return menu;
     }
 
