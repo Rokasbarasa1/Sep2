@@ -12,6 +12,7 @@ public class ItemModel implements IItemModel {
     private ItemDAO itemDAO;
     private IngredientDAO ingredientDAO;
     private ItemIngredientDAO itemIngredientDAO;
+    private RmiHandler rmiHandler;
 
 
     public ItemModel(ItemDAO itemDAO, IngredientDAO ingredientDAO) {
