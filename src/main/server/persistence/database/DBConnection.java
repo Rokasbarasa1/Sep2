@@ -13,15 +13,9 @@ public class DBConnection implements IDBConnection {
     private final String url = "jdbc:mysql://localhost:3306/sep2?useTimezone=true&serverTimezone=GMT";
     private final String username = "root";
     private final String password = "augis123"; //change to your password
-
-
-    private final String schemaName;
-
-
     private Connection connection;
 
     public DBConnection() {
-        schemaName = "sep2";
     }
 
     public Connection getConnection() {
@@ -52,20 +46,6 @@ public class DBConnection implements IDBConnection {
     }
 
     @Override
-    public PreparedStatement executePreparedQuery(String preparedSql) throws DataConnectionException {
-        Connection connection = getConnection();
-        PreparedStatement preparedStatement;
-        try {
-            preparedStatement = connection.prepareStatement(preparedSql);
-        } catch (SQLException e) {
-            throw new DataConnectionException("Lost connection to database");
-        }
-        assert preparedStatement != null;
-        return preparedStatement;
-
-    }
-
-    @Override
     public PreparedStatement createPreparedStatement(String preparedSql) throws DataConnectionException {
         Connection connection = getConnection();
         PreparedStatement preparedStatement;
@@ -75,15 +55,5 @@ public class DBConnection implements IDBConnection {
             throw new DataConnectionException("Lost connection to database");
         }
         return preparedStatement;
-    }
-
-    @Override
-    public void executeUpdate(PreparedStatement preparedStatement) throws SQLException {
-        preparedStatement.executeUpdate();
-    }
-
-    @Override
-    public String getSchemaName() {
-        return schemaName;
     }
 }

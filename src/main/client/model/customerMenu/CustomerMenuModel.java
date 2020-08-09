@@ -25,21 +25,25 @@ public class CustomerMenuModel implements ICustomerMenuModel{
     @Override
     public ArrayList<Item> getMenu() {
         ArrayList<Item> list = client.getMenu();
-        ArrayList<String> groupNames = new ArrayList<>();
-        ArrayList<Item> listSortedByGroupName = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            if(!groupNames.contains(list.get(i).getGroupName()))
-                groupNames.add(list.get(i).getGroupName());
-        }
-
-        for (int i = 0; i < groupNames.size(); i++) {
-            for (int j = 0; j < list.size(); j++) {
-                if(groupNames.get(i).equals(list.get(j).getGroupName()))
-                    listSortedByGroupName.add(list.get(j));
+        if(list != null){
+            ArrayList<String> groupNames = new ArrayList<>();
+            ArrayList<Item> listSortedByGroupName = new ArrayList<>();
+            for (int i = 0; i < list.size(); i++) {
+                if(!groupNames.contains(list.get(i).getGroupName()))
+                    groupNames.add(list.get(i).getGroupName());
             }
+
+            for (int i = 0; i < groupNames.size(); i++) {
+                for (int j = 0; j < list.size(); j++) {
+                    if(groupNames.get(i).equals(list.get(j).getGroupName()))
+                        listSortedByGroupName.add(list.get(j));
+                }
+            }
+            menu = listSortedByGroupName;
+            return menu;
+        }else {
+            return new ArrayList<>();
         }
-        menu = listSortedByGroupName;
-        return menu;
     }
 
     @Override

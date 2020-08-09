@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class ClientRMIHandler implements RemoteSender{
     private RemoteCommandList rml;
-    private boolean connected;
     private PropertyChangeSupport newOrderSupport = new PropertyChangeSupport(this);
     private PropertyChangeSupport orderUpdateSupport = new PropertyChangeSupport(this);
 
@@ -24,9 +23,7 @@ public class ClientRMIHandler implements RemoteSender{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
             UnicastRemoteObject.exportObject(this, 0);
             rml = (RemoteCommandList)reg.lookup("point of sales");
-            connected = true;
         }catch (ConnectException e){
-            connected = false;
             e.printStackTrace();
             System.out.println("Connection stopped");
         }
@@ -42,16 +39,10 @@ public class ClientRMIHandler implements RemoteSender{
         orderUpdateSupport.firePropertyChange("Updated order list", null, null);
     }
 
-    public void retryConnection(){
-        try{
+    public void retryConnection() throws RemoteException, NotBoundException {
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
             UnicastRemoteObject.exportObject(this, 0);
             rml = (RemoteCommandList)reg.lookup("point of sales");
-            connected = true;
-        }catch (RemoteException |NotBoundException e){
-            connected = false;
-            e.printStackTrace();
-        }
     }
 
     public String login(Receptionist loginCarrier) {
@@ -59,10 +50,11 @@ public class ClientRMIHandler implements RemoteSender{
             return rml.login(loginCarrier, this);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
+
             try {
+                retryConnection();
                 return rml.login(loginCarrier, this);
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return "Failed to connect to server";
             }
@@ -74,10 +66,10 @@ public class ClientRMIHandler implements RemoteSender{
             return rml.getReceptionistById(userId);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 return rml.getReceptionistById(userId);
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return null;
             }
@@ -87,12 +79,12 @@ public class ClientRMIHandler implements RemoteSender{
     public ArrayList<Item> getMenu() {
         try {
             return rml.getMenu();
-        } catch (RemoteException e) {
+        } catch (RemoteException | NullPointerException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 return rml.getMenu();
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return null;
             }
@@ -104,10 +96,10 @@ public class ClientRMIHandler implements RemoteSender{
             return rml.getOrders(this);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 return rml.getOrders(this);
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return null;
             }
@@ -119,10 +111,10 @@ public class ClientRMIHandler implements RemoteSender{
             rml.completeOrder(id);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 rml.completeOrder(id);
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
             }
         }
@@ -133,10 +125,10 @@ public class ClientRMIHandler implements RemoteSender{
             return rml.getIdForOrder();
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 return rml.getIdForOrder();
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return -1;
             }
@@ -149,11 +141,11 @@ public class ClientRMIHandler implements RemoteSender{
             return "OK";
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 rml.makeOrder(order);
                 return "OK";
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return "No connection to server";
             }
@@ -165,10 +157,10 @@ public class ClientRMIHandler implements RemoteSender{
             return rml.getIncompleteOrders();
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 return rml.getIncompleteOrders();
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return null;
             }
@@ -179,11 +171,10 @@ public class ClientRMIHandler implements RemoteSender{
         try {
             return rml.createItem(createdItem);
         } catch (RemoteException e) {
-            System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 return rml.createItem(createdItem);
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return "Failed to connect";
             }
@@ -196,10 +187,10 @@ public class ClientRMIHandler implements RemoteSender{
             rml.deleteItem(id);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
-            retryConnection();
             try {
+                retryConnection();
                 rml.deleteItem(id);
-            }catch (RemoteException i){
+            }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
             }
         }
