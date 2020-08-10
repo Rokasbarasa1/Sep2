@@ -14,10 +14,10 @@ public interface RemoteCommandList extends Remote {
     ArrayList<Item> getMenu() throws RemoteException;                                       // Give me all the items that are in the database... the menu
     ArrayList<Order> getIncompleteOrders() throws RemoteException;                          // Give all the unfinished orders
     ArrayList<Order> getOrders(RemoteSender sender) throws RemoteException;                 // Give me all the orders, finished or unfinished
-    void completeOrder(int id) throws RemoteException;                                      // Set the complete status of this order to true
+    String completeOrder(int id) throws RemoteException;                                      // Set the complete status of this order to true
     int getIdForOrder() throws RemoteException;                                             // I dont know which id is taken or not. I need you to give my order an id.
     String makeOrder(Order order) throws RemoteException;                                     // Put the order into the orderModel order list. Basicaly new order
     void closeConnection(RemoteSender clientRMIHandler) throws RemoteException;             // Removes Remote senders from list
     String createItem(Item createdItem) throws RemoteException;                             // Create the item,  and if it was created give me "OK" as string back
-    void deleteItem(int id) throws RemoteException;                                         // Delete the item by specified id and the delete the ItemIngredient things for it.
+    String deleteItem(int id) throws RemoteException;                                         // Delete the item by specified id and the delete the ItemIngredient things for it.
 }

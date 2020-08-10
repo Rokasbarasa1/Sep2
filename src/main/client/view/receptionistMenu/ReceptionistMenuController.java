@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -28,13 +29,16 @@ public class ReceptionistMenuController {
     private TableColumn<Item, Boolean> menuCustomizable;
     @FXML
     private TableColumn<Item, String> menuGroupName;
-
+    @FXML
+    private Label menuResponse;
     @FXML
     private TableView<Order> incompleteOrderTable;
     @FXML
     private TableColumn<Order, String> tableIdOrder;
     @FXML
     private TableColumn<Order, String> tableItemsOrder;
+    @FXML
+    private Label orderResponse;
 
 
     private ViewHandler viewHandler;
@@ -52,6 +56,8 @@ public class ReceptionistMenuController {
         menuPrice.setCellValueFactory(new PropertyValueFactory<Item, Double>("price"));
         menuCustomizable.setCellValueFactory(new PropertyValueFactory<Item, Boolean>("customizable"));
         menuGroupName.setCellValueFactory(new PropertyValueFactory<Item, String>("groupName"));
+        orderResponse.textProperty().bindBidirectional(vm.orderResponseProperty());
+        menuResponse.textProperty().bindBidirectional(vm.menuResponseProperty());
         menuItems.addAll(vm.getMenu());
         menuTable.setItems(menuItems);
 
@@ -106,9 +112,11 @@ public class ReceptionistMenuController {
         Item selectedItem = menuTable.getSelectionModel().getSelectedItem();
         if(selectedItem != null){
             vm.deleteItem(selectedItem.getID());
-            menuTable.getItems().clear();
-            menuItems.addAll(vm.getMenu());
-            menuTable.setItems(menuItems);
+            if(menuResponse.getText().equals("Success")){
+                menuTable.getItems().clear();
+                menuItems.addAll(vm.getMenu());
+                menuTable.setItems(menuItems);
+            }
         }
     }
 }

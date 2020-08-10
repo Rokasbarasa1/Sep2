@@ -58,7 +58,7 @@ public class OrderModel implements IOrderModel {
     }
 
     @Override
-    public void completeID(int ID) {
+    public String completeID(int ID) {
         for (int i = 0; i < orders.size(); i++){
             if (orders.get(i).getID() == ID){
                 orders.get(i).setFinished(true);
@@ -80,5 +80,6 @@ public class OrderModel implements IOrderModel {
                 break;
             }
         }
+        return "Success";
     }
 }

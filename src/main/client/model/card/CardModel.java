@@ -26,7 +26,11 @@ public class CardModel implements ICardModel{
     @Override
     public String makeOrder(String cardNumber, String expiration, String securityNumber, String method) {
         id = client.getIdForOrder();
-        Order order = new Order(id, menuModel.getCart());
-        return client.makeOrder(cardNumber, expiration, securityNumber, method, order);
+        if(id != -1){
+            Order order = new Order(id, menuModel.getCart());
+            return client.makeOrder(cardNumber, expiration, securityNumber, method, order);
+        }else {
+            return "Problem getting id for order";
+        }
     }
 }

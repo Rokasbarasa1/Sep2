@@ -1,5 +1,7 @@
 package main.client.viewModel;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import main.client.model.receptionistMenu.IReceptionistMenuModel;
 import main.shared.Item;
 import main.shared.Order;
@@ -10,9 +12,14 @@ import java.util.ArrayList;
 
 public class ReceptionistMenuViewModel implements PropertyChangeSubject {
     private IReceptionistMenuModel model;
+    private StringProperty menuResponse;
+    private StringProperty orderResponse;
     private PropertyChangeSupport newOrderSupport = new PropertyChangeSupport(this);
+
     public ReceptionistMenuViewModel(IReceptionistMenuModel receptionistMenuModel) {
         this.model = receptionistMenuModel;
+        menuResponse = new SimpleStringProperty();
+        orderResponse = new SimpleStringProperty();
         model.addPropertyChangeListener(evt -> newOrder());
     }
 
@@ -38,10 +45,18 @@ public class ReceptionistMenuViewModel implements PropertyChangeSubject {
     }
 
     public void completeOrder(int id) {
-        model.completeOrder(id);
+        orderResponse.setValue(model.completeOrder(id));
     }
 
     public void deleteItem(int id) {
-        model.deleteItem(id);
+        menuResponse.setValue(model.deleteItem(id));
+    }
+
+    public StringProperty orderResponseProperty() {
+        return orderResponse;
+    }
+
+    public StringProperty menuResponseProperty() {
+        return menuResponse;
     }
 }
