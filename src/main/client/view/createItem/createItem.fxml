@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="403.0" prefWidth="399.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="main.client.view.createItem.CreateItemController">
+<AnchorPane prefHeight="403.0" prefWidth="424.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.createItem.CreateItemController">
    <children>
       <Label layoutX="14.0" layoutY="18.0" text="Name of Item" />
       <Label layoutX="15.0" layoutY="43.0" text="Customizable" />
@@ -17,8 +17,8 @@
       <TextField fx:id="name" layoutX="92.0" layoutY="14.0" />
       <TextField fx:id="groupName" layoutX="92.0" layoutY="91.0" />
       <TextField fx:id="price" layoutX="92.0" layoutY="66.0" />
-      <TextArea fx:id="ingredients" layoutX="43.0" layoutY="209.0" prefHeight="138.0" prefWidth="313.0" wrapText="true" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="184.0" prefHeight="17.0" prefWidth="330.0" text="Non customizable Format : (ingredient, ingredient)" textAlignment="CENTER" wrapText="true" />
+      <TextArea fx:id="ingredients" layoutX="21.0" layoutY="215.0" prefHeight="138.0" prefWidth="391.0" wrapText="true" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="185.0" prefHeight="17.0" prefWidth="330.0" text="Non customizable Format : (ingredient, ingredient)" textAlignment="CENTER" wrapText="true" />
       <Button layoutX="15.0" layoutY="369.0" mnemonicParsing="false" onAction="#OnBack" text="Back" />
       <Button layoutX="307.0" layoutY="369.0" mnemonicParsing="false" onAction="#OnCreateItem" text="Create Item" />
       <Label fx:id="response" layoutX="65.0" layoutY="371.0" prefHeight="21.0" prefWidth="238.0" textAlignment="CENTER">
@@ -28,8 +28,8 @@
       </Label>
       <RadioButton fx:id="tureRadio" layoutX="102.0" layoutY="43.0" mnemonicParsing="false" text="True" />
       <RadioButton fx:id="falseRadio" layoutX="156.0" layoutY="43.0" mnemonicParsing="false" text="False" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" prefHeight="17.0" prefWidth="384.0" text="Customizable Format : (ingredient $(price for extra) , ingredient $(price for extra))" textAlignment="CENTER" wrapText="true" />
-      <Label layoutX="160.0" layoutY="134.0" text="Ingredients">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="159.0" prefHeight="17.0" prefWidth="434.0" text="Customizable Format : (ingredient =(price for extra) , ingredient =(price for extra))" textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="177.0" layoutY="134.0" text="Ingredients">
          <font>
             <Font size="16.0" />
          </font>

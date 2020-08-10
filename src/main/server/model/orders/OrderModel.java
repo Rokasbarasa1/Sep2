@@ -27,10 +27,11 @@ public class OrderModel implements IOrderModel {
     }
 
     @Override
-    public void makeOrder(Order order) {
+    public String makeOrder(Order order) {
         orders.add(order);
         rmiHandler.sendUpdateToOrderScreens();
         rmiHandler.sendUpdateToReceptionists();
+        return "OK";
     }
 
     public void setRmiHandler(RmiHandler rmiHandler) {
