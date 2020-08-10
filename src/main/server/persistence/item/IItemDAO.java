@@ -8,4 +8,5 @@ public interface IItemDAO {
     ArrayList<Item> getMenuItems();
     boolean addItem(Item item);
     int getItemID(Item item);
+    void deleteItemById(int id);
 }
