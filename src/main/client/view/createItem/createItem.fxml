@@ -20,8 +20,8 @@
       <TextArea fx:id="ingredients" layoutX="21.0" layoutY="215.0" prefHeight="138.0" prefWidth="391.0" wrapText="true" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="185.0" prefHeight="17.0" prefWidth="330.0" text="Non customizable Format : (ingredient, ingredient)" textAlignment="CENTER" wrapText="true" />
       <Button layoutX="15.0" layoutY="369.0" mnemonicParsing="false" onAction="#OnBack" text="Back" />
-      <Button layoutX="307.0" layoutY="369.0" mnemonicParsing="false" onAction="#OnCreateItem" text="Create Item" />
-      <Label fx:id="response" layoutX="65.0" layoutY="371.0" prefHeight="21.0" prefWidth="238.0" textAlignment="CENTER">
+      <Button layoutX="343.0" layoutY="369.0" mnemonicParsing="false" onAction="#OnCreateItem" text="Create Item" />
+      <Label fx:id="response" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="371.0" prefHeight="21.0" prefWidth="267.0" textAlignment="CENTER" textFill="RED">
          <font>
             <Font size="15.0" />
          </font>

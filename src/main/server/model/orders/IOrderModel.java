@@ -11,6 +11,6 @@ public interface IOrderModel {
     ArrayList<Order> getUnfinishedOrders();
     int getIdForOrder();
     String makeOrder(Order order);
-    void completeID(int ID);
+    String completeID(int ID);
     void setRmiHandler(RmiHandler rmiHandler);
 }

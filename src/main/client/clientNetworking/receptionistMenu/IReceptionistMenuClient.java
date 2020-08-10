@@ -11,6 +11,6 @@ public interface IReceptionistMenuClient extends PropertyChangeSubject {
     Receptionist getReceptionist(int currentUser);
     ArrayList<Item> getMenu();
     ArrayList<Order> getIncompleteOrders();
-    void completeOrder(int id);
-    void deleteItem(int id);
+    String completeOrder(int id);
+    String deleteItem(int id);
 }

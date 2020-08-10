@@ -1,5 +1,6 @@
 package main.client.view.createItem;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -58,8 +59,10 @@ public class CreateItemController {
         String toogleGroupValue = selectedRadioButton.getText();
         System.out.println(Boolean.parseBoolean(toogleGroupValue));
         vm.createItem(Boolean.parseBoolean(toogleGroupValue));
-        clear();
-        viewHandler.openReceptionistMenu();
+        if(response.getText().equals("OK")){
+            clear();
+            viewHandler.openReceptionistMenu();
+        }
     }
 
     private void clear() {
