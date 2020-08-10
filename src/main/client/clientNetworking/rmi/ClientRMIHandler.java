@@ -137,14 +137,12 @@ public class ClientRMIHandler implements RemoteSender{
 
     public String makeOrder(Order order) {
         try {
-            rml.makeOrder(order);
-            return "OK";
+            return rml.makeOrder(order);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
             try {
                 retryConnection();
-                rml.makeOrder(order);
-                return "OK";
+                return rml.makeOrder(order);
             }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
                 return "No connection to server";

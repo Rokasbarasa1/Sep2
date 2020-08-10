@@ -15,7 +15,7 @@ public class CreateItemModel implements ICreateItemModel{
 
     @Override
     public String createItem(String name, boolean customizable, String ingredients, String price, String groupName) {
-        if(!customizable){
+        if(customizable == false){
             String[] ingredientsSplit = ingredients.split(", ");
             ArrayList<Ingredient> ingredientsArray = new ArrayList<>();
             for (int i = 0; i < ingredientsSplit.length; i++) {
@@ -29,7 +29,7 @@ public class CreateItemModel implements ICreateItemModel{
             String[] ingredientsSplit = ingredients.split(", ");
             ArrayList<Ingredient> ingredientsArray = new ArrayList<>();
             for (int i = 0; i < ingredientsSplit.length; i++) {
-                String[] nameAndPrice = ingredientsSplit[i].split(" $");
+                String[] nameAndPrice = ingredientsSplit[i].split(" =");
                 if(nameAndPrice.length == 2){
                     Ingredient ingredient = new Ingredient(nameAndPrice[0], Double.parseDouble(nameAndPrice[1]));
                     ingredientsArray.add(ingredient);

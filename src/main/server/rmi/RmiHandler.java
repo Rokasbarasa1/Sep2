@@ -70,9 +70,9 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     @Override
-    public void makeOrder(Order order) throws RemoteException {
+    public String makeOrder(Order order) throws RemoteException {
         System.out.println("Making order");
-        modelFactory.getOrderModel().makeOrder(order);
+        return modelFactory.getOrderModel().makeOrder(order);
     }
 
     @Override
