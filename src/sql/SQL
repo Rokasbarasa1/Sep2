@@ -50,6 +50,12 @@ insert into Ingredient(ingredientName, price) values ('bread', 2);
 insert into Ingredient(ingredientName, price) values ('beef', 10);
 insert into Ingredient(ingredientName, price) values ('cheese', 5);
 insert into Ingredient(ingredientName, price) values ('tomato', 3);
+insert into Ingredient(ingredientName, price) values ('gravy', 2);
+insert into Ingredient(ingredientName, price) values ('ketchup', 2);
+insert into Ingredient(ingredientName, price) values ('potatoes', 2);
+insert into Ingredient(ingredientName, price) values ('stir fry vegetables', 2);
+insert into Ingredient(ingredientName, price) values ('beef patty', 2);
+
 select * from Ingredient;
 
 CREATE TABLE ItemIngredient(
@@ -59,7 +65,15 @@ CREATE TABLE ItemIngredient(
         foreign key (ingredient_ID) references Ingredient(ingredient_ID)
 );
 insert into ItemIngredient(item_ID,ingredient_ID)values(1,1);
-insert into ItemIngredient(item_ID,ingredient_ID)values(1,2);
+insert into ItemIngredient(item_ID,ingredient_ID)values(1,9);
 insert into ItemIngredient(item_ID,ingredient_ID)values(1,3);
-insert into ItemIngredient(item_ID,ingredient_ID)values(1,4);
+insert into ItemIngredient(item_ID,ingredient_ID)values(2,2);
+insert into ItemIngredient(item_ID,ingredient_ID)values(2,6);
+insert into ItemIngredient(item_ID,ingredient_ID)values(2,7);
+insert into ItemIngredient(item_ID,ingredient_ID)values(3,2);
+insert into ItemIngredient(item_ID,ingredient_ID)values(3,8);
+insert into ItemIngredient(item_ID,ingredient_ID)values(3,6);
+insert into ItemIngredient(item_ID,ingredient_ID)values(5,1);
+insert into ItemIngredient(item_ID,ingredient_ID)values(5,9);
+
 select * from ItemIngredient;

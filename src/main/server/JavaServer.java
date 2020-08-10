@@ -12,7 +12,6 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class JavaServer {
-
     public static void main(String[] args){
         IDBConnection connect = new DBConnection();
         DAOFactory DAOFactory = new DAOFactory(connect);
