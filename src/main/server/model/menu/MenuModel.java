@@ -42,9 +42,10 @@ public class MenuModel implements IMenuModel {
     }
 
     @Override
-    public void deleteItemFromMenu(int id) {
+    public String deleteItemFromMenu(int id) {
         itemIngredientDAO.deleteAllByItemID(id);
         itemDAO.deleteItemById(id);
         ingredientDAO.deleteIngredientsWithoutPairs();
+        return "Success";
     }
 }

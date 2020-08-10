@@ -27,10 +27,11 @@ public class OrderModel implements IOrderModel {
     }
 
     @Override
-    public void makeOrder(Order order) {
+    public String makeOrder(Order order) {
         orders.add(order);
         rmiHandler.sendUpdateToOrderScreens();
         rmiHandler.sendUpdateToReceptionists();
+        return "OK";
     }
 
     public void setRmiHandler(RmiHandler rmiHandler) {
@@ -57,7 +58,7 @@ public class OrderModel implements IOrderModel {
     }
 
     @Override
-    public void completeID(int ID) {
+    public String completeID(int ID) {
         for (int i = 0; i < orders.size(); i++){
             if (orders.get(i).getID() == ID){
                 orders.get(i).setFinished(true);
@@ -79,5 +80,6 @@ public class OrderModel implements IOrderModel {
                 break;
             }
         }
+        return "Success";
     }
 }

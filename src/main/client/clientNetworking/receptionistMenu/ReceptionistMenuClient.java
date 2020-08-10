@@ -38,13 +38,13 @@ public class ReceptionistMenuClient implements IReceptionistMenuClient {
     }
 
     @Override
-    public void completeOrder(int id) {
-        rmiHandler.completeOrder(id);
+    public String completeOrder(int id) {
+        return rmiHandler.completeOrder(id);
     }
 
     @Override
-    public void deleteItem(int id) {
-        rmiHandler.deleteItem(id);
+    public String deleteItem(int id) {
+        return rmiHandler.deleteItem(id);
     }
 
     @Override

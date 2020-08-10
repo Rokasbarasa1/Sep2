@@ -12,6 +12,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class ClientRMIHandler implements RemoteSender{
     private RemoteCommandList rml;
@@ -24,8 +25,7 @@ public class ClientRMIHandler implements RemoteSender{
             UnicastRemoteObject.exportObject(this, 0);
             rml = (RemoteCommandList)reg.lookup("point of sales");
         }catch (ConnectException e){
-            e.printStackTrace();
-            System.out.println("Connection stopped");
+            System.out.println("Connection failed");
         }
     }
 
@@ -39,18 +39,21 @@ public class ClientRMIHandler implements RemoteSender{
         orderUpdateSupport.firePropertyChange("Updated order list", null, null);
     }
 
-    public void retryConnection() throws RemoteException, NotBoundException {
+    public void retryConnection() throws RemoteException, NotBoundException, ConnectException{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
-            UnicastRemoteObject.exportObject(this, 0);
-            rml = (RemoteCommandList)reg.lookup("point of sales");
+            //UnicastRemoteObject.exportObject(this, 0);
+            try {
+                rml = (RemoteCommandList)reg.lookup("point of sales");
+            } catch (ConnectException e){
+                throw new ConnectException("Not working connection");
+            }
     }
 
     public String login(Receptionist loginCarrier) {
         try {
             return rml.login(loginCarrier, this);
-        } catch (RemoteException e) {
+        } catch (RemoteException | NullPointerException e) {
             System.out.println("Retry connection");
-
             try {
                 retryConnection();
                 return rml.login(loginCarrier, this);
@@ -106,16 +109,17 @@ public class ClientRMIHandler implements RemoteSender{
         }
     }
 
-    public void completeOrder(int id) {
+    public String completeOrder(int id) {
         try {
-            rml.completeOrder(id);
+            return rml.completeOrder(id);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
             try {
                 retryConnection();
-                rml.completeOrder(id);
+                return rml.completeOrder(id);
             }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
+                return "Failed to connect to server";
             }
         }
     }
@@ -137,15 +141,13 @@ public class ClientRMIHandler implements RemoteSender{
 
     public String makeOrder(Order order) {
         try {
-            rml.makeOrder(order);
-            return "OK";
+            return rml.makeOrder(order);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
             try {
                 retryConnection();
-                rml.makeOrder(order);
-                return "OK";
-            }catch (RemoteException | NotBoundException i){
+                return rml.makeOrder(order);
+            }catch (Exception i){
                 i.printStackTrace();
                 return "No connection to server";
             }
@@ -174,24 +176,24 @@ public class ClientRMIHandler implements RemoteSender{
             try {
                 retryConnection();
                 return rml.createItem(createdItem);
-            }catch (RemoteException | NotBoundException i){
+            }catch (Exception i){
                 i.printStackTrace();
                 return "Failed to connect";
             }
         }
-
     }
 
-    public void deleteItem(int id) {
+    public String deleteItem(int id) {
         try {
-            rml.deleteItem(id);
+            return rml.deleteItem(id);
         } catch (RemoteException e) {
             System.out.println("Retry connection");
             try {
                 retryConnection();
-                rml.deleteItem(id);
+                return rml.deleteItem(id);
             }catch (RemoteException | NotBoundException i){
                 i.printStackTrace();
+                return "Failed to connect to server";
             }
         }
     }

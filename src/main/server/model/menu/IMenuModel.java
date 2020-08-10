@@ -7,5 +7,5 @@ import java.util.ArrayList;
 public interface IMenuModel {
     ArrayList<Item> getMenu();
     String addItemToMenu(Item item);
-    void deleteItemFromMenu(int id);
+    String deleteItemFromMenu(int id);
 }

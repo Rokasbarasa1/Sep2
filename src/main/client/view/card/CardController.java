@@ -50,9 +50,7 @@ public class CardController {
     @FXML
     void OnMakeOrder(ActionEvent event) {
         vm.makeOrder(payementMethod.getValue());
-        if (vm.getId() == -1) {
-            response.setText("Problem getting id for order");
-        } else if(response.getText().equals("OK")){
+        if(response.getText().equals("OK")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Make order");
             alert.setHeaderText("Your order id is: " + vm.getId());

@@ -10,7 +10,7 @@ public interface IOrderModel {
     ArrayList<Order> getOrders();
     ArrayList<Order> getUnfinishedOrders();
     int getIdForOrder();
-    void makeOrder(Order order);
-    void completeID(int ID);
+    String makeOrder(Order order);
+    String completeID(int ID);
     void setRmiHandler(RmiHandler rmiHandler);
 }

@@ -43,13 +43,13 @@ public class ReceptionistMenuModel implements IReceptionistMenuModel{
     }
 
     @Override
-    public void completeOrder(int id) {
-        client.completeOrder(id);
+    public String completeOrder(int id) {
+        return client.completeOrder(id);
     }
 
     @Override
-    public void deleteItem(int id) {
-        client.deleteItem(id);
+    public String deleteItem(int id) {
+        return client.deleteItem(id);
     }
 
     public void newOrder(){

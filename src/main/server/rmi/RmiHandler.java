@@ -58,9 +58,9 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     @Override
-    public void completeOrder(int id) throws RemoteException {
+    public String completeOrder(int id) throws RemoteException {
         System.out.println("Setting order status to complete");
-        modelFactory.getOrderModel().completeID(id);
+        return modelFactory.getOrderModel().completeID(id);
     }
 
     @Override
@@ -70,9 +70,9 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     @Override
-    public void makeOrder(Order order) throws RemoteException {
+    public String makeOrder(Order order) throws RemoteException {
         System.out.println("Making order");
-        modelFactory.getOrderModel().makeOrder(order);
+        return modelFactory.getOrderModel().makeOrder(order);
     }
 
     @Override
@@ -93,9 +93,9 @@ public class RmiHandler implements RemoteCommandList {
     }
 
     @Override
-    public void deleteItem(int id) throws RemoteException {
+    public String deleteItem(int id) throws RemoteException {
         System.out.println("Deleting item " + id);
-        modelFactory.getMenuModel().deleteItemFromMenu(id);
+        return modelFactory.getMenuModel().deleteItemFromMenu(id);
     }
 
     public void sendUpdateToReceptionists(){
