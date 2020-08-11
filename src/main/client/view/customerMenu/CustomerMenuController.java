@@ -70,12 +70,12 @@ public class CustomerMenuController {
     }
 
     @FXML
-    void OnCancelOrder(ActionEvent event) {
+    void OnCancelOrder() {
         vm.clear();
     }
 
     @FXML
-    void OnViewCart(ActionEvent event) {
+    void OnViewCart() {
         viewHandler.openCart();
     }
 }

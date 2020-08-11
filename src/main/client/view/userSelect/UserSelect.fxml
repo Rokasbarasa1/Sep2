@@ -27,5 +27,6 @@
             <Font size="64.0" />
          </font>
       </Label>
+      <Label fx:id="response" layoutX="174.0" layoutY="294.0" prefHeight="17.0" prefWidth="272.0" />
    </children>
 </AnchorPane>

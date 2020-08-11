@@ -87,12 +87,20 @@ public class CartController {
     }
 
     @FXML
-    void OnBackToMenu(ActionEvent event) {
-        viewHandler.openCustomerMenu();
+    void OnBackToMenu() {
+
+        if(vm.testConnection()){
+            viewHandler.openCustomerMenu();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Alert");
+            alert.setHeaderText("No connection to server!");
+            alert.showAndWait();
+        }
     }
 
     @FXML
-    void OnMakeOrder(ActionEvent event) {
+    void OnMakeOrder() {
         if(vm.getCart().size() == 0){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Alert");

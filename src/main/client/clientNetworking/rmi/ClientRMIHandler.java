@@ -41,7 +41,6 @@ public class ClientRMIHandler implements RemoteSender{
 
     public void retryConnection() throws RemoteException, NotBoundException, ConnectException{
             Registry reg = LocateRegistry.getRegistry("localhost", 1099);
-            //UnicastRemoteObject.exportObject(this, 0);
             try {
                 rml = (RemoteCommandList)reg.lookup("point of sales");
             } catch (ConnectException e){
@@ -97,12 +96,12 @@ public class ClientRMIHandler implements RemoteSender{
     public ArrayList<Order> getOrders() {
         try {
             return rml.getOrders(this);
-        } catch (RemoteException e) {
+        } catch (RemoteException | NullPointerException  e) {
             System.out.println("Retry connection");
             try {
                 retryConnection();
                 return rml.getOrders(this);
-            }catch (RemoteException | NotBoundException i){
+            }catch (RemoteException | NullPointerException |NotBoundException i){
                 i.printStackTrace();
                 return null;
             }
@@ -203,6 +202,23 @@ public class ClientRMIHandler implements RemoteSender{
             rml.closeConnection(this);
         } catch (RemoteException e) {
             e.printStackTrace();
+        }
+    }
+
+    public boolean testConnection() {
+        try {
+            rml.testConnection();
+            return true;
+        } catch (RemoteException | NullPointerException e) {
+            System.out.println("Retry connection");
+            try {
+                retryConnection();
+                rml.testConnection();
+                return true;
+            }catch (RemoteException | NullPointerException |NotBoundException i){
+                i.printStackTrace();
+                return false;
+            }
         }
     }
 

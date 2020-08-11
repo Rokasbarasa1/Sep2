@@ -42,13 +42,13 @@ public class CardController {
     }
 
     @FXML
-    void OnBack(ActionEvent event) {
+    void OnBack() {
         clearCardDetails();
         viewHandler.openCart();
     }
 
     @FXML
-    void OnMakeOrder(ActionEvent event) {
+    void OnMakeOrder() {
         vm.makeOrder(payementMethod.getValue());
         if(response.getText().equals("OK")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

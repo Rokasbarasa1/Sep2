@@ -30,7 +30,7 @@ public class CardModel implements ICardModel{
             Order order = new Order(id, menuModel.getCart());
             return client.makeOrder(cardNumber, expiration, securityNumber, method, order);
         }else {
-            return "Problem getting id for order";
+            return "Problem getting id for order. Possibly connection problem";
         }
     }
 }

@@ -1,9 +1,6 @@
 package main.client.model;
 
-import com.sun.security.ntlm.Client;
 import main.client.clientNetworking.ClientFactory;
-import main.client.clientNetworking.card.ICardClient;
-import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
 import main.client.model.card.CardModel;
 import main.client.model.card.ICardModel;
 import main.client.model.cart.CartModel;
@@ -20,6 +17,8 @@ import main.client.model.orderScreen.IOrderScreenModel;
 import main.client.model.orderScreen.OrderScreenModel;
 import main.client.model.receptionistMenu.IReceptionistMenuModel;
 import main.client.model.receptionistMenu.ReceptionistMenuModel;
+import main.client.model.userSelect.IUserSelectModel;
+import main.client.model.userSelect.UserSelectModel;
 
 public class ModelFactory {
     private ClientFactory clientFactory;
@@ -31,6 +30,7 @@ public class ModelFactory {
     private ICardModel card;
     private ICreateItemModel createItem;
     private ICustomizeModel customize;
+    private IUserSelectModel userSelect;
 
     public ModelFactory(ClientFactory clientFactory) {
         this.clientFactory = clientFactory;
@@ -56,7 +56,7 @@ public class ModelFactory {
 
     public ICartModel cartModel() {
         if(cart == null)
-            cart = new CartModel(customerMenuModel());
+            cart = new CartModel(customerMenuModel(), userSelect);
         return cart;
     }
 
@@ -82,5 +82,11 @@ public class ModelFactory {
         if(customize == null)
             customize = new CustomizeModel(cartModel());
         return customize;
+    }
+
+    public IUserSelectModel userSelectModel() {
+        if(userSelect == null)
+            userSelect = new UserSelectModel(clientFactory.userSelectClient());
+        return userSelect;
     }
 }

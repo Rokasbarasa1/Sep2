@@ -26,7 +26,7 @@ public class LoginController {
     }
 
     @FXML
-    void OnLogin(ActionEvent event) {
+    void OnLogin() {
         vm.login();
         if(response.getText().equals("Login successful")){
             viewHandler.openReceptionistMenu();

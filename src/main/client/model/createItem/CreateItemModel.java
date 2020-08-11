@@ -43,4 +43,9 @@ public class CreateItemModel implements ICreateItemModel{
             return client.createItem(createdItem);
         }
     }
+
+    @Override
+    public boolean testConnection() {
+        return client.testConnection();
+    }
 }

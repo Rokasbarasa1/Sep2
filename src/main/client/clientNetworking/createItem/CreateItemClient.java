@@ -14,4 +14,9 @@ public class CreateItemClient implements ICreateItemClient{
     public String createItem(Item createdItem) {
         return rmiHandler.createItem(createdItem);
     }
+
+    @Override
+    public boolean testConnection() {
+        return rmiHandler.testConnection();
+    }
 }

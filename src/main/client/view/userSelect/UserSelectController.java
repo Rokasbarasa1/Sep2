@@ -1,28 +1,43 @@
 package main.client.view.userSelect;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import main.client.view.ViewHandler;
+import main.client.viewModel.UserSelectViewModel;
 
 public class UserSelectController {
-    private ViewHandler viewHandler;
+    @FXML
+    private Label response;
 
-    public void init(ViewHandler viewHandler) {
+    private ViewHandler viewHandler;
+    private UserSelectViewModel vm;
+
+    public void init(ViewHandler viewHandler, UserSelectViewModel userSelectViewModel) {
+        vm = userSelectViewModel;
         this.viewHandler = viewHandler;
     }
 
     @FXML
-    void OnCustomer(ActionEvent event) {
-        viewHandler.openCustomerMenu();
+    void OnCustomer() {
+        if(vm.testConnection()){
+            viewHandler.openCustomerMenu();
+        }else{
+            response.setText("Cannot open Customer. No connection.");
+        }
     }
 
     @FXML
-    void OnOrderScreen(ActionEvent event) {
-        viewHandler.openOrderScreen();
+    void OnOrderScreen() {
+        if(vm.testConnection()){
+            viewHandler.openOrderScreen();
+        }else{
+            response.setText("Cannot open order screen. No connection.");
+        }
+
     }
 
     @FXML
-    void OnWorker(ActionEvent event) {
+    void OnWorker() {
         viewHandler.openLogin();
     }
 }

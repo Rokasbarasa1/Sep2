@@ -59,4 +59,8 @@ public class CreateItemViewModel {
             response.setValue("Must enter all values");
         }
     }
+
+    public boolean testConnection() {
+        return model.testConnection();
+    }
 }

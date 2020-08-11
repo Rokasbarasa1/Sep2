@@ -98,6 +98,10 @@ public class RmiHandler implements RemoteCommandList {
         return modelFactory.getMenuModel().deleteItemFromMenu(id);
     }
 
+    @Override
+    public void testConnection() throws RemoteException {
+    }
+
     public void sendUpdateToReceptionists(){
         for (int i = 0; i < receptionists.size(); i++) {
             try {

@@ -20,4 +20,5 @@ public interface RemoteCommandList extends Remote {
     void closeConnection(RemoteSender clientRMIHandler) throws RemoteException;             // Removes Remote senders from list
     String createItem(Item createdItem) throws RemoteException;                             // Create the item,  and if it was created give me "OK" as string back
     String deleteItem(int id) throws RemoteException;                                         // Delete the item by specified id and the delete the ItemIngredient things for it.
+    void testConnection() throws RemoteException;                                           //Test for get orders stubborn exception
 }

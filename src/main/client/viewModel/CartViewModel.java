@@ -22,4 +22,8 @@ public class CartViewModel {
     public void removeItemFromCart(int id) {
         model.removeItemFromCart(id);
     }
+
+    public boolean testConnection() {
+        return model.testConnection();
+    }
 }

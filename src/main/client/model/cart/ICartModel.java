@@ -9,4 +9,6 @@ public interface ICartModel {
     void removeItemFromCart(int id);
     void setCustomizeItem(int id);
     Item getCustomizeItem();
+
+    boolean testConnection();
 }

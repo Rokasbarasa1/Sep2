@@ -12,6 +12,7 @@ public class ViewModelFactory {
     private CardViewModel card;
     private CreateItemViewModel createItem;
     private CustomizeViewModel customize;
+    private UserSelectViewModel userSelect;
 
     public ViewModelFactory(ModelFactory modelFactory) {
         this.modelFactory = modelFactory;
@@ -63,5 +64,11 @@ public class ViewModelFactory {
         if(customize == null)
             customize = new CustomizeViewModel(modelFactory.customizeModel());
         return customize;
+    }
+
+    public UserSelectViewModel getUserSelectViewModel() {
+        if(userSelect == null)
+            userSelect = new UserSelectViewModel(modelFactory.userSelectModel());
+        return userSelect;
     }
 }

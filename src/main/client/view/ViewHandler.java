@@ -44,7 +44,7 @@ public class ViewHandler {
         FXMLLoader loader = new FXMLLoader();
         Parent root = getRootByPath("UserSelect/UserSelect.fxml", loader);
         UserSelectController controller = loader.getController();
-        controller.init(this);
+        controller.init(this, viewModelFactory.getUserSelectViewModel());
         userSelectScene = new Scene(root);
         mainStage.setTitle("User select");
         mainStage.setScene(userSelectScene);

@@ -13,6 +13,8 @@ import main.client.clientNetworking.orderScreen.OrderScreenClient;
 import main.client.clientNetworking.receptionistMenu.IReceptionistMenuClient;
 import main.client.clientNetworking.receptionistMenu.ReceptionistMenuClient;
 import main.client.clientNetworking.rmi.ClientRMIHandler;
+import main.client.clientNetworking.userSelect.IUserSelectClient;
+import main.client.clientNetworking.userSelect.UserSelectClient;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -25,6 +27,7 @@ public class ClientFactory {
     private IOrderScreenClient orderScreen;
     private ICardClient card;
     private ICreateItemClient createItem;
+    private IUserSelectClient userSelect;
 
     public ClientFactory(){
         try {
@@ -68,6 +71,12 @@ public class ClientFactory {
         if(createItem == null)
             createItem = new CreateItemClient(rmiHandler);
         return createItem;
+    }
+
+    public IUserSelectClient userSelectClient() {
+        if(userSelect == null)
+            userSelect = new UserSelectClient(rmiHandler);
+        return userSelect;
     }
 
     public void closeConnection() {

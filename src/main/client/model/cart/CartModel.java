@@ -1,16 +1,19 @@
 package main.client.model.cart;
 
 import main.client.model.customerMenu.ICustomerMenuModel;
+import main.client.model.userSelect.IUserSelectModel;
 import main.shared.Item;
 
 import java.util.ArrayList;
 
 public class CartModel implements ICartModel {
+    private IUserSelectModel userSelect;
     private ICustomerMenuModel customerMenuModel;
     private Item customize;
 
-    public CartModel(ICustomerMenuModel customerMenuModel) {
+    public CartModel(ICustomerMenuModel customerMenuModel, IUserSelectModel userSelect) {
         this.customerMenuModel = customerMenuModel;
+        this.userSelect = userSelect;
     }
 
     @Override
@@ -31,5 +34,10 @@ public class CartModel implements ICartModel {
     @Override
     public Item getCustomizeItem() {
         return customize;
+    }
+
+    @Override
+    public boolean testConnection() {
+        return userSelect.testConnection();
     }
 }

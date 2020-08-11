@@ -49,12 +49,17 @@ public class CreateItemController {
     }
 
     @FXML
-    void OnBack(ActionEvent event) {
-        viewHandler.openReceptionistMenu();
+    void OnBack() {
+        if(vm.testConnection()){
+            viewHandler.openReceptionistMenu();
+            clear();
+        } else {
+            response.setText("Failed to connect to server");
+        }
     }
 
     @FXML
-    void OnCreateItem(ActionEvent event) {
+    void OnCreateItem() {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
         System.out.println(Boolean.parseBoolean(toogleGroupValue));

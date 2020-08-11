@@ -75,18 +75,18 @@ public class ReceptionistMenuController {
     }
 
     @FXML
-    void OnCompleteOrder(ActionEvent event) {
+    void OnCompleteOrder() {
         Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
         vm.completeOrder(selectedOrder.getID());
     }
 
     @FXML
-    void OnCreateNewItem(ActionEvent event) {
+    void OnCreateNewItem() {
         viewHandler.openCreateItem();
     }
 
     @FXML
-    void OnPrintOrder(ActionEvent event) {
+    void OnPrintOrder() {
         Order selectedOrder = incompleteOrderTable.getSelectionModel().getSelectedItem();
         if(selectedOrder != null){
             PrinterJob job = PrinterJob.getPrinterJob();
@@ -108,7 +108,7 @@ public class ReceptionistMenuController {
     }
 
     @FXML
-    void OnDeleteItem(ActionEvent event) {
+    void OnDeleteItem() {
         Item selectedItem = menuTable.getSelectionModel().getSelectedItem();
         if(selectedItem != null){
             vm.deleteItem(selectedItem.getID());

@@ -98,7 +98,7 @@ public class CustomizeController {
     }
 
     @FXML
-    void OnBack(ActionEvent event) {
+    void OnBack() {
         viewHandler.openCart();
     }
 }
