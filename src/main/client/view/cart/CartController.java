@@ -1,18 +1,13 @@
 package main.client.view.cart;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import main.client.view.ViewHandler;
 import main.client.viewModel.CartViewModel;
-import main.client.viewModel.CustomerMenuViewModel;
 import main.shared.Item;
-import main.shared.Order;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 public class CartController {
     @FXML

@@ -1,9 +1,7 @@
 package main.client.view.customerMenu;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
 import main.client.view.ViewHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;

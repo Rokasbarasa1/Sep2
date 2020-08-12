@@ -3,7 +3,6 @@ package main.server.persistence.ingredient;
 import main.server.persistence.database.DataConnectionException;
 import main.server.persistence.database.IDBConnection;
 import main.shared.Ingredient;
-import main.shared.Item;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,13 +1,9 @@
 package main.client.view.createItem;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import main.client.view.ViewHandler;
 import main.client.viewModel.CreateItemViewModel;
-
-import javax.swing.text.View;
 
 public class CreateItemController {
     @FXML

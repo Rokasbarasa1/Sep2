@@ -3,7 +3,6 @@ package main.client.model.createItem;
 import main.client.clientNetworking.createItem.ICreateItemClient;
 import main.shared.Ingredient;
 import main.shared.Item;
-
 import java.util.ArrayList;
 
 public class CreateItemModel implements ICreateItemModel{

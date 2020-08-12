@@ -5,7 +5,6 @@ import main.shared.Order;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public class OrderScreenClient implements IOrderScreenClient{

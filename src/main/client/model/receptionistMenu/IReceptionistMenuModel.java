@@ -4,7 +4,6 @@ import main.shared.Item;
 import main.shared.Order;
 import main.shared.PropertyChangeSubject;
 
-import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
 public interface IReceptionistMenuModel extends PropertyChangeSubject {

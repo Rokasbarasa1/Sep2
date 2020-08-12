@@ -2,7 +2,6 @@ package main.shared;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Item implements Serializable, Cloneable {
     private int ID;

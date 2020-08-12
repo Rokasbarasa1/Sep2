@@ -1,6 +1,5 @@
 package main.client.model.login;
 
-import main.client.clientNetworking.login.ILoginClient;
 import main.shared.Receptionist;
 
 public interface ILoginModel {

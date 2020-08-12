@@ -46,9 +46,6 @@ public class OrderModel implements IOrderModel {
     @Override
     public ArrayList<Order> getUnfinishedOrders() {
         ArrayList<Order> unFinishedOrders = new ArrayList<>();
-        for (int i = 0; i < orders.size() ; i++) {
-
-        }
         for (int i = 0; i < orders.size() ; i++){
             if(orders.get(i).isFinished() == false){
                 unFinishedOrders.add(orders.get(i));
