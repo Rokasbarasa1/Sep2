@@ -81,7 +81,7 @@ public class Item implements Serializable, Cloneable {
         return name + ": " + getIngredients();
     }
 
-    public static ArrayList<Ingredient> cloneList(ArrayList<Ingredient> ingredientList) {
+    public ArrayList<Ingredient> cloneList(ArrayList<Ingredient> ingredientList) {
         ArrayList<Ingredient> clonedList = new ArrayList<Ingredient>(ingredientList.size());
         for (Ingredient ing : ingredientList) {
             clonedList.add(new Ingredient(ing.getName(), ing.getPrice()));

@@ -4,6 +4,7 @@ import main.client.clientNetworking.rmi.ClientRMIHandler;
 
 public class UserSelectClient implements IUserSelectClient {
     private ClientRMIHandler rmiHandler;
+
     public UserSelectClient(ClientRMIHandler rmiHandler) {
         this.rmiHandler = rmiHandler;
     }

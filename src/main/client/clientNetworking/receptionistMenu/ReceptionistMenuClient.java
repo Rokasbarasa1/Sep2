@@ -4,7 +4,6 @@ import main.client.clientNetworking.rmi.ClientRMIHandler;
 import main.shared.Item;
 import main.shared.Order;
 import main.shared.Receptionist;
-
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;

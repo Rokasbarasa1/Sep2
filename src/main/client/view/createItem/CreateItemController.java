@@ -29,10 +29,11 @@ public class CreateItemController {
 
     private ViewHandler viewHandler;
     private CreateItemViewModel vm;
-    private ToggleGroup group = new ToggleGroup();
+    private ToggleGroup group;
 
     public void init(CreateItemViewModel createItemViewModel, ViewHandler viewHandler) {
         this.viewHandler = viewHandler;
+        group = new ToggleGroup();
         vm = createItemViewModel;
         falseRadio.setToggleGroup(group);
         tureRadio.setToggleGroup(group);

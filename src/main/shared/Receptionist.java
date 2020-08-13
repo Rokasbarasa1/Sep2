@@ -40,27 +40,7 @@ public class Receptionist implements Serializable {
         return password;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getWorkRole() {
-        return workRole;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int id) {
+        ID = id;
     }
 }
