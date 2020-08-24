@@ -61,13 +61,6 @@ public class Item implements Serializable, Cloneable {
         return groupName;
     }
 
-    public String getIngredients(){
-        String ingredientString = "";
-        for (int i = 0; i < ingredients.size(); i++) {
-            ingredientString += ingredients.get(i).toString();
-        }
-        return ingredientString;
-    }
     public ArrayList<Ingredient> getIngredientList(){
         return ingredients;
     }
@@ -79,6 +72,14 @@ public class Item implements Serializable, Cloneable {
     @Override
     public String toString(){
         return name + ": " + getIngredients();
+    }
+
+    public String getIngredients(){
+        String ingredientString = "";
+        for (int i = 0; i < ingredients.size(); i++) {
+            ingredientString += ingredients.get(i).toString();
+        }
+        return ingredientString;
     }
 
     public ArrayList<Ingredient> cloneList(ArrayList<Ingredient> ingredientList) {

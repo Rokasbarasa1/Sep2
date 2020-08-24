@@ -59,7 +59,6 @@ public class CreateItemController {
     void OnCreateItem() {
         RadioButton selectedRadioButton = (RadioButton) group.getSelectedToggle();
         String toogleGroupValue = selectedRadioButton.getText();
-        System.out.println(Boolean.parseBoolean(toogleGroupValue));
         vm.createItem(Boolean.parseBoolean(toogleGroupValue));
         if(response.getText().equals("OK")){
             clear();

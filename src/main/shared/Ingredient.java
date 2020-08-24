@@ -49,5 +49,4 @@ public class Ingredient implements Serializable {
             return + counter + " " + name + ", ";
         }
     }
-    
 }

@@ -22,9 +22,10 @@ public class CreateItemModel implements ICreateItemModel{
                 ingredientsArray.add(ingredient);
             }
             double priceToDouble = Double.parseDouble(price);
-            Item createdItem = new Item(name, customizable, ingredientsArray, priceToDouble, groupName);
+            Item createdItem = new Item(name, false, ingredientsArray, priceToDouble, groupName);
             return client.createItem(createdItem);
-        }else {
+        }
+        else {
             String[] ingredientsSplit = ingredients.split(", ");
             ArrayList<Ingredient> ingredientsArray = new ArrayList<>();
             for (int i = 0; i < ingredientsSplit.length; i++) {
@@ -38,7 +39,7 @@ public class CreateItemModel implements ICreateItemModel{
                 }
             }
             double priceToDouble = Double.parseDouble(price);
-            Item createdItem = new Item(name, customizable, ingredientsArray, priceToDouble, groupName);
+            Item createdItem = new Item(name, true, ingredientsArray, priceToDouble, groupName);
             return client.createItem(createdItem);
         }
     }

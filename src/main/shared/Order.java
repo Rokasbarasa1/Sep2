@@ -25,6 +25,14 @@ public class Order implements Serializable, Printable {
         return ID;
     }
 
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
+    }
+
     //For table, it is used, dont delete
     public String getItems() {
         String itemsString = "";
@@ -40,14 +48,6 @@ public class Order implements Serializable, Printable {
             itemsString += items.get(i).toString() + "\n";
         }
         return itemsString;
-    }
-
-    public boolean isFinished() {
-        return finished;
-    }
-
-    public void setFinished(boolean finished) {
-        this.finished = finished;
     }
 
     @Override
